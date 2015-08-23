@@ -1,0 +1,28 @@
+$font-size--base:		16px !default;
+
+$font-size--desktop:	$font-size--base * 1.125;
+$font-size--mobile:		$font-size--base;
+
+
+$font-size--xl:     2.5rem;
+$font-size--l:      2.0rem;
+$font-size--m:      1.5rem;
+$font-size--reg:    1rem;
+$font-size--s:      0.875rem;
+$font-size--xs:			0.75rem;
+
+$line-height--base:	24px !default;
+$font-family--desktop: sans-serif;
+
+
+
+$color--base:				#333 !default;
+$background-color--base:   #fff !default;
+
+
+$screen--xsmall: 320px;
+$screen--small: 667px;
+$screen--medium: 736px;
+$screen--large: 1024px;
+$screen--xlarge: 1440px;
+

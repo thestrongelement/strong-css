@@ -1,0 +1,39 @@
+html {
+	font-family: $font-family--desktop;
+	font-size: ($font-size--base / 16px) * 1em;
+	line-height: $line-height--base / $font-size--base;
+	background-color: $background-color--base;
+	color: $color--base;
+	min-height: 100%;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	@include media(m) {
+		font-size: ($font-size--desktop / 16px) * 1em;
+	}	
+}
+body {
+	background: red;
+	min-height: 100%;
+	min-width: 100%;
+	position: absolute;
+	margin: 0;
+	@include media(xs) {
+		
+	}
+	@include media(s) {
+		background: orange;
+	}
+	@include media(m) {
+		background: yellow;
+	}
+	@include media(l) {
+		background: green;
+	}
+	@include media(xl) {
+		background: lightblue;
+	}
+}
+main {
+  display: block;
+}
+

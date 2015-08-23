@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/thestrongelement/strong-css",
   "devDependencies": {
+    "autoprefixer-core": "^5.2.1",
     "bower": "^1.4.1",
     "browser-sync": "^1.8.2",
     "gulp": "^3.9.0",
@@ -24,6 +25,7 @@
     "gulp-postcss": "^5.1.10",
     "gulp-sass": "^2.0.4",
     "gulp-sourcemaps": "^1.5.2",
-    "gulp-util": "^3.0.4"
+    "gulp-util": "^3.0.4",
+    "minimist": "^1.1.3"
   }
 }

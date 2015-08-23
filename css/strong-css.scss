@@ -1,0 +1,43 @@
+
+
+
+/*
+
+@import "bower_components/inuit-defaults/settings.defaults";
+
+@import "bower_components/inuit-functions/tools.functions";
+@import "bower_components/inuit-mixins/tools.mixins";
+
+
+@import "bower_components/inuit-normalize/generic.normalize";
+@import "bower_components/inuit-box-sizing/generic.box-sizing";
+
+@import "bower_components/inuit-page/base.page";
+
+
+
+
+objects
+	- 
+
+
+ui
+
+
+
+view
+	- ultimately respsonsible for everything visible on the screen
+	- concerned with high-level layout of view components
+
+
+
+*/
+
+@import "settings";
+@import "helpers/media";
+
+
+@import "elements/blocks";
+@import "elements/headers";
+
+@import "views/index";
