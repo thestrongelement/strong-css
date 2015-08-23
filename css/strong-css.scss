@@ -33,9 +33,9 @@ view
 
 */
 
-@import "settings";
-@import "helpers/media";
+@import "settings/vars";
 
+@import "helpers/media";
 
 @import "elements/blocks";
 @import "elements/headers";
