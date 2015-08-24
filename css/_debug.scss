@@ -1,0 +1,25 @@
+
+
+#ui {
+    //background-image: url(../grid-6-12.min.svg);
+}
+
+#logo--thestrongelement {
+    code {
+        @include media(xs) {
+            color: red;
+        }
+        @include media(s) {
+            color: orange;
+        }
+        @include media(m) {
+            color: green;
+        }
+        @include media(l) {
+            color: blue;
+        }
+        @include media(xl) {
+            color: purple;
+        }
+    }
+}

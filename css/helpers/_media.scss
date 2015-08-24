@@ -1,4 +1,31 @@
+/**
+* @file _media.scss
+* @project strong-css
+* @author The strong element
+*/
 
+/**
+* @section Mixins
+* Media query mixin for common devices sizes
+*/
+
+/*
+	@include media(xs) {
+		
+	}
+	@include media(s) {
+
+	}
+	@include media(m) {
+
+	}
+	@include media(l) {
+
+	}
+	@include media(xl) {
+
+	}
+*/
 @mixin media($size) {
   @if $size == xs {
     @media (min-width: $screen--xsmall) { @content; }
