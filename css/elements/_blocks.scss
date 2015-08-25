@@ -1,3 +1,18 @@
+/**
+* @file _blocks.scss
+* @project strong-css
+* @author The strong element
+*/
+
+/**
+* @section Block elements
+* Set base styles for block-level elements, incl. view-level elements.
+*/
+
+/**
+* Top-level font and color rules for the application
+* Base font-size increases on larger screens
+*/
 html {
 	font-family: $font-family--desktop;
 	font-size: ($font-size--base / 16px) * 1em;
@@ -7,31 +22,22 @@ html {
 	min-height: 100%;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
 	@include media(m) {
 		font-size: ($font-size--desktop / 16px) * 1em;
 	}	
 }
+* {
+  box-sizing: inherit;
+}
+/**
+* Top-level positioning rules for the UI
+*/
 body {
-	background: red;
 	min-height: 100%;
 	min-width: 100%;
 	position: absolute;
 	margin: 0;
-	@include media(xs) {
-		
-	}
-	@include media(s) {
-		background: orange;
-	}
-	@include media(m) {
-		background: yellow;
-	}
-	@include media(l) {
-		background: green;
-	}
-	@include media(xl) {
-		background: lightblue;
-	}
 }
 main {
   display: block;
@@ -42,20 +48,20 @@ p {
 p:last-child, ul:last-child {
 	margin-bottom: 0;
 }
-
 article, section {
 	width: 100vw;
 	& > div {
-		padding-right: 5vw;
-		padding-left: 5vw;
 		padding: 1.5rem 5vw 2.5rem;
 	}
 }
-
 section {
-	display: inline-block;
 	border-bottom: solid 1px black;
-	background-color: pink;
-	background-repeat: no-repeat;	
-	
+	//background-color: pink;
+	background-repeat: no-repeat;
 }
+header, footer {
+    padding: 1.5rem 5vw 1.5rem;
+}
+
+
+

@@ -1,0 +1,40 @@
+/**
+* @file elements/palpable
+* @project strong-css
+* @author The strong element
+*/
+
+/**
+* @section Elements
+* An element is considered palpable if its parent is a flow or phrase element, which generally require palpable content
+* These styles are dependent on the relationship of the parent and child
+* These are simple nested styles here, more complex relationships should be expressed as components
+*/
+nav {
+  ul {
+    padding-left: 0;
+    display: flex;
+    & > li {
+      flex: 1;
+      background-color: lightgray;
+      margin-left: 1px;
+      display: inline-block;
+      transition: flex 0.15s ease-in;
+      &:first-child {
+          margin-left: 0;
+      }
+      & > a {
+          display: block;
+          padding: 1em;
+      }
+      &[aria-selected=true] {
+          background: pink;
+          flex: 1.2;
+      }
+      &:hover {
+          flex: 1.2;
+      }
+    }
+  }
+}
+

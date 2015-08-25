@@ -1,0 +1,21 @@
+/**
+* @file elements/sections
+* @project strong-css
+* @author The strong element
+*/
+
+/**
+* @section Block elements
+* Set base styles for block-level elements, incl. view-level elements.
+*/
+$elements--sections: article aside nav section header footer;
+
+article, section {
+	width: 100vw;
+	& > div {
+		padding: 1.5rem 5vw 2.5rem;
+	}
+}
+header, footer {
+    padding: 1.5rem 5vw 1.5rem;
+}

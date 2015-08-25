@@ -1,0 +1,17 @@
+/**
+* @file elements/flow
+* @project strong-css
+* @author The strong element
+*/
+
+/**
+* @section Elements
+* High-level resets for phrase content elements
+* Think of this as the text of the application.
+* With a few exceptions, these elements are inline and can only contain other phrase elements
+* This isn't how things stack on the page but rather how they line up
+*/
+
+$elements--phrase: a abbr audio b bdi bdo br button canvas cite code data datalist del dfn em embed i iframe img input ins kbd keygen label map mark math meter noscript object output progress q ruby s samp script select small span strong sub sup svg template textarea time u var video wbr;
+
+

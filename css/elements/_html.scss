@@ -1,0 +1,31 @@
+/**
+* @file elements/html
+* @project strong-css
+* @author The strong element
+*/
+
+/**
+* @section Elements
+* Highest-level application settings
+*/
+
+/**
+* Top-level font and color rules for the application
+* Base font-size increases on larger screens
+*/
+html {
+	font-family: $font-family--desktop;
+	font-size: ($font-size--base / 16px) * 1em;
+	line-height: $line-height--base / $font-size--base;
+	background-color: $background-color--base;
+	color: $color--base;
+	min-height: 100%;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+	@include media(m) {
+		font-size: ($font-size--desktop / 16px) * 1em;
+	}
+}
+
+

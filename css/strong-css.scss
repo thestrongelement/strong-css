@@ -18,18 +18,12 @@
 
 
 objects
-	- 
-
 
 ui
-
-
 
 view
 	- ultimately respsonsible for everything visible on the screen
 	- concerned with high-level layout of view components
-
-
 
 */
 
@@ -37,7 +31,18 @@ view
 
 @import "helpers/media";
 
-@import "elements/blocks";
+@import "elements/html";
+@import "elements/flow";
+@import "elements/sections";
 @import "elements/headers";
+@import "elements/phrase";
+@import "elements/embedded";
+@import "elements/interactive";
+@import "elements/palpable";
+
 
 @import "views/index";
+
+@import "debug";
+
+
