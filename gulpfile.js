@@ -44,7 +44,7 @@ gulp.task('css', function () {
   return gulp.src(dir__src_css+'/*.scss')
     .pipe($.sourcemaps.init())
     .pipe($.sass({
-      outputStyle: 'nested', // libsass doesn't support expanded yet
+      outputStyle: (minify?'compressed':'nested'), // libsass doesn't support expanded yet
       precision: 10,
       includePaths: ['.'],
       onError: console.error.bind(console, 'Sass error:')

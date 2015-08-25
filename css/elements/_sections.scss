@@ -8,7 +8,9 @@
 * @section Block elements
 * Set base styles for block-level elements, incl. view-level elements.
 */
-$elements--sections: article aside nav section header footer;
+$elements__sections: article aside nav section;
+$elements__sections--roots: blockquote body fieldset figure td;
+$elements__sections--app: header footer main;
 
 article, section {
 	width: 100vw;

@@ -11,7 +11,7 @@
 * Not text (that's phrasing content), but margins, padding, borders, yes!
 */
 
-$elements--flow: a abbr address article aside audio b body bdi bdo big blockquote br button canvas cite code data datalist del details dfn dialog div dl em embed fieldset figure footer form h1 h2 h3 h4 h5 h6 header hr i iframe img input ins kbd keygen label main map mark math menu meter nav noscript object ol output p pre progress q ruby s samp script section select small span strong sub sup svg table textarea time u ul var video wbr;
+$elements__flow: a abbr address article aside audio b body bdi bdo big blockquote br button canvas cite code data datalist del details dfn dialog div dl em embed fieldset figure footer form h1 h2 h3 h4 h5 h6 header hr i iframe img input ins kbd keygen label main map mark math menu meter nav noscript object ol output p pre progress q ruby s samp script section select small span strong sub sup svg table textarea time u ul var video wbr;
 
 /**
 * Top-level font and color rules for the application
@@ -32,10 +32,14 @@ body {
 }
 main {
   display: block;
+  background-color: rgba(0,0,0,0.2);
 }
 p {
 	margin-top: 0;
 }
 p:last-child, ul:last-child {
 	margin-bottom: 0;
+}
+header, footer {
+    padding: 1.5rem 5vw 1.5rem;
 }

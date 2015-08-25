@@ -14,6 +14,7 @@
     "tests"
   ],
   "dependencies": {
-    "inuit-starter-kit": "~0.2.9"
+    "inuit-starter-kit": "~0.2.9",
+    "bourbon": "thoughtbot/bourbon#4.2.4"
   }
 }
