@@ -1,7 +1,11 @@
 {
   "name": "strong-css",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/thestrongelement/strong-css",
+  "description": "CSS framework",
+  "main": [
+    "css/strong-css.scss"
+  ],
   "authors": [
     "zack Frazier <zfrazier@gmail.com>"
   ],
@@ -16,5 +20,8 @@
   "dependencies": {
     "inuit-starter-kit": "~0.2.9",
     "bourbon": "thoughtbot/bourbon#4.2.4"
+  },
+  "devDependencies": {
+    "modular-scale": "~2.1.1"
   }
 }
