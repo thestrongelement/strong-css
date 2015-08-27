@@ -3,6 +3,11 @@
   background-image: url(../grid-6-12.min.svg);
 }
 
+#{$elements__phrase} {
+  outline: solid 1px blue;
+}
+
+
 #logo--thestrongelement {
   code {
     @include media(xs) {

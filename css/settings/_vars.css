@@ -1,17 +1,33 @@
-$font-size--base:		16px !default;
+$font-size--base:		20px !default;
+$line-height--base:	30px !default;
+$line-height--ratio:  $line-height--base / $font-size--base;
 
-$font-size--desktop:	$font-size--base * 1.125;
+$font-size--desktop:	$font-size--base;// * 1.125;
 $font-size--mobile:		$font-size--base;
 
+$em-base: $font-size--base;
+$ms-base: $font-size--base;
+$ms-ratio: $fourth;
 
+
+$font-size--xl:     rem(ms(3));
+$font-size--l:      rem(ms(2));
+$font-size--m:      rem(ms(1));
+$font-size--reg:    rem(ms(0));
+$font-size--s:      rem(ms(-1));
+$font-size--xs:			rem(ms(-2));
+
+/* 
 $font-size--xl:     2.5rem;
 $font-size--l:      2.0rem;
 $font-size--m:      1.5rem;
 $font-size--reg:    1rem;
 $font-size--s:      0.875rem;
 $font-size--xs:			0.75rem;
+ */
 
-$line-height--base:	24px !default;
+
+
 $font-family--desktop: sans-serif;
 
 
@@ -24,4 +40,7 @@ $screen--small: 667px;
 $screen--medium: 736px;
 $screen--large: 1024px;
 $screen--xlarge: 1440px;
+
+
+
 
