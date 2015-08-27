@@ -14,6 +14,7 @@ var dir__src_html = 'views';
 var dir__src_css = 'css';
 var dir__dist = 'dist';
 var dir__www = 'www';
+var dir__build = dir__www; //default
 
 var server;
 
@@ -42,7 +43,7 @@ gulp.task('html', function () {
 
 gulp.task('css', function () {
   return gulp.src(dir__src_css+'/*.scss')
-    .pipe($.sourcemaps.init())
+    .pipe(minify?$.util.noop():$.sourcemaps.init())
     .pipe($.sass({
       outputStyle: (minify?'compressed':'nested'), // libsass doesn't support expanded yet
       precision: 10,
@@ -52,8 +53,8 @@ gulp.task('css', function () {
     .pipe($.postcss([
       require('autoprefixer-core')({browsers: ['last 1 version']})
     ]))
-    .pipe($.sourcemaps.write())
-    .pipe(gulp.dest(dir__www + '/css'))
+    .pipe(minify?$.util.noop():$.sourcemaps.write())
+    .pipe(gulp.dest(dir__build + '/css'))
     .pipe(reload());
 });
 
@@ -64,7 +65,21 @@ gulp.task('public', function() {
 });
 
 //build
-gulp.task('www', $.sequence('clean',['css','public'],'html'));
+gulp.task('www', $.sequence('clean',['css','public'],'html','dist'));
+
+gulp.task('dist', function () {
+  return gulp.src(dir__src_css+'/*.scss')
+    .pipe($.sass({
+      outputStyle: ('compressed'), // libsass doesn't support expanded yet
+      precision: 10,
+      includePaths: ['.'],
+      onError: console.error.bind(console, 'Sass error:')
+    }))
+    .pipe($.postcss([
+      require('autoprefixer-core')({browsers: ['last 1 version']})
+    ]))
+    .pipe(gulp.dest(dir__dist + '/css'))
+});
 
 gulp.task('default', function () {
   gulp.start('serve');
