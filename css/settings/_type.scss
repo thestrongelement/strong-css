@@ -1,0 +1,38 @@
+$elements__headers: h1, h2, h3, h4, h5, h6;
+
+#{$elements__headers} {
+	margin-top: 0;
+	background: pink;
+}
+%font__size--xl {
+	font-size: $font-size--xl;
+	margin-bottom: 0.66em;
+	line-height: 1.375;
+}
+%font__size--l {
+	font-size: $font-size--l;
+	margin-bottom: 0.9em;
+	line-height: 1.345;
+}
+%font__size--m {
+	font-size: $font-size--m;
+	margin-bottom: 0.6em;
+	line-height: 1.2;
+}
+%font__size--reg {
+	font-size: $font-size--reg;
+	line-height: 1.475;
+	margin-bottom: 0.8em;
+}
+%font__size--s {
+	font-size: $font-size--s;
+	margin-bottom: 1.1em;
+	line-height: 1.1;
+	background: lightblue;
+}
+%font__size--xs {
+	font-size: $font-size--xs;
+	line-height: 1.5;
+	margin-bottom: 1.4em;
+	background: cyan;
+}

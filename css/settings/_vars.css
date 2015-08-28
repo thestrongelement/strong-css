@@ -1,6 +1,8 @@
 $font-size--base:		20px !default;
-$line-height--base:	30px !default;
+$line-height--base:	32px !default;
 $line-height--ratio:  $line-height--base / $font-size--base;
+
+$padding--base: 1.6rem;
 
 $font-size--desktop:	$font-size--base;// * 1.125;
 $font-size--mobile:		$font-size--base;
@@ -10,6 +12,11 @@ $ms-base: $font-size--base;
 $ms-ratio: $fourth;
 
 
+/*
+$ms-base: 1.25em;
+$ms-ratio: 1.333;
+ */
+
 $font-size--xl:     rem(ms(3));
 $font-size--l:      rem(ms(2));
 $font-size--m:      rem(ms(1));
@@ -17,7 +24,7 @@ $font-size--reg:    rem(ms(0));
 $font-size--s:      rem(ms(-1));
 $font-size--xs:			rem(ms(-2));
 
-/* 
+/*
 $font-size--xl:     2.5rem;
 $font-size--l:      2.0rem;
 $font-size--m:      1.5rem;

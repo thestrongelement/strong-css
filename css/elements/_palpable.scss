@@ -10,6 +10,9 @@
 * These styles are dependent on the relationship of the parent and child
 * These are simple nested styles here, more complex relationships should be expressed as components
 */
+
+
+
 nav {
   ul {
     padding-left: 0;
@@ -25,11 +28,10 @@ nav {
       }
       & > a {
           display: block;
-          padding: 1em;
+          padding: $padding--base;
       }
       &[aria-selected=true] {
           background: pink;
-          flex: 1.2;
       }
       &:hover {
           flex: 1.2;

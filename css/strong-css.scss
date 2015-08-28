@@ -14,8 +14,11 @@ view
 
 @import "bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "bower_components/modular-scale/stylesheets/modular-scale";
-@import "settings/vars";
 
+@import "settings/vars";
+@import "settings/type";
+
+@import "helpers/generic";
 @import "helpers/media";
 
 @import "elements/html";

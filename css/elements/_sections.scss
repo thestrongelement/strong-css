@@ -8,16 +8,28 @@
 * @section Block elements
 * Set base styles for block-level elements, incl. view-level elements.
 */
-$elements__sections: article aside nav section;
-$elements__sections--roots: blockquote body fieldset figure td;
-$elements__sections--app: header footer main;
+$elements__sections: article, aside, nav, section;
+$elements__sections--roots: aside, nav, section, blockquote, body, fieldset, figure, td;
+$elements__sections--app: header, footer, main;
 
-article, section {
-	width: 100vw;
+#{$elements__sections} {
 	& > div {
-		padding: 1.5rem 5vw 2.5rem;
+		padding: $padding--base;
+    max-width: 1440px;
 	}
 }
 header, footer {
-    padding: 1.5rem 5vw 1.5rem;
+    padding: $padding--base;
+}
+article {
+  & > section {
+    border-top: solid 16px white;
+  }
+}
+
+.section--no-side-padding {
+	& > div {
+	  padding-left: 0;
+	  padding-right: 0;
+	}
 }

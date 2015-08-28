@@ -37,10 +37,22 @@ main {
 }
 p {
 	margin-top: 0;
+	@extend %font__size--reg;
 }
 p:last-child, ul:last-child {
 	margin-bottom: 0;
 }
 header, footer {
-    padding: 1.5rem 5vw 1.5rem;
+//    padding: 1.5rem 5vw 1.5rem;
+}
+
+/**
+* Using .flow__flex will make all the immediate children the same height
+* Add .flow__flex--col — or shortcut "col--" to child containers to fill the horizontal space
+*/
+.flow__flex {
+  display: flex;
+  & > .flow__flex--col, & > .col-- {
+    flex: 1;
+  }
 }
