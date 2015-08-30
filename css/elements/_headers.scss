@@ -1,21 +1,21 @@
 
-h1, .font__size--xl, .xl-- {
-	@extend %font__size--xl;
+h1, .font-size--xl, .xl-- {
+	@extend %font-size--xl;
 }
-h2, .font__size--l, .l-- {
-	@extend %font__size--l;
+h2, .font-size--l, .l-- {
+	@extend %font-size--l;
 }
-h3, .font__size--m, .m-- {
-	@extend %font__size--m;
+h3, .font-size--m, .m-- {
+	@extend %font-size--m;
 }
 h4 {
-	@extend %font__size--reg;
+	@extend %font-size--reg;
 }
 h5 {
-	@extend %font__size--s;
+	@extend %font-size--s;
 }
 h6 {
-	@extend %font__size--xs;
+	@extend %font-size--xs;
 }
 
 small {
@@ -29,5 +29,5 @@ h1, h2, h3 {
 }
 
 #{$elements__headers} {
-	@extend %font__size--reg;
+	@extend %font-size--reg;
 }

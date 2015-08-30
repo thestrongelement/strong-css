@@ -37,7 +37,7 @@ main {
 }
 p {
 	margin-top: 0;
-	@extend %font__size--reg;
+	@extend %font-size--reg;
 }
 p:last-child, ul:last-child {
 	margin-bottom: 0;
@@ -53,7 +53,7 @@ header, footer {
 [class^=flow__flex] {
   min-height: 64px;
   display: flex;
-  & > .flow__flex--col, & > .col-- {
+  & > div, & > .flow__item, & > .item-- {
     flex: 1;
   }
 }
@@ -62,7 +62,20 @@ header, footer {
 }
 
 
-.col-- {
+
+
+[class^=flow__flex] > div {
   background: rgba(0,0,0,0.5);
   outline: solid 1px white;
+  color: white;
+  font-size: $font-size--xl;
+}
+
+
+// flow helpers
+.flow__block {
+  display: block;
+}
+.flow__inline {
+  display: inline;
 }
