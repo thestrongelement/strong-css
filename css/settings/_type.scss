@@ -2,7 +2,7 @@ $elements__headers: h1, h2, h3, h4, h5, h6;
 
 #{$elements__headers} {
 	margin-top: 0;
-	background: pink;
+//	background: pink;
 }
 %font__size--xl {
 	font-size: $font-size--xl;
@@ -28,11 +28,11 @@ $elements__headers: h1, h2, h3, h4, h5, h6;
 	font-size: $font-size--s;
 	margin-bottom: 1.1em;
 	line-height: 1.1;
-	background: lightblue;
+//	background: lightblue;
 }
 %font__size--xs {
 	font-size: $font-size--xs;
 	line-height: 1.5;
 	margin-bottom: 1.4em;
-	background: cyan;
+//	background: cyan;
 }
