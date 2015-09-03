@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
+var minifyHTML = require('gulp-minify-html');
 var del = require('del');
 
 var json__pkg = require('./package.json');
@@ -24,6 +25,7 @@ gulp.task('serve', ['www'], function () {
     port: 9000,
     server: {
       baseDir: [dir__www],
+      index: 'layout.html',
       routes: {
         '/bower_components': 'bower_components',
         '/css': 'css'
@@ -37,6 +39,9 @@ gulp.task('serve', ['www'], function () {
 
 gulp.task('html', function () {
   return gulp.src(dir__src_html+'/**/*.html')
+    .pipe(minifyHTML({
+      conditionals: true
+    }))
     .pipe(gulp.dest(dir__www))
     .pipe(reload());
 });
@@ -48,7 +53,8 @@ gulp.task('css', function () {
       outputStyle: (minify?'compressed':'nested'), // libsass doesn't support expanded yet
       precision: 10,
       includePaths: ['.'],
-      onError: console.error.bind(console, 'Sass error:')
+      //onError: console.error.bind(console, 'Sass error:'),
+      errLogToConsole: true
     }))
     .pipe($.postcss([
       require('autoprefixer-core')({browsers: ['last 1 version']})

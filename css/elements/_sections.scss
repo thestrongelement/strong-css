@@ -13,6 +13,9 @@ $elements__sections--roots: aside, nav, section, blockquote, body, fieldset, fig
 $elements__sections--app: header, footer, main;
 
 #{$elements__sections} {
+  margin: 0 auto;
+  min-width: 664px;
+  background: white;
 	& > div {
 		padding: $padding--base;
     max-width: 1440px;

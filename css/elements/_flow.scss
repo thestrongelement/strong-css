@@ -53,26 +53,72 @@ header, footer {
 [class^=flow__flex] {
   min-height: 64px;
   display: flex;
-  & > div, & > .flow__item, & > .item-- {
+  & > .flow__item, & > .item-- {
     flex: 1;
   }
 }
-.flow__flex--col {
+.flow__flex--vertical {
   flex-direction: column;
 }
 
+%span--item {
+  display: inline-block;
+  margin-right: $padding--base;
 
+}
+[class^=flow--] {
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.flow--3-1 {
+  @extend %span--item;
+  width: calc((100%/3) - (#{$padding--base}*2/3));
+}
+.flow--3-2 {
+  @extend %span--item;
+  width: calc(((100%/3) - (#{$padding--base}*2/3))*2 + #{$padding--base});
+}
 
-
-[class^=flow__flex] > div {
-  background: rgba(0,0,0,0.5);
-  outline: solid 1px white;
-  color: white;
-  font-size: $font-size--xl;
+.flow--4-1 {
+  @extend %span--item;
+  width: calc((100%/4) - (#{$padding--base}*3/4));
+}
+.flow--4-2 {
+  @extend %span--item;
+  width: calc(((100%/3) - (#{$padding--base}*3/4))*2 + #{$padding--base});
+}
+.flow--4-3 {
+  @extend %span--item;
+  width: calc(((100%/3) - (#{$padding--base}*3/4))*3 + #{$padding--base});
+}
+.flow--6-1 {
+  @extend %span--item;
+  width: calc((100%/6) - (#{$padding--base}*5/6));
+}
+.flow--6-2 {
+  @extend %span--item;
+  width: calc(((100%/6) - (#{$padding--base}*5/6))*2 + #{$padding--base});
+}
+.flow--6-3 {
+  @extend %span--item;
+  width: calc(((100%/6) - (#{$padding--base}*5/6))*3 + #{$padding--base}*2);
+}
+.flow--6-4 {
+  @extend %span--item;
+  width: calc(((100%/6) - (#{$padding--base}*5/6))*4 + #{$padding--base}*3);
+}
+.flow--6-5 {
+  @extend %span--item;
+  width: calc(((100%/6) - (#{$padding--base}*5/6))*5 + #{$padding--base}*4);
 }
 
 
+
 // flow helpers
+.flow__clear {
+  overflow: auto;
+}
 .flow__block {
   display: block;
 }
