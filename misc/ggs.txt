@@ -1,0 +1,2044 @@
+<style type="text/gss" scoped="scoped">
+.banner-cta {
+  .title.main {
+    height: == &[intrinsic-height];
+  }
+
+  aside {
+    border-radius: == &[width] / 2;
+    size: == [aside-size];
+
+    (& .title)[margin-top] == [aside-title-margin-top];
+
+    .button {
+      margin-top: == [aside-button-margin-top];
+      padding-top: == &[padding-bottom] == [aside-button-v-padding];
+      padding-left: == &[padding-right] == [aside-button-h-padding];
+    }
+  }
+}
+
+
+/*
+
+portrait mobile
+
+----------------------------------------------- */
+
+@if ::window[width] <= 600 {
+
+
+  .banner-cta {
+
+    .title.main {
+      font-size: 34px;
+    }
+    aside {
+      overflow: hidden;
+    }
+    aside .title {
+      font-size: 32px;
+    }
+    aside .subtitle {
+      font-size: 18px;
+    }
+    aside .button {
+      font-size: 16px;
+    }
+    aside svg.logo {
+      visibility: hidden;
+    }
+
+    @v |-(& .title.main)~-~(& aside)-| in(&) gap([base] * 3) outer-gap([base] * 5);
+    @h |~-~(& .title.main)~-~| in(&) gap([base] * 4);
+    @h |~-~(& aside)~-~| in(&) gap([base] * 4);
+    (& .title.main)[center-x] == (& aside)[center-x] == (&)[center-x];
+
+    [aside-size] == [md] * 3;
+    [aside-title-margin-top] == ([base] * 6) - 16;
+    [aside-button-margin-top] == [base] * 2;
+    [aside-button-h-padding] == [base] * 2;
+    [aside-button-v-padding] == [base] * 2;
+  }
+
+}
+
+@else {
+  /*
+
+  landscape mobile
+
+  ----------------------------------------------- */
+
+  @if ::window[width] < 960  {
+
+    .banner-cta {
+
+      .title.main {
+        font-size: 34px;
+      }
+      aside {
+        overflow: hidden;
+      }
+      aside .title {
+        font-size: 32px;
+      }
+      aside .subtitle {
+        font-size: 18px;
+      }
+      aside .button {
+        font-size: 16px;
+      }
+      aside svg.logo {
+        visibility: hidden;
+      }
+
+      @v |~-~(& .title.main)~-~| in(&) gap([base] * 3);
+      @v |~-~(& aside)~-~| in(&) gap([base] * 3);
+      (& .title.main)[center-y] == (& aside)[center-y] == (&)[center-y];
+
+      [aside-size] == [md] * 3;
+      [aside-title-margin-top] == ([base] * 6) - 16;
+      [aside-button-margin-top] == [base] * 2;
+      [aside-button-h-padding] == [base] * 2;
+      [aside-button-v-padding] == [base] * 2;
+
+      &.cta-left {
+        @h |-(& aside)-(& .title.main)-| in(&) gap([base] * 4);
+      }
+
+      &.cta-right {
+        @h |-(& .title.main)-(& aside)-| in(&) gap([base] * 4);
+      }
+    }
+  }
+
+  /*
+
+  Desktop
+
+  ----------------------------------------------- */
+
+  @else {
+
+    .banner-cta {
+
+
+      .title.main {
+        font-size: 64px;
+      }
+      aside .title {
+        font-size: 56px;
+      }
+      aside .subtitle {
+        font-size: 20px;
+      }
+      aside .button {
+        font-size: 20px;
+      }
+      aside svg.logo {
+        visibility: visible;
+      }
+
+      @v |~-~(& .title.main)~-~| in(&) gap([md]);
+      @v |~-~(& aside)~-~| in(&) gap([md]);
+      (& .title.main)[center-y] == (& aside)[center-y] == (&)[center-y];
+
+      [aside-size] == [md] * 5;
+      [aside-title-margin-top] == ([base] * 10) - 32;
+      [aside-button-margin-top] == [base] * 4;
+      [aside-button-h-padding] == [base] * 3;
+      [aside-button-v-padding] == [base] * 2;
+
+      aside {
+        (& .logo)[center-x] == &[center-x];
+        @v (& .logo)-| in(&) gap([base] * 7);
+
+        .logo {
+          width: == &[height] == 46;
+        }
+      }
+
+      &.cta-left {
+        @h |-(& aside)-(& .title.main)-| in(&) gap([md]);
+      }
+
+      &.cta-right {
+        @h |-(& .title.main)-(& aside)-| in(&) gap([md]);
+      }
+    }
+
+  }
+}
+
+section.head-cta {
+  height: >= ::window[height];
+
+  @h |(& .overlay)| in(&);
+  @v |(& .overlay)| in(&);
+
+  @h  |-(&"area")-| in(&) gap([md]) !require;
+  @v  |-(&"area")-| in(&) gap([md]) !require;
+
+  @h |(& .bg)| in(&);
+  @v |(& .bg)| in(&);
+
+  @h |~-~(& .cta, & .play)~-~| in(&"area") gap(0);
+  (& .cta)[center-x] == &"area"[center-x];
+  (& .play)[center-x] == &"area"[center-x];
+
+  .title, .subtitle {
+    height: == &[intrinsic-height] !require;
+  }
+
+  .cta, .play {
+    height: == &[intrinsic-height];
+    line-height: == &[font-size] + [base];
+  }
+
+  .cta {
+    .number {
+      margin-left: == [base];
+    }
+
+    .odometer {
+      margin-top: == -2;
+      margin-left: == 1;
+    }
+  }
+
+  &[sizer] == &[width];
+  //&[sizer] <= &[height];
+
+  video {
+    ::[width] == ::[height] * (640/360) !require;
+    ::[x] <= 0;
+    ::[y] <= 0;
+    ::[width] >= ::window[width];
+    ::[height] >= ::window[height];
+    ::[center-x] == ::window[center-x];
+    ::[center-y] == ::window[center-y];
+  }
+
+  @if &[sizer] <= 600 {
+
+    .logo {
+      opacity: 0;
+    }
+    .subtitle {
+      opacity: 0;
+    }
+
+    (& .title)[center] == &[center];
+
+    @h |-18-(& .title)-18-| in(&);
+    (& .title)[center-y] == &[center-y];
+
+    .title {
+      font-size: 40px;
+      line-height: 48px;
+    }
+
+    @v  |
+        -36-
+        (& .play)
+        ~18~
+        (& .title)
+        ~18~
+        (& .cta)
+        -36-
+        |
+      in(&);
+
+    .cta, .play {
+      font-size: == 14;
+      padding: == [base];
+    }
+  }
+  @else {
+
+    @v  |
+        (&"logo")
+        ~[md]~
+        (& .subtitle)
+        -18-
+        (& .title)
+        <&"area"[center-y]>
+        -[md-gap]-
+        (& .cta)
+        -[md-gap]-
+        (& .play)
+      in(&"area") !require;
+
+    @v (& .play)~[md]~| in(&"area");
+
+    .cta, .play {
+      font-size: == 20;
+      padding: == [base] * 3;
+      size: == &[intrinsic-size];
+    }
+
+    &"logo" {
+      &[height] == [md] == &[width];
+    }
+    &"logo"[center-x] == &"area"[center-x];
+
+    .logo {
+      &[height] == 46 == &[width];
+    }
+    (& .logo)[center] == &"logo"[center];
+
+    @h  |(& .title)| in(&"area") {
+
+          @if &[width] <= 600 {
+            line-height: == [md] / 2;
+            font-size: == [md] / 2;
+          }
+          @else {
+            line-height: == [md];
+            font-size: == [md];
+          }
+        }
+
+
+    @h |(& .subtitle)| in(&"area") {
+          @if &[width] <= 600 {
+            line-height: == 24;
+            font-size: == 16;
+          }
+          @else {
+            line-height: == 36;
+            font-size: == 24;
+          }
+        }
+  }
+
+
+}
+
+.post-cols-footer {
+  height: == 72 !require;
+
+  (& a)[line-height] == &[height];
+
+}
+
+.post-columns {
+
+  .media {
+    width: == &[height];
+  }
+
+  @if ::window[width] < 504 {
+    @h |(&)| in(::window);
+    height: == ::window[height];
+
+    .title.main {
+      font-size: == 16 !require;
+      height: == &[intrinsic-height];
+    }
+
+    @v |-(& .title.main)-(& .media) in(&) gap(&[main-title-media-v-gap]);
+    @v (& .content)| in(&);
+
+    @h |-(& .title.main)-| in(&) gap([base] * 5);
+    @h |(& .content)| in(&);
+
+    (& .content)[width] == (& article)[width] == &[width];
+
+    @h |(& article)... in(& .content) {
+      top: == &:next[top];
+      @h |-(&"area")-| in(&) gap([base] * 3);
+    }
+
+
+    @v |~-~(& article)~-~| in(& .content) gap(0);
+    (& article)[center-y] == &[center-y];
+
+    article {
+      @v |(& .media)-(& .title) in(&) gap([base] * 4);
+      @v (& .title)-(& .subtitle)-| in(&) gap([base]);
+
+      @h |-(& .media)-| in(&"area") gap([base] * 5);
+      (& .media)[center-x] == &[center-x];
+
+      @h |(& .title)| in(&"area");
+      @h |(& .subtitle)| in(&"area");
+
+      .title,
+      .subtitle {
+        height: == &[intrinsic-height];
+      }
+
+      .title {
+        font-size: == 32 !require;
+        line-height: == 32 !require;
+      }
+
+      .subtitle {
+        font-size: == 16 !require;
+      }
+
+      .text {
+        height: == 0;
+        opacity: == 0;
+      }
+    }
+
+
+    @h |~-~(&"position-indicators")~-~| in(&) gap([base] * 2);
+    &"position-indicators"[center-x] == &[center-x];
+
+    /*@v (&"position-indicators")-| in(&) gap([base] * 2);*/
+    @v (& .position-indicator)-| in(&) gap([base] * 2);
+
+    @h |(& .position-indicator)-...| in(&"position-indicators") gap([base] * 2) {
+      height: == 2 !require;
+      width: == [base] * 4 !weak;
+      width: == &:next[width];
+    }
+  }
+  @else {
+    @if ::window[width] < 1008 {
+      @h |(&)| in(::window);
+      height: == ::window[height];
+
+      .title.main {
+        font-size: == 16 !require;
+        height: == &[intrinsic-height];
+      }
+
+      @h |-(& .title.main) in(&) gap([base] * 4);
+
+      @h |(& .content)| in(&);
+      @v |(& .content)| in(&);
+
+      (& .content)[width] == (& article)[width] == &[width];
+      (& article)[height] == &[height];
+
+      @h |(& article)... in(& .content) {
+        top: == &:next[top];
+        @h |-(&"area")-| in(&) gap([base] * 4);
+        @v |-(&"area") in(&) gap([base] * 5);
+        @v (&"area")-| in(&) gap([base] * 8);
+      }
+
+
+      &"text"[center-y] == &[center-y];
+      @v |(& .title.main) in(&"text");
+      &[main-title-bottom] == (& .title.main)[bottom];
+
+      @v <&[main-title-bottom]>(& article .title)(& .subtitle)~-~| in(&"text") gap(0);
+
+
+      @v |(& article)| in(& .content);
+
+      article {
+        @h |(& .title)~-~(& .media) in(&"area") gap([base] * 4);
+        @h |(& .subtitle)~-~(& .media) in(&"area") gap([base] * 4);
+
+        /*@h (& .media)| in(&"area");*/
+        @h <&[center-x]>~-~(& .media)| in(&"area") gap(0);
+        @v |~-~(& .media)~-~| in(&"area") gap(0);
+        (& .media)[center-y] == &"area"[center-y];
+
+        .title,
+        .subtitle {
+          height: == &[intrinsic-height];
+        }
+
+        .title {
+          font-size: == 32 !require;
+          line-height: == 32 !require;
+        }
+
+        .subtitle {
+          font-size: == 16 !require;
+        }
+
+        .text {
+          height: == 0;
+          opacity: == 0;
+        }
+      }
+
+
+      @h |~-~(&"position-indicators")-| in(&) gap([base] * 2);
+
+      /*@v (&"position-indicators")-| in(&) gap([base] * 2);*/
+      @v (& .position-indicator)-| in(&) gap([base] * 2);
+
+      @h |(& .position-indicator)-...| in(&"position-indicators") gap([base] * 2) {
+        height: == 2 !require;
+        width: == [base] * 4 !weak;
+        width: == &:next[width];
+      }
+    }
+    @else {
+      .title.main {
+        height: == &[intrinsic-height];
+        padding-top: == [base] * 5;
+      }
+
+      [post-column-h-gap] == [post-column-outer-h-gap] / 2;
+      [post-column-h-gap] >= [md];
+
+      [post-column-v-gap] == [base] * 10;
+
+      @h |-(& .title.main)-| in(&) gap([post-column-h-gap]);
+      @v |-(& .title.main)-(& .posts)-...~-~| in(&) gap([post-column-v-gap]);
+
+      @h |~-~(& .posts)~-~| in(&) gap(0);
+      (& .posts)[center-x] == &[center-x];
+
+      .posts {
+        article {
+          height: == &[intrinsic-height];
+        }
+
+        @h |-(& article)-...-| in(&) gap([post-column-h-gap]) outer-gap([post-column-outer-h-gap]) {
+          top: == &:next[top];
+          (& .media)[width] == &[width] - [md];
+        }
+
+        @v |(& article)~-~| in(&) gap(0);
+
+
+        &.large {
+          article {
+            width: == [md] * 4;
+
+            .title {
+              font-size: == 32;
+              margin-top: == ([base] * 6) - 8;
+            }
+
+            .subtitle {
+              font-size: == 20;
+              margin-top: == ([base] * 3) - 16;
+            }
+
+            .text {
+              font-size: == 20;
+              line-height: == 32;
+              margin-top: == ([base] * 3) - 16;
+            }
+          }
+        }
+
+        &.large + .posts.small {
+          @h |-(& .divider)-| in(&) gap([post-column-outer-h-gap]);
+
+          /*@v |(& .divider)-(& article) in(&) gap([post-column-v-gap]);*/
+          @v |(& .divider) in(&);
+          (& article)[padding-top] == [post-column-v-gap];
+        }
+
+        &.small {
+          article {
+            width: == [md] * 3;
+
+            .title {
+              font-size: == 22;
+              margin-top: == ([base] * 3) - 8;
+            }
+
+            .subtitle {
+              font-size: == 18;
+              margin-top: == ([base] * 2) - 8;
+            }
+
+            .text {
+              font-size: == 16;
+              line-height: == 24;
+              margin-top: == ([base] * 2) - 8;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.post-cut-off-media {
+  height: == ::window[height];
+  
+  @h |(& .background)| in(&);
+  @v |(& .background)| in(&);
+
+  .media {
+    width: == &[height] * (1035 / 646) !require;
+    border-top-width: == (&[height] / 100) * 7.430340557275541;
+    border-right-width: == (&[width] / 100) * 17.101449275362317;
+    border-bottom-width: == (&[height] / 100) * 36.9969040247678;
+    border-left-width: == (&[width] / 100) * 17.584541062801932;
+
+    (& div)[width] == &[width];
+    (& div)[center] == &[center];
+  }
+
+  /* Compensate for box-sizing: content-box; */
+  &[media-border-top-width] == (& .media)[border-top-width];
+  &[media-border-right-width] == (& .media)[border-right-width];
+  &[media-border-bottom-width] == (& .media)[border-bottom-width];
+  &[media-border-left-width] == (& .media)[border-left-width];
+
+  @h |(& .media) in(&"media");
+  @h (& .media)-| in(&"media") gap(&[media-border-left-width] + &[media-border-right-width]);
+  @v |(& .media) in(&"media");
+  @v (& .media)-| in(&"media") gap(&[media-border-top-width] + &[media-border-bottom-width]);
+
+  @if ::window[width] < 504 {
+    .title {
+      margin-top: == [base] * 10;
+      padding-left: == &[padding-right] == [base] * 5;
+    }
+
+    .subtitle {
+      margin-top: == [base];
+      margin-bottom: == [base] * 8;
+      padding-left: == &[padding-right] == [base] * 5;
+    }
+
+    &"media"[width] == &[width] * 4/3;
+
+    &.media-left {
+      (& .media)[margin-left] == &[left] - (&[width] * 1/3) - ([base] * 2);
+    }
+
+    &.media-right {
+      (& .media)[margin-left] == &[left] + ([base] * 2);
+    }
+  }
+  @else {
+    @if ::window[width] < 1008 {
+      .title {
+        margin-top: == [base] * 10;
+        padding-left: == &[padding-right] == [base] * 12;
+      }
+
+      .subtitle {
+        margin-top: == [base];
+        margin-bottom: == [base] * 8;
+        padding-left: == &[padding-right] == [base] * 12;
+      }
+
+      &"media"[width] == &[width] - ([base] * 8);
+
+      .media {
+        margin-left: == &[margin-right] == [base] * 4;
+      }
+    }
+    @else {
+      .title,
+      .subtitle,
+      .text {
+        width: == [md] * 10;
+      }
+
+      .title {
+        margin-top: == [md];
+        padding-top: == ([base] * 6) - 8;
+      }
+
+      .subtitle {
+        padding-top: == ([base] * 3) - 12;
+      }
+
+      .text {
+        margin-bottom: == [base] * 8;
+        padding-top: == ([base] * 3) - 12;
+      }
+
+      &"media"[width] == &[width] - ([base] * 8);
+
+      .media {
+        margin-left: == &[margin-right] == [base] * 4;
+      }
+    }
+  }
+}
+.post-featured-media {
+  width: == ::window[width] !require;
+
+  @h |(& .background)| in(&);
+  @v |(& .background)| in(&);
+
+  article {
+    height: == &[intrinsic-height] !require;
+
+    .subtitle {
+      margin-top: == [base] * 2;
+    }
+  }
+
+  .media {
+    width: == &[height] * (1035 / 646) !require;
+    border-top-width: == (&[height] / 100) * 7.430340557275541;
+    border-right-width: == (&[width] / 100) * 17.101449275362317;
+    border-bottom-width: == (&[height] / 100) * 36.9969040247678;
+    border-left-width: == (&[width] / 100) * 17.584541062801932;
+
+    (& div)[width] == &[width];
+    (& div)[center] == &[center];
+  }
+
+  /* Compensate for box-sizing: content-box; */
+  &[media-border-top-width] == (& .media)[border-top-width];
+  &[media-border-right-width] == (& .media)[border-right-width];
+  &[media-border-bottom-width] == (& .media)[border-bottom-width];
+  &[media-border-left-width] == (& .media)[border-left-width];
+
+  @h |(& .media) in(&"media");
+  @h (& .media)-| in(&"media") gap(&[media-border-left-width] + &[media-border-right-width]);
+  @v |(& .media) in(&"media");
+  @v (& .media)-| in(&"media") gap(&[media-border-top-width] + &[media-border-bottom-width]);
+}
+
+
+/*
+
+portrait mobile
+
+----------------------------------------------- */
+
+@if ::window[width] <= 400 {
+
+  .post-featured-media {
+
+    overflow: hidden;
+
+    .title {
+      font-size: 32px;
+      line-height: 36px;
+    }
+    .subtitle {
+      font-size: 20px;
+      letter-spacing: 0.16em;
+      line-height: 20px;
+    }
+    .text {
+      display: none;
+    }
+
+
+    @h |-(& article)-| gap([base] * 4) in(&);
+
+    /* BUG: points not working as expected */
+    /*@v |~-~(& article)-<&[center-y]>-(&"media")~-~| in(&) gap([base]) outer-gap([base] * 6);*/
+    (& article)[bottom] + ([base] * 2) == &[center-y];
+
+    @v |~-~(& article)-(&"media")~-~| in(&) gap([base] * 4) outer-gap([base] * 9);
+
+    &.left {
+      @h (&"media")~-~| gap([base] * 3) in(&);
+      (&"media")[left] == &[left] - (&"media")[width] / 5;
+    }
+
+    &.right {
+      @h |~-~(&"media") gap([base] * 3) in(&);
+      (&"media")[right] == &[right] + (&"media")[width] / 5;
+    }
+  }
+
+}
+
+@else {
+  /*
+
+  landscape mobile
+
+  ----------------------------------------------- */
+
+  @if ::window[width] < 590  {
+
+    .post-featured-media {
+
+      overflow: hidden;
+
+      .title {
+        font-size: 32px;
+        line-height: 36px;
+      }
+      .subtitle {
+        font-size: 16px;
+        letter-spacing: 0.16em;
+        line-height: 20px;
+      }
+      .text {
+        display: none;
+      }
+
+      article {
+        width: == [md] * 3;
+      }
+
+      @v |~-~(& article)~-~| in(&) gap([base] * 13);
+
+      @v |~-~(&"media") in(&) gap([base] * 8);
+      @v (&"media")~-~| in(&) gap([base] * 3);
+
+      (& article)[center-y] == (&"media")[center-y] == &[center-y];
+
+      &.left {
+        @h (&"media")~-~(& article)-| gap([base] * 6) outer-gap([base] * 4) in(&);
+        (&"media")[left] == &[left] - (&"media")[width] / 5;
+      }
+
+      &.right {
+        @h |-(& article)~-~(&"media") gap([base] * 6) outer-gap([base] * 4) in(&);
+        (&"media")[right] == &[right] + (&"media")[width] / 5;
+      }
+
+    }
+
+  }
+
+
+  /*
+
+  Desktop
+
+  ----------------------------------------------- */
+
+  @else {
+
+    .post-featured-media {
+
+      overflow: hidden;
+
+      .title {
+        font-size: 40px;
+        line-height: 46px;
+      }
+      .subtitle {
+        font-size: 20px;
+        letter-spacing: 0.16em;
+        line-height: 24px;
+      }
+      .text {
+        font-size: 20px;
+        line-height: 40px;
+      }
+
+      article {
+        width: == [md] * 4;
+
+        .text {
+          margin-top: == [base] * 2;
+        }
+      }
+
+      .media {
+       width: >= 500 !strong;
+      }
+
+      @h |~-~(&"area")~-~| in(&) gap([md]);
+      &"area"[center-x] == &[center-x];
+      @v |(&"area")| in(&);
+
+      @v |~-~(& article) in(&) gap([md] * 3);
+      @v (& article)~-~| in(&) gap([md] * 4);
+
+      @v |~-~(&"media") in(&) gap([md] * 2);
+      @v (&"media")~-~| in(&) gap([md] * 3);
+
+      (& article)[center-y] == (&"media")[center-y] == &"area"[center-y];
+
+      &.left {
+        @h |(& article)-(&"media")  gap([md]) in(&"area") !strong;
+        @h              (&"media")| gap([md]) in(&"area") !weak;
+      }
+
+      &.right {
+        @h  (&"media")-(& article)| gap([md]) in(&"area") !strong;
+        @h |(&"media")              gap([md]) in(&"area") !weak;
+      }
+    }
+
+  }
+
+}
+
+section.post-text {
+
+  .content {
+    height: == &[intrinsic-height] !require;
+  }
+
+  @v  |
+      -
+      (& .content)
+      -
+      |
+      in(&)
+      gap([md]) !require;
+
+  @h  |~-~(& .content)~-~|
+      in(&)
+      gap([md]);
+
+  (& .content)[width] <= 700;
+  (& .content)[center-x] == &[center-x];
+
+}
+.post-multiple-media {
+  @h |(& .background)| in(&);
+  @v |(& .background)| in(&);
+
+  article {
+    height: == &[intrinsic-height];
+
+    .subtitle,
+    .text {
+      margin-top: == [base];
+    }
+  }
+
+  .media {
+    width: == &[height] * (1265 / 943) !require;
+  }
+}
+
+/*
+
+portrait mobile
+
+----------------------------------------------- */
+
+@if ::window[width] <= 400 {
+
+  .post-multiple-media {
+
+    .title {
+      font-size: 32px;
+      line-height: 32px;
+      text-align: center;
+    }
+    .subtitle {
+      font-size: 18px;
+      line-height: 24px;
+      text-align: center;
+    }
+    .text {
+      display: none;
+    }
+    .media {
+      display: none;
+    }
+    .media.selected {
+      display: block;
+    }
+
+    (.media.selected)[width] == ::window[width];
+
+
+    &"area"[center-y] == &[center-y];
+    @h |(&"area")|;
+    @v |~-~(&"area")~-~| outer-gap([base] * 14);
+
+    @h |-(& article)-| gap([base] * 4) in(&"area");
+    @v |(& article)-(& .media.selected)| gap([base] * 4) in(&"area");
+
+    &.media-left {
+      @h |(& .media.selected)~-~| gap([base] * 4) in(&"area");
+    }
+
+    &.media-right {
+      @h |~-~(& .media.selected)| gap([base] * 4) in(&"area");
+    }
+  }
+
+}
+
+@else {
+  /*
+
+  landscape mobile
+
+  ----------------------------------------------- */
+
+  @if ::window[width] < 900  {
+
+    .post-multiple-media {
+
+      .title {
+        font-size: 32px;
+        line-height: 32px;
+      }
+      .subtitle {
+        font-size: 18px;
+        line-height: 24px;
+      }
+      .text {
+        display: none;
+      }
+      .media {
+        display: none;
+      }
+      .media.selected {
+        display: block;
+      }
+
+      (& article)[center-y] == (& .media.selected)[center-y] == &[center-y];
+
+      (& article)[width] == [md] * 4;
+
+      @v |~-~(& .media.selected)~-~| in(&) gap([base] * 6);
+
+      &.media-left {
+        @h (& .media.selected)~-~(& article)-| gap([base] * 6) outer-gap([base] * 4);
+        (& .media.selected)[left] == &[left] - ((& .media.selected)[width] / 4);
+      }
+
+      &.media-right {
+        @h |-(& article)~-~(& .media.selected) gap([base] * 6) outer-gap([base] * 4);
+        (& .media.selected)[right] == &[right] + ((& .media.selected)[width] / 4);
+      }
+    }
+  }
+
+  /*
+
+  Desktop
+
+  ----------------------------------------------- */
+
+  @else {
+
+    .post-multiple-media {
+
+
+      .title {
+        font-size: 40px;
+        line-height: 46px;
+      }
+      .subtitle {
+        font-size: 20px;
+        line-height: 30px;
+      }
+      .text {
+        font-size: 20px;
+        line-height: 30px;
+      }
+
+      height: == (& .media.selected)[height] * 2;
+
+      &"media"[width] == [md] * 10;
+
+      @v |(&"media")| in(&);
+      (& .media)[width] == [md] * 4 !weak;
+
+      @h |(& .media.selected)| in(&"media") !strong;
+      (& .media.selected)[center-y] == &"media"[center-y];
+
+      article {
+        width: >= [md] * 5;
+        @v |~-~(&)~-~| gap([md] * 2);
+      }
+
+      (& article)[center-y] == &[center-y];
+
+      &.media-left {
+        @h |(&"media")-(& article)~-~| in(&) gap([md2]);
+
+        @v (& .media)-... gap([base] * 11) in(&"media") {
+          right: == &:next[right];
+        }
+      }
+
+      &.media-right {
+        @h |~-~(& article)-(&"media")| in(&) gap([md2]);
+
+        @v (& .media)-... gap([base] * 11) in(&"media") {
+          left: == &:next[left];
+        }
+      }
+    }
+  }
+}
+
+.post-simple {
+
+  &.media-adjacent {
+    @h |(& .media)| in(&"zone1");
+    @v |(& .media)| in(&"zone1");
+  }
+
+  &[large-screen-content-width] <=  [md] * 10;
+  &[large-screen-content-width] == ::window[width] * .61;
+  &[large-screen-content-padding] <= [md] * 3/2;
+  &[large-screen-content-padding] == ::window[width] / 10;
+}
+
+@if ::window[width] <= 590 {
+
+  /*
+
+  portrait mobile
+
+  ----------------------------------------------- */
+
+  /* These rules aren't applied when nested */
+  .post-simple .title { text-align: center; }
+  .post-simple .subtitle { text-align: center; }
+
+  .post-simple {
+
+    /* css */
+    .title {
+      /*text-align: center;*/
+    }
+    .subtitle {
+      font-size: 20px;
+      /*text-align: center;*/
+    }
+    .text {
+      font-size: 16px;
+    }
+
+    @h |(&"zone1")| in(&);
+    &"zone1"[height] == ::window[height] * 2/3;
+
+    @h |(&"zone2")| in(&);
+
+    @v |-16-(&"zone1")(&"zone2")| in(&);
+
+
+    @h |-16-(& .content)-16-| in(&);
+
+    @v  <&"zone1"[bottom] - [md2] >
+        (&"zone2");
+    @v |(& .content)| in(&"zone2");
+
+    .title, .subtitle {
+      height: == &[intrinsic-height];
+    }
+
+    @h |-(& .title)-| in(&"zone2") gap([md] / 2);
+    @h |-(& .subtitle)-| in(&"zone2") gap([md] / 2);
+
+    @h |-(& .text)-| in(&"zone2") gap([md] / 2);
+
+    @v |-[md]-(& .title) in(&"zone2");
+    @v (& .title)-(& .subtitle) gap([base] * 2);
+    @v (& .subtitle)-[md]-(& .text)-[md2]-| in(&"zone2");
+
+    .text {
+      height: == &[intrinsic-height];
+    }
+
+    &.media-behind {
+      @h |(& .media)| in(&"zone1");
+      @v |(& .media)| in(&"zone1");
+    }
+  }
+}
+@else {
+
+
+  /*
+
+  Desktop
+
+  ----------------------------------------------- */
+
+  .post-simple.media-behind .content {
+    background-color: transparent !important;
+  }
+
+  .post-simple {
+
+    .subtitle {
+      font-size: 20px;
+      margin-top: [base] * 2;
+    }
+    .text {
+      font-size: 18px;
+      margin-top: 1em;
+    }
+
+    (& .content)[center-y] == &"zone2"[center-y];
+    @v |~-~(& .content)~-~| in(&"zone2") gap([md]);
+
+    &"zone1"[width] == &"zone2"[width];
+
+    @v |(&"zone1")| in(&);
+    @v |(&"zone2")| in(&);
+
+    (& .content)[width] == &[large-screen-content-width];
+    (& .content)[padding] == &[large-screen-content-padding];
+    .content {
+      height: == &[intrinsic-height];
+      /*height: == [md] * 6;*/
+
+      .detail {
+        width: == [md] / 2;
+        height: == 2;
+      }
+    }
+
+
+    &.media-adjacent {
+      .text {
+        padding-left: == [md];
+      }
+    }
+    &.media-behind {
+      @h |(& .media)| in(&);
+      @v |(& .media)| in(&);
+
+      .text {
+        padding-right: == [md];
+      }
+    }
+  }
+
+  .post-simple.right {
+    @h |(&"zone1")(&"zone2")| in(&);
+
+    @h |(& .content) in(&"zone2") !weak;
+    @h (& .content)~| in(&"zone2") !strong;
+  }
+
+  .post-simple.left {
+    @h |(&"zone2")(&"zone1")| in(&);
+
+    @h |~(& .content) in(&"zone2") !strong;
+    @h (& .content)| in(&"zone2") !weak;
+  }
+
+}
+
+// apparently GSS is not working with deeply nested vanilla css 
+section.reposts.w-squarish .repost.w-cover .text .meta {
+  position: absolute;
+  bottom: initital !important;
+  top: 72px !important;
+}
+
+
+/*
+
+## Reposts: Shared Rules
+
+====================================================== */
+
+
+
+
+section.reposts {
+
+
+  height: >= ::window[height] / 2;
+
+  .repost.w-cover .quote .desc {
+    font-size: 30px;
+    line-height: 36px;
+  }
+  .repost.wo-cover .quote .desc {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .repost {
+
+    .from .author {
+      padding:  0 24px;
+    }
+    .text {
+      padding: 108px 72px;
+    }
+    .meta {
+      position: absolute;
+      bottom: 72px;
+      left:  72px;
+      right: 72px;
+    }
+
+    /* text */
+    .text {
+      height: == &[intrinsic-height] !require;
+    }
+
+    /* author block */
+    .from {
+      height: == [md];
+      width: == &[intrinsic-width];
+      .avatar {
+        height: == [md];
+        width: == [md];
+      }
+      .author {
+        height: == [md];
+        line-height: == [md];
+      }
+    }
+
+    /* media block */
+    .media {
+      center: == (& .play-btn)[center] !weak;
+      .play-btn {
+        &[width] == [md] == &[height];
+        (& i)[line-height] == [md];
+      }
+    }
+
+    /* play */
+    .play-btn {
+      z-index: 10;
+    }
+
+  }
+
+
+
+
+  /*
+
+  mobile
+  -------------------------------------------------- */
+  @if ::window[width] <= 500 {
+
+    height: >= ::window[height];
+    @v |(& .repost)...| in(&);
+    @h |(& .repost)| in(&);
+
+    .repost  {
+
+      @v |(& .media)| in(&);
+      @h |(& .media)| in(&);
+
+      @v |~48~(& .from)(& .text)-| gap(24) in(&);
+
+      @h |-(& .from)   gap(36) in(&);
+
+      @h |-(& .text)-| gap(24) in(&);
+
+      .text {
+        padding:    36px 36px 60px;
+      }
+      .meta {
+        opacity: 1;
+        right:      36px;
+        left:       36px;
+        bottom:     24px;
+        font-size:  12px;
+      }
+      &.wo-cover {
+        @v |~[md]~(& .text)~[md]~| in(&);
+      }
+    }
+  }
+
+}
+
+
+@if ::window[width] > 500 {
+
+  /*
+
+  ## Reposts: Singular Squarish
+
+  ====================================================== */
+
+  section.reposts.singular.large-portrait {
+
+    @h |(& .repost)| in(&);
+    @v |(& .repost)| in(&) !strong  ;
+
+
+    @h |(& .media)| in(&"zone1");
+
+    .repost {
+
+      opacity: 1;
+
+      &[--text-gap] >= [md];
+
+      @v |-(& .media)-|
+        gap([md]) in(&)
+        {
+          height: == 700;
+        }
+
+      (& .text)[width] <= [md] * 8;
+      (& .text)[width] >= [md] * 4 !require;
+
+    }
+
+    @if ::window[width] > 900 {
+      @v |(&"zone1")| in(&) !require;
+      @v |(&"zone2")| in(&) !require;
+
+      (& .text)[center-y] == &[center-y];
+      &.right {
+        @h |(&"zone2")<&[center-x]>(&"zone1")| in(&) !require;
+
+        .repost {
+          (& .text)[right] == (&)[center-x] + [md];
+          (& .from)[left] + [md-2] == (& .text)[left];
+        }
+      }
+      &.left {
+        @h |(&"zone1")<&[center-x]>(&"zone2")| in(&) !require;
+
+        .repost {
+          (& .text)[left] == (&)[center-x] - [md];
+          (& .from)[right] + [md-2] == (& .text)[right];
+        }
+      }
+    } @else {
+      @h |(&"zone1")| in(&) !require;
+      @h |-[md1]-(& .text)| in(&) !require;
+      &.left .repost {
+        (& .from)[left] + [md-2] == (& .text)[left];
+      }
+      &.right .repost {
+        (& .from)[right] + [md-2] == (& .text)[right];
+      }
+    }
+
+    &.left {
+
+
+      .repost {
+
+        /* play */
+        (& .play-btn)[center-y] == (& .text)[center-y];
+        (& .play-btn)[center-x] == (& .text)[left];
+
+        @h (& .text)~[md]~| in(&) !strong;
+
+        (& .from)[top] == (& .text)[top];
+      }
+    }
+    &.right {
+
+
+      .repost {
+
+        /* play */
+        (& .play-btn)[center-x] == (& .text)[right];
+        (& .play-btn)[center-y] == (& .text)[center-y];
+
+        (& .from)[top] == (& .text)[top];
+      }
+    }
+  }
+
+
+
+
+
+  /*
+
+  ## Reposts: Singular Wide
+
+  - Fullscreen media
+  - Post overlapped on bottom of media
+
+  ====================================================== */
+
+  section.reposts.singular.large.landscape.box-beneath {
+
+    @h |(& .repost)| in(&);
+    @v |(& .repost)| in(&);
+
+    @h |(&"zone1")| in(&) !require;
+    @h |(&"zone2")| in(&) !require;
+
+    @v |-[md2]-(&"zone1") -[-md]- (&"zone2")-[md2]-| in(&) !require;
+
+    &"zone1"[height] * (16/9) == &"zone1"[width];
+    &"zone2"[height] >= 200;
+
+    @h |(& .media)| in(&"zone1");
+    @v |(& .media)| in(&"zone1");
+
+
+    // text
+
+    @h <&[center-x]> (& .text) -[md]- | in(&);
+
+    @v |(& .text) in(&"zone2")
+
+    @v (& .from) | in(&"zone2");
+
+
+    .repost {
+
+      opacity: 1;
+
+      (& .from)[center-y] == (& .text)[bottom];
+      (& .from)[right] - [md-2] == (& .text)[right];
+
+      /* play */
+      (& .play-btn)[center-x] == (& .text)[left];
+      (& .play-btn)[center-y] == (& .text)[top];
+    }
+
+  }
+
+
+  /*
+
+  ## Reposts: Singular Wide Thing
+
+  - Fullscreen media
+  - Post overlayed w/in media
+
+  ====================================================== */
+
+  section.reposts.singular.large.landscape.box-atop {
+
+    @h |(& .repost)| in(&);
+    @v |(& .repost)| in(&);
+
+    @h |(&"zone1")| in(&) !require;
+    @v |(&"zone1")| in(&) !require;
+
+    &.left {
+      .repost {
+        /* play */
+        (& .play-btn)[center-x] == (& .text)[right];
+        (& .play-btn)[center-y] == (& .text)[center-y];
+
+        (& .from)[top] == (& .text)[top];
+        (& .from)[left] + [md-2] == (& .text)[left];
+      }
+    }
+    &.right {
+      .repost {
+        /* play */
+        (& .play-btn)[center-x] == (& .text)[left];
+        (& .play-btn)[center-y] == (& .text)[center-y];
+
+        (& .from)[top] == (& .text)[top];
+        (& .from)[right] + [md-2] == (& .text)[right];
+      }
+    }
+    @if ::window[width] > 1100 {
+      &.left {
+        @h |-[md2]-(&"zone2")-[md2]-<&"zone1"[center-x]> in(&"zone1");
+      }
+      &.right {
+        @h <&"zone1"[center-x]>-[md2]-(&"zone2")-[md2]-| in(&"zone1");
+      }
+    } @else {
+      &.left {
+        &[-column-gap] >= [md];
+        @h |-[md]-(&"zone2")-&[-column-gap]-| in(&"zone1");
+
+      }
+      &.right {
+        &[-column-gap] >= [md];
+        @h |-&[-column-gap]-(&"zone2")-[md]-| in(&"zone1");
+      }
+    }
+    @v |-[md]-(&"zone2")-[md]-| in(&"zone1");
+
+    @h |(& .media)| in(&"zone1");
+    @v |(& .media)| in(&"zone1");
+
+    @v |(& .text)| in(&"zone2");
+    @h |(& .text)| in(&"zone2");
+
+    .repost {
+
+      opacity: 1;
+
+    }
+
+  }
+
+
+  /*
+
+  ## Reposts: Duality
+
+  - 1 repost w/o cover
+  - 1 repost w/ mcoveredia (landscape)
+
+  ====================================================== */
+
+  section.reposts.dual.w-wo-cover {
+
+    /*
+
+    1 landscape cover
+
+    ----------------------------------------- */
+
+    &.w-landscape {
+
+      @h |(& .repost.wo-cover)| in(&"zone1");
+      @v |(& .repost.wo-cover)| in(&"zone1");
+
+      @h |(& .repost.w-cover)| in(&"zone2");
+      @v |(& .repost.w-cover)| in(&"zone2");
+
+      &"zone2"[width] == &"zone1"[width] !strong;
+
+      @if ::window[width] > 1000 {
+
+        @v |(&"zone2")| in(&) {
+        }
+        @v |(&"zone1")| in(&) {
+        }
+
+        &[-zone-gap-h] == 0;
+
+        &.v-zone-1 {
+          @h |(&"zone1")(&"zone2")| in(&) gap(&[-zone-gap-h]);
+
+        }
+        &.v-zone-2 {
+          @h |(&"zone2")(&"zone1")| in(&) gap(&[-zone-gap-h]);
+        }
+
+      }
+
+      @else {
+
+        @h |(&"zone2")| in(&);
+        @h |(&"zone1")| in(&);
+
+        &[-zone-gap-h] >= 0;
+
+        &.v-zone-1 {
+          @v |~-~(&"zone1")(&"zone2")~-~| in(&) gap(&[-zone-gap-h]);
+        }
+        &.v-zone-2 {
+          @v |~-~(&"zone2")(&"zone1")~-~| in(&) gap(&[-zone-gap-h]);
+        }
+      }
+
+      &.variation-layout-1 {
+
+        .repost.wo-cover {
+
+          opacity: == 1; /* BUG: CSS Dumping */
+
+          // text
+
+          &[--text-gap] >= [md];
+
+          @v |-
+              (& .text)
+              -|
+              gap(&[--text-gap])
+              in(&);
+
+
+          [md] <= &[left-text-pad];
+
+          @h |~&[left-text-pad]~(& .text)-[md]-|
+              in(&);
+
+          // author
+
+          @h |-(& .from) in(& .text) gap(-[md-2]);
+
+          (& .from)[center-y] == (& .text)[y];
+        }
+
+        .repost.w-cover {
+
+          opacity: == 1; /* BUG: CSS Dumping */
+
+          &[--text-gap] >= [md];
+
+          @h |(& .media)| in(&);
+          @v |-[md]-(& .media)  in(&) {
+            height: == ::[width] / 1.6;
+          }
+
+          // .from positioned to .media
+
+          @h |-(& .from) in(& .media) gap([md-2]);
+          (& .from)[top] == (& .text)[top];
+
+          @v  (& .media)
+              -[-md]-
+              (& .text)
+              ~-~|
+              gap(&[--text-gap])
+              in(&);
+
+          &[--text-left] == (& .from)[left] + [md-2];
+          // just in case .from is missing
+          &[--text-left] >= (& .media)[left] + [md];
+
+          @h  <&[--text-left]>
+               (& .text)
+               -[md]-|
+              in(&);
+
+          /* play */
+          (& .play-btn)[center-x] == (& .text)[center-x];
+          (& .play-btn)[center-y] == (& .text)[top];
+
+        }
+      }
+    }
+
+    /*
+
+    1 non-landscape cover
+
+    ----------------------------------------- */
+
+    &.w-squarish {
+
+      @h |(& .repost.wo-cover)| in(&"zone1");
+      @v |(& .repost.wo-cover)| in(&"zone1");
+
+      @h |(& .repost.w-cover)| in(&"zone2");
+      @v |(& .repost.w-cover)| in(&"zone2");
+
+      //&"zone2"[width] == &"zone1"[width] !strong;
+
+      @if ::window[width] > 1200 {
+
+
+        &[-zone-gap-v] >= [md];
+
+        @v |-(&"zone2")-| in(&) gap(&[-zone-gap-v]);
+        @v |-(&"zone1")-| in(&) gap(&[-zone-gap-v]);
+
+        &"zone1"[height] == &"zone2"[height];
+        &"zone1"[width] == &"zone2"[width];
+
+        &[-zone-gap-h] == 0;
+
+        &.v-zone-1 {
+          @h |-(&"zone1")<&[center-x]>(&"zone2")-| in(&) gap(&[-zone-gap-h]);
+        }
+        &.v-zone-2 {
+          @h |-(&"zone2")<&[center-x]>(&"zone1")-| in(&) gap(&[-zone-gap-h]);
+        }
+
+      }
+
+      @else {
+
+        @h |(&"zone2")| in(&);
+        @h |(&"zone1")| in(&);
+
+        &[-zone-gap-v] >= 0;
+
+        &.v-zone-1 {
+          @v |~-~(&"zone1")-[md]-(&"zone2")~-~| in(&) gap(&[-zone-gap-v]);
+        }
+        &.v-zone-2 {
+          // bigger gap when cover is on top
+          @v |~-~(&"zone2")-[md2]-(&"zone1")~-~| in(&) gap(&[-zone-gap-v]);
+        }
+
+      }
+
+      .repost.wo-cover {
+
+        opacity: == 1; /* BUG: CSS Dumping */
+
+        /* GSS  */
+        &[--text-gap] >= 72;
+        @v |-
+            (& .text)
+            -|
+            gap(&[--text-gap])
+            in(&);
+
+        @h |-[md2]-(& .text)-[md]-|
+            in(&);
+
+        (& .from)[center-y] == (& .text)[top];
+
+      }
+      &.v-zone-1 {
+        .repost.wo-cover {
+          @h   (& .from)-| in(& .text) gap(-[md-2]);
+        }
+        .repost.w-cover {
+          (& .from)[center-x] == (& .media)[right];
+          @h |(& .media) in(&) !weak;
+        }
+      }
+      &.v-zone-2 {
+        .repost.wo-cover {
+          @h |-(& .from)   in(& .text) gap(-[md-2]);
+        }
+        .repost.w-cover {
+          (& .from)[center-x] == (& .media)[left];
+          @h (& .media)| in(&) !weak;
+        }
+      }
+
+      .repost.w-cover {
+
+        @h |-[md]-(& .text)-[md]-| in(&) !strong;
+        @v |-[md]-(& .text)        in(&);
+
+        (& .from)[center-y] == (& .text)[bottom];
+        (& .from)[center-x] == (& .text)[center-x] - [md] !weak;
+
+        &[overlap-gap] == [md];
+
+        @v  (& .text)
+            -[-md]-
+            (& .media)
+            ~&[overlap-gap]~|
+            in(&);
+
+
+        .text {
+          z-index: == 1;
+          
+        }
+        
+        .meta {
+          position: absolute;
+          top: 72px !important;
+          bottom: initial !important;
+        }
+        
+        .from {
+          z-index: == 3;
+        }
+        .media {
+          z-index: == 2;
+          height: >= 350;
+          height: >= &[width] !weak;
+        }
+      }
+
+
+    }
+
+  }
+
+
+
+  /*
+
+  ## Reposts: Duality Media
+
+  - 1 repost w/ media
+  - 1 repost w/ media
+
+  ====================================================== */
+
+  //section.reposts.dual.w-w-cover {
+  //
+  //  @h |(& .repost-1)| in(&"zone1");
+  //  @v |(& .repost-1)| in(&"zone1");
+  //
+  //  @h |(& .repost-2)| in(&"zone2");
+  //  @v |(& .repost-2)| in(&"zone2");
+  //
+  //  &.v-aspect-1 {
+  //
+  //    @v |-(&"zone2")-| in(&) gap([md2]);
+  //    @v |-(&"zone1")-| in(&) gap([md2]);
+  //
+  //    &.v-zone-1 {
+  //
+  //      @h | (&"zone1") <&[center-x]> (&"zone2") | in(&);
+  //
+  //      .repost-1 {
+  //
+  //        /* play */
+  //        (& .play-btn)[center-x] == (& .text)[left];
+  //        (& .play-btn)[center-y] == (& .media)[top];
+  //
+  //        /* meta */
+  //        .meta {
+  //          bottom: initial;
+  //          top:72px;
+  //        }
+  //      }
+  //      .repost-2 {
+  //
+  //        /* play */
+  //        (& .play-btn)[center-x] == (& .text)[right];
+  //        (& .play-btn)[center-y] == (& .media)[bottom];
+  //
+  //      }
+  //
+  //    }
+  //    &.v-zone-2 {
+  //      @h | (&"zone2") <&[center-x]> (&"zone1") | in(&);
+  //
+  //      .repost-1 {
+  //
+  //        /* play */
+  //        (& .play-btn)[center-x] == (& .text)[right];
+  //        (& .play-btn)[center-y] == (& .media)[top];
+  //
+  //        /* meta */
+  //        .meta {
+  //          bottom: initial;
+  //          top:72px;
+  //        }
+  //      }
+  //      .repost-2 {
+  //
+  //        /* play */
+  //        (& .play-btn)[center-x] == (& .text)[right];
+  //        (& .play-btn)[center-y] == (& .media)[bottom];
+  //
+  //      }
+  //    }
+  //  }
+  //
+  //  &.variation-layout-1 {
+  //
+  //    .repost.w-cover {
+  //
+  //      opacity: == 1; /* BUG: CSS Dumping */
+  //
+  //      @h | (& .media) | in(&);
+  //
+  //    }
+  //
+  //
+  //    // equal media height
+  //    (& .media)[height] == &[--media-height];
+  //
+  //    (& .media)[height]  >= ::window[height] / 3 !strong;
+  //
+  //    (& .media)[height]  <= ::window[height] / 2 !strong;
+  //
+  //    .repost-1 {
+  //      @v |
+  //          (& .text)
+  //          < &[center-y] >
+  //          in(&);
+  //
+  //      @h  <&[center-x] - [md] > (& .text) -[md]- |
+  //          in(&);
+  //
+  //      @v |
+  //          ~[md]~
+  //          (& .media)
+  //          ~[md2]~
+  //         | in(&);
+  //
+  //      (& .from)[center-x] == (& .text)[center-x];
+  //      (& .from)[center-y] == (& .text)[bottom];
+  //    }
+  //    .repost-2 {
+  //      @v  < &[center-y] >
+  //          (& .text)
+  //          |
+  //          in(&);
+  //
+  //      @h  | -[md]- (& .text) <&[center-x]  + [md]>
+  //          in(&);
+  //
+  //      @v |
+  //          ~[md2]~
+  //          (& .media)
+  //          ~[md]~
+  //         | in(&);
+  //
+  //     (& .from)[center-x] == (& .text)[center-x];
+  //     (& .from)[center-y] == (& .text)[top];
+  //
+  //    }
+  //  }
+  //}
+
+}
+section {
+  width: 100%;
+  width: == ::window[width] !require;
+  top: == 0 !require;
+  left: == 0 !require;
+  z-index: 1;
+  overflow-x: hidden;
+  margin: auto;
+  width: 100%;
+
+  height: <= ::window[height] !weak;
+  height: >= &[width] / 2.4 !weak;
+}
+
+.modal {
+  @h |(&)| in(::window);
+  @v |(&)| in(::window);
+}
+
+section.footer {
+  width: == ::window[width];
+  height: == 144;
+
+  (& .content)[center] == &[center];
+
+  .content {
+    size: == &[intrinsic-size];
+    padding: 0 20px;
+  }
+}
+
+
+.adaptive-container {
+  @if &[width] > 600 {
+    .adaptive-text {
+      &[font-size] == 22;
+      &[line-height] == 36;
+    }
+  }
+  @else {
+    @if &[width] > 420 {
+      .adaptive-text {
+        &[font-size] == 20;
+        &[line-height] == 30;
+      }
+    }
+    @else {
+      @if &[width] > 260 {
+        .adaptive-text {
+          &[font-size] == 16;
+          &[line-height] == 24;
+        }
+      }
+      @else {
+        .adaptive-text {
+          &[font-size] == 14;
+          &[line-height] == 21;
+        }
+      }
+    }
+  }
+}
+
+/*
+
+GSS BUG
+-----------------
+
+.adaptive-text {
+  @if &[width] > 600 {
+    &[font-size] == 22;
+    &[line-height] == 36;
+  }
+  @else {
+    @if &[width] > 420 {
+      &[font-size] == 20;
+      &[line-height] == 30;
+    }
+    @else {
+      @if &[width] > 260 {
+        &[font-size] == 16;
+        &[line-height] == 20;
+      }
+      @else {
+        &[font-size] == 14;
+        &[line-height] == 18;
+      }
+    }
+  }
+}
+*/
+</style>

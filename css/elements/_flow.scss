@@ -33,7 +33,7 @@ body {
 }
 main {
   display: block;
-  background-color: rgba(0,0,0,0.2);
+//  background-color: rgba(0,0,0,0.2);
 }
 p {
 	margin-top: 0;
@@ -50,27 +50,42 @@ header, footer {
 * Using .flow__flex will make all the immediate children the same height
 * Add .flow__flex--col — or shortcut "col--" to child containers to fill the horizontal space
 */
-[class^=flow__flex] {
+%flow__flex {
   min-height: 64px;
   display: flex;
+  padding: 0;
   & > .flow__item, & > .item-- {
     flex: 1;
   }
 }
+.flow__flex {
+  @extend %flow__flex;
+}
 .flow__flex--vertical {
+  @extend %flow__flex;
   flex-direction: column;
+}
+.flow__item--2, .item--2 {
+  flex: 2;
+}
+.flow__item--3, .item--3 {
+  flex: 3;
+}
+.flow__item--4, .item--5 {
+  flex: 5;
+}
+.flow__item--5, .item--5 {
+  flex: 5;
 }
 
 %span--item {
   display: inline-block;
   margin-right: $padding--base;
-
-}
-[class^=flow--] {
   &:last-child {
     margin-right: 0;
   }
 }
+
 .flow--3-1 {
   @extend %span--item;
   width: calc((100%/3) - (#{$padding--base}*2/3));

@@ -28,8 +28,13 @@
   }
 }
 
+.ui__header--fixed, .ui__footer--fixed {
+  //opacity: 0.3;
+  background: rgba(0,0,0,0.1);
+}
+
 [class^=flow__flex] > div {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.2);
   outline: solid 1px white;
   color: white;
   font-size: $font-size--xl;
