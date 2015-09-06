@@ -1,88 +1,95 @@
 /**
-* @file elements/flow
+* @file layout/ui
 * @project strong-css
 * @author The strong element
 */
 
 /**
-* @section Elements
-* High-level resets for flow content elements
-* Think of this as how you want all the elements to flow on the page compared how the browser manufacturer wants them to flow.
-* Not text (that's phrasing content), but margins, padding, borders, yes!
+* @section UI
+* @els: ui, ui--flex, ui__header, ui__footer, ui__nav, ui__view, ui__content
+* Top-level layout classes for app UI
+*
 */
-
 
 /**
-* 
+* .ui
+* Outermost, top-level container, body > div.ui*
+* Should be same element as role="application"
+* Replacing the contents of this container would effectively replace the entire app UI
 */
-.ui--flex {
-  display: flex;
-  flex-direction: column;
+%ui {
   height: 100vh;
 }
-
-
-
+.ui {
+  @extend %ui;
+}
 
 /**
-*  ui__header
+* .ui--flex
+* Sets app container to flexbox
+*/
+%ui__flex {
+  @extend %ui;
+  display: flex;
+}
+.ui--flex {
+  @extend %ui__flex;
+  flex-direction: column;
+}
+
+/**
+* .ui_flex--cols
+* TODO: needs work
+*/
+.ui--flex-cols {
+  @extend %ui__flex;
+  flex-direction: row;
+  width: 100vw;
+}
+
+/**
+*  .ui__header
 */
 .ui__header {
-  background: yellow;
+
 }
 /**
-*  ui__footer
+*  .ui__footer
 */
 .ui__footer {
-  background: lightblue;
+
+}
+.ui__footer--fixed {
+  position: fixed;
+  bottom: 0;
 }
 
 /**
-*  ui__nav
+*  .ui__nav
 */
-
 .ui__nav {
-  background: pink;
-  width: 256px;
 
-//  height: 100%;
 }
 
 /**
-*  ui__view
+*  .ui__view
 */
-.ui__view, .ui__view--flex {
-  background: lime;
+%ui__view {
   overflow: auto;
+  flex: 1;
+}
+.ui__view, .ui__view--flex {
+  @extend %ui__view;
 }
 .ui__view--flex {
   display: flex;
 }
 
-
-
+/**
+*  .ui__content
+*
+*/
 .ui__content {
   overflow: auto;
   flex: 1;
 }
-
-
-
-
-
-
-/**
-* 
-*/
-.ui__header--fixed, .ui__footer--fixed {
-  position: fixed;
-  width: 100vw;
-}
-.ui__header--fixed {
-  top: 0;
-}
-.ui__footer--fixed {
-  bottom: 0;
-}
-
-

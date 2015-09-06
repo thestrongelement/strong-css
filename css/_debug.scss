@@ -7,6 +7,22 @@
   //outline: solid 1px blue;
 }
 
+.ui__nav {
+  background: purple;
+  color: white;
+//  height: 200px;
+}
+.ui__header, .ui__footer, .ui__footer--fixed {
+//  height: 40px;
+  background: black;
+  color: white;
+}
+.ui__content {
+//  background: orange;
+  //min-height: 100vh;
+}
+
+
 
 #logo--thestrongelement {
   code {
@@ -30,7 +46,7 @@
 
 .ui__header--fixed, .ui__footer--fixed {
   //opacity: 0.3;
-  background: rgba(0,0,0,0.1);
+ // background: rgba(0,0,0,0.1);
 }
 
 [class^=flow__flex] > div {
