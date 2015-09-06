@@ -25,7 +25,7 @@ gulp.task('serve', ['www'], function () {
     port: 9000,
     server: {
       baseDir: [dir__www],
-      index: 'master.html',
+      index: 'index.html',
       routes: {
         '/bower_components': 'bower_components',
         '/css': 'css'
@@ -37,8 +37,12 @@ gulp.task('serve', ['www'], function () {
   gulp.watch(dir__public+'/**/*', ['public']);
 });
 
+
 gulp.task('html', function () {
-  return gulp.src(dir__src_html+'/**/*.html')
+  return gulp.src([dir__src_html+'/**/*.html','!'+dir__src_html+'/**/_*'])
+    .pipe($.ejs({
+      app: json__pkg
+    }).on('error', $.util.log))
     .pipe(minifyHTML({
       conditionals: true
     }))

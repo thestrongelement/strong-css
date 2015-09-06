@@ -16,12 +16,16 @@
     "url": "https://github.com/thestrongelement/strong-css/issues"
   },
   "homepage": "https://github.com/thestrongelement/strong-css",
+  "dependencies": {
+    "strong-data": "thestrongelement/strong-data#6dd3adf9c40a5fb1a1d7ed64ba218bc56471ca85"
+  },
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
     "bower": "^1.4.1",
     "browser-sync": "^1.8.2",
     "del": "^1.2.1",
     "gulp": "^3.9.0",
+    "gulp-ejs": "^1.2.0",
     "gulp-load-plugins": "^0.8.0",
     "gulp-minify-html": "^1.0.4",
     "gulp-postcss": "^5.1.10",

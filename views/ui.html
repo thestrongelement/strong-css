@@ -1,63 +1,41 @@
+<% var title = "ui" %>
 <!doctype html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>strong-css</title>
-    <link rel="stylesheet" href="css/strong-css.css">
-<!--     <link rel="stylesheet" href="http://basehold.it/16"> -->
-  </head>
-  <body id="thestrongelement-com">
-		<div class="ui--flex" role="application">
-			<header class="ui__header">
-			    <div>
-.ui__header
-          </div>
-			</header>
+    <head>
+        <% include ./includes/_app_meta.html %>
+    </head>
+    <body id=thestrongelement-com>
+		<div class=ui--flex role=application>
+            <% include ./includes/_app_header.html %>
+			<main class=ui__view--flex role=main>
 
-
-      <nav class="ui__nav">
-        <div>
+                <nav class="ui__nav">
+                    <div>
 .ui__nav
-        </div>
-      </nav>
+                    </div>
+                </nav>
 
-			<main class="ui__view--flex" role="main">
-
-        <nav class="ui__nav">
-          <div>
-  .ui__nav
-          </div>
-        </nav>
-
-        <!-- ajax wrapper option -->
-        <div class="ui__content">
+                <div class="ui__content">
+                    <article>
 
 
-
-          <article>
-              <div>
-  .ui__content
-              </div>
-              <section>
-                  <div>
-  <span style="display: block; height: 1500px; border-left: solid 1px red;">
-  .ui__content section
-  </span>
-                  </div>
-              </section>
-          </article>   
+                        <div>
+.ui__content
+                        </div>
+                        <section>
+                           <div>
+<span style="display: block; height: 1500px; border-left: solid 1px red;">
+.ui__content section
+</span>
+                            </div>
+                        </section>
 
 
 
-        </div>
+                    </article>
+                </div>
 			</main>
-			<footer class="ui__footer">
-        <div>
-.ui__footer
-        </div>
-			</footer>
+            <% include ./includes/_app_footer.html %>
 		</div>
 	</body>
 </html>

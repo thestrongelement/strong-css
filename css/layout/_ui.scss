@@ -28,21 +28,21 @@
 * .ui--flex
 * Sets app container to flexbox
 */
-%ui__flex {
+%ui--flex {
   @extend %ui;
   display: flex;
 }
 .ui--flex {
-  @extend %ui__flex;
+  @extend %ui--flex;
   flex-direction: column;
 }
 
 /**
-* .ui_flex--cols
+* .ui--flex-cols
 * TODO: needs work
 */
 .ui--flex-cols {
-  @extend %ui__flex;
+  @extend %ui--flex;
   flex-direction: row;
   width: 100vw;
 }
