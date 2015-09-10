@@ -2,3 +2,6 @@
   background-attachment: fixed;
 }
 
+@mixin clearfix {
+  overflow: auto;
+}

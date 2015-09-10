@@ -50,9 +50,15 @@ header, footer {
 * Using .flow__flex will make all the immediate children the same height
 * Add .flow__flex--col — or shortcut "col--" to child containers to fill the horizontal space
 */
+section {
+  @include clearfix;
+//  width: 320px;
+}
 %flow__flex {
   min-height: 64px;
-  display: flex;
+  @include media(s) {
+    display: flex;
+  }
   padding: 0;
   & > .flow__item, & > .item-- {
     flex: 1;

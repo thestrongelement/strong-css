@@ -50,16 +50,17 @@
 /**
 *  .ui__header
 */
-.ui__header {
+%ui__header {
 
 }
 /**
 *  .ui__footer
 */
-.ui__footer {
+%ui__footer {
 
 }
 .ui__footer--fixed {
+  @extend %ui__footer;
   position: fixed;
   bottom: 0;
 }
@@ -67,7 +68,7 @@
 /**
 *  .ui__nav
 */
-.ui__nav {
+%ui__nav {
 
 }
 
@@ -78,10 +79,11 @@
   overflow: auto;
   flex: 1;
 }
-.ui__view, .ui__view--flex {
+.ui__view {
   @extend %ui__view;
 }
 .ui__view--flex {
+  @extend %ui__view;
   display: flex;
 }
 
@@ -89,7 +91,20 @@
 *  .ui__content
 *
 */
-.ui__content {
+%ui__content {
   overflow: auto;
   flex: 1;
+}
+.ui__content {
+  @extend %ui__content;
+  margin: 0 auto;
+
+  @include media(l) {
+    max-width: $screen--xlarge;
+  }
+}
+.ui__content--skinny {
+  @extend %ui__content;
+  width: 320px;
+  margin: 0 auto;
 }

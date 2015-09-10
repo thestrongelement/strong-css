@@ -1,18 +1,24 @@
 # strong-css
 
-## ITCSS
+## settings
 
-playing around with ITCSS
+## helpers
+media
 
-```
-_____________
-\___________/   settings
- \_________/    tools
-  \_______/     generic
-   \_____/      base
-    \___/       objects
-     \_/        components
-      V         trumps
+## elements
 
-```
+
+## layout
+- ui
+- grid
+- box
+
+## objects
+
+
+## components
+
+## views
+
+
 
