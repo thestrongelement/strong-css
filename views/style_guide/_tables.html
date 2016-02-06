@@ -1,27 +1,23 @@
 
 <!--
     ///// SIMPLE TABLE
-
     .table--simple
     :   table element
-
     th
     :   table header
         &.sortable--
         :   required if col is sortable
         &[aria-sort]
         :   ascending || descending (attr allowed on only one header at a time)
-
     .status__
     :   status message
-
     /////
 -->
 
 <table class="table--simple" role="grid" aria-readonly="true">
 	<thead>
 		<tr>
-			<th class="sortable--" role="columnheader" data-sortable="true" aria-sort="descending">Date</th>
+			<th class="sortable--" role="columnheader" aria-sort="descending" data-sortable="true">Date</th>
 			<th class="sortable--" role="columnheader" data-sortable="true">Type</th>
 			<th class="sortable--" role="columnheader" data-sortable="true">Amount</th>
 		</tr>

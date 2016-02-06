@@ -21,7 +21,6 @@ $max-panel-width: 1072px;
         padding-left: calc((100% - #{$max-panel-width})/2);
         padding-right: calc((100% - #{$max-panel-width})/2);;
     }
-
 }
 
 /**
@@ -37,7 +36,6 @@ $max-panel-width: 1072px;
         display: flex;
         background: $color__white;
         padding-top: 24px;
-        //padding-bottom: 24px;
         margin-bottom: 24px;
         box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
     }
