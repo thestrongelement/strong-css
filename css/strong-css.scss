@@ -12,27 +12,46 @@ view
 	- concerned with high-level layout of view components
 */
 
+//vendor
 @import "bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "bower_components/neat/app/assets/stylesheets/neat";
 @import "bower_components/modular-scale/stylesheets/modular-scale";
 
-@import "settings/vars";
-@import "settings/type";
+//base
+@import "base/settings";
+//@import "base/vars";
+@import "base/type";
 
-@import "helpers/generic";
-@import "helpers/at-media";
+//mixins
+@import "mixins/type";
+@import "mixins/screen";
+@import "mixins/clearfix";
+@import "mixins/at-media";
 
-@import "elements/html";
-@import "elements/flow";
+//elements
+@import "elements/doc";
 @import "elements/sections";
 @import "elements/headers";
+@import "elements/flow";
 @import "elements/phrase";
 @import "elements/embedded";
 @import "elements/interactive";
 @import "elements/palpable";
 
+@import "blocks/buttons";
+@import "blocks/forms";
+@import "blocks/filters";
+@import "blocks/nav";
+@import "blocks/tables";
+@import "blocks/pagination";
+
 @import "layout/ui";
+@import "layout/flow";
 
 @import "views/index";
+
+@import "helpers/generic";
+@import "helpers/type";
 
 @import "debug";
 

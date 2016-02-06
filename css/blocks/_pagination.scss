@@ -1,0 +1,76 @@
+/**
+* @file _pagination.scss
+* @project strong-css
+* @author The strong element
+*/
+
+/**
+* @section Tables
+* Base styles for a table pagination
+*/
+.pagination {
+    text-align: center;
+    @include type(s);
+    .list__ {
+        display: inline-block;
+    }
+    .link__ {
+        display: none;
+        //xs screen shows only selected, prev, and next links
+        &.prev--, &.next--, &[aria-selected=true] {
+            display: block;
+        }
+        width: 28px;
+        padding: 8px 0;
+        margin-left: 18px; 
+        margin-right: 18px; 
+        @include screen(s) {
+            display: block;
+        }
+        @include screen(l) {
+            margin-left: 26px; 
+            margin-right: 26px; 
+        }
+        color: $color__gray--d;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: transparent;
+        &.placeholder-- {
+            cursor: default;
+            margin-left: 6px;
+            margin-right: 6px;
+            font-size: 2em;
+            line-height: 1rem;
+        }
+        &.prev-- {
+            &:before {
+                content: '';
+                display: inline-block;
+                width: 6px;
+                height: 9px;
+                margin-right: 8px;
+                background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI5IiB2aWV3Qm94PSIwIDAgNiA5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0uMTA1IDQuMzA3bC0uMDEtLjAxMkw0LjM5OC0uMDFsLjg1Mi44NS0zLjQ3NiAzLjQ3NyAzLjQ2NCAzLjQ2Ni0uODUuODVMLjA4MyA0LjMzbC4wMjItLjAyM3oiIGZpbGw9IiNDMUMxQzUiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==') no-repeat;
+                @include screen(s) {
+                    display: none;
+                }
+            }
+        }
+        &.next-- {
+            &:after {
+                content: '';
+                display: inline-block;
+                width: 6px;
+                height: 9px;
+                margin-left: 8px;
+                background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI5IiB2aWV3Qm94PSIwIDAgNiA5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik01LjIyOCA0LjMxNmwuMDEuMDEyTC45MzUgOC42MzNsLS44NTItLjg1TDMuNTYgNC4zMDYuMDk0Ljg0bC44NS0uODVMNS4yNSA0LjI5NGwtLjAyMi4wMjJ6IiBmaWxsPSIjQzFDMUM1IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=') no-repeat; 
+                @include screen(s) {
+                    display: none;
+                }
+            }
+        }
+    }
+    [aria-selected=true] {
+        color: $color__blue--b;
+        border-bottom-color: $color__blue--b;
+    }
+}

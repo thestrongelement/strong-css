@@ -1,0 +1,18 @@
+.type--reg {
+    @include type();
+}
+.type--xs {
+    @include type(xs);
+}
+.type--s {
+    @include type(s);
+}
+.type--m {
+    @include type(m);
+}
+.type--l {
+    @include type(l);
+}
+.type--xl {
+    @include type(xl);
+}

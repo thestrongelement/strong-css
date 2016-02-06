@@ -1,0 +1,18 @@
+@mixin screen($size) {
+  @if $size == xs {
+    @media (min-width: $screen--xsmall) { @content; }
+  }
+  @else if $size == s {
+    @media (min-width: $screen--small) { @content; }
+  }
+  @else if $size == m {
+    @media (min-width: $screen--medium) { @content; }
+  }
+  @else if $size == l {
+    @media (min-width: $screen--large) { @content; }
+  }
+  @else if $size == xl {
+    @media (min-width: $screen--xlarge) { @content; }
+  }
+
+}

@@ -1,7 +1,9 @@
 .has-fixed-background, .fixed-- {
   background-attachment: fixed;
 }
-
-@mixin clearfix {
-  overflow: auto;
+.is-phone-number, .phone-- {
+    white-space: nowrap;
+}
+.is-hidden {
+    display: none;
 }

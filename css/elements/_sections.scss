@@ -35,3 +35,7 @@ article {
 	  padding-right: 0;
 	}
 }
+
+section {
+  @include clearfix;
+}

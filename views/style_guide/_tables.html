@@ -1,0 +1,82 @@
+
+<!-- 
+    ///// SIMPLE TABLE
+    
+    .table--simple
+    :   table element
+    
+    th
+    :   table header
+        &.sortable--
+        :   required if col is sortable
+        &[aria-sort]
+        :   ascending || descending (attr allowed on only one header at a time)
+
+    .status__
+    :   status message
+    
+    /////
+-->
+
+<table class="table--simple" role="grid" aria-readonly="true">
+	<thead>
+		<tr>
+			<th class="sortable--" role="columnheader" data-sortable="true" aria-sort="descending">Date Sent</th>
+			<th class="sortable--" role="columnheader" data-sortable="true">Type</th>
+			<th class="sortable--" role="columnheader" data-sortable="true">Amount</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr data-row-id="9ea259">
+			<td> 01/26/2016 </td>
+			<td> DEPOSIT <span class="status__">(pending)</span> </td>
+			<td> $248,588.21 </td>
+		</tr>
+		<tr data-row-id="21c978">
+			<td> 01/25/2016 </td>
+			<td> DEPOSIT </td>
+			<td> $73,037.46 </td>
+		</tr>
+		<tr data-row-id="b8531c">
+			<td> 01/24/2016 </td>
+			<td> DEPOSIT </td>
+			<td> $200,259.18 </td>
+		</tr>
+		<tr data-row-id="7a986b">
+			<td> 01/23/2016 </td>
+			<td> FEE </td>
+			<td> ($20,871.12) </td>
+		</tr>
+		<tr data-row-id="35a7a8">
+			<td> 01/22/2016 </td>
+			<td> DEPOSIT </td>
+			<td> $212,102.75 </td>
+		</tr>
+		<tr data-row-id="1b9599">
+			<td> 01/21/2016 </td>
+			<td> DEPOSIT </td>
+			<td> $175,673.72 </td>
+		</tr>
+		<tr data-row-id="a6139a">
+			<td> 01/20/2016 </td>
+			<td> DEPOSIT </td>
+			<td> $185,912.39 </td>
+		</tr>
+		<tr data-row-id="42e0cb">
+			<td> 01/19/2016 </td>
+			<td> DEPOSIT </td>
+			<td> $220,045.20 </td>
+		</tr>
+		<tr data-row-id="3f4eab">
+			<td> 01/18/2016 </td>
+			<td> DEPOSIT </td>
+			<td> $227,960.00 </td>
+		</tr>
+		<tr data-row-id="ca86e6">
+			<td> 01/17/2016 </td>
+			<td> DEPOSIT </td>
+			<td> $193,261.52 </td>
+		</tr>
+	</tbody>
+</table>
+

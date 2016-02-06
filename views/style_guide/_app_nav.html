@@ -1,0 +1,96 @@
+<!-- 
+    ///// PRIMARY NAV
+    
+    .primary-nav
+    :   list wrapper container
+        
+    .link__     
+    :   hyperlink
+        &[aria-selected]
+        :   true || false toggle if selected
+        &.locked--
+        :   behind paywall
+        &.notify--
+        :   has new activity
+
+    /////
+-->
+
+    <ul class="navlist primary-nav">
+        <li class="item__">
+            <a href="#" class="link__ logo--" aria-selected="false">
+Dashboard
+            </a>
+        </li>
+        <li class="item__">
+          <a href="#" class="link__" aria-selected="true">
+Campaigns
+          </a>          
+        </li>
+        <li class="item__">
+          <a href="#" class="link__" aria-selected="false">
+Customers
+          </a>          
+        </li>
+        <li class="item__">
+          <a href="#" class="link__ locked--" aria-selected="false">
+Loyalty
+          </a>          
+        </li>
+        <li class="item__">
+          <a href="#" class="link__ notify--" aria-selected="false">
+Reviews
+          </a>          
+        </li>
+        <li class="item__">
+          <a href="#" class="link__" aria-selected="false">
+Payments
+          </a>         
+        </li>        
+
+
+    </ul>
+    
+    
+<!-- 
+    ///// USER NAV
+    
+    .user-nav
+    :   list wrapper container
+
+    & > .link__
+    :   first-level link
+        &[aria-haspopup]
+        :   true if has subnav
+        &[aria-controls]
+        :   id of subnav element
+
+    .subnav__
+    :   dropdown wrapper container
+        &[aria-hidden]
+        :  true |false toggle
+    
+    .link__     
+    :   hyperlink
+
+    /////
+-->
+
+    
+        <div class="user-nav" role="navigation">
+            <a href="#usernav-dropdown" class="link__" aria-selected="true" aria-controls="usernav-dropdown"  aria-haspopup="true">Zack</a>
+            <ul class="navlist--dropdown subnav__" id="usernav-dropdown" aria-hidden="true">
+                <li class="item__">
+                    <a href="#" class="link__">Settings</a>
+                </li>
+                <li class="item__">
+                    <a href="#" class="link__">Settings</a>
+                </li>
+                <li class="item__">
+                    <a href="#" class="link__">Settings</a>
+                </li>
+                <li class="item__">
+                    <a href="#" class="link__">Settings</a>
+                </li>
+            </ul>
+        </div> 

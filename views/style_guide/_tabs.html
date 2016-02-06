@@ -1,0 +1,48 @@
+
+<!-- 
+    ///// TABLIST
+    
+    [role=tablist]
+    :   tabs wrapper container
+    
+    [role=tab]     
+    :   tab container
+        &[aria-controls]
+        :   matches ID of tabpanel
+        &[aria-selected]
+        :   true || false toggle if selected
+
+    /////
+-->
+
+<ul class=tablist--purchase role=tablist>
+    <li id=tab-building class=tab__ role=tab aria-controls=tabpanel-building aria-selected=true>Building</li>
+    <li id=tabpanel-growth class=tab__ role=tab aria-controls=tabpanel-growth aria-selected=false>Growth</li>
+    <li id=tabpanel-amplify class=tab__ role=tab aria-controls=tabpanel-amplify aria-selected=false>Amplify</li>
+</ul>
+
+
+<!-- 
+    ///// TABPANEL
+    
+    [role=tabpanel]
+    :   tabs target container
+    
+    [aria-labeled-by]
+    :   matches ID of trigger tab
+    
+    [aria-hidden]
+    :   true || false toggle if active
+
+    /////
+-->
+
+    <div id=tabpanel-building role=tabpanel aria-labeled-by=tab-building aria-hidden=false>
+BUILDING
+    </div>
+    <div id=tabpanel-growth class=tabpanel__ role=tabpanel aria-labeled-by=tab-growth aria-hidden=true>
+GROWTH
+    </div>
+    <div id=tabpanel-amplify class=tabpanel__ role=tabpanel aria-labeled-by=tab-amplify aria-hidden=true>
+AMPLIFY
+    </div>

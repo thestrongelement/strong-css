@@ -1,8 +1,41 @@
 /**
-* @file elements/flow
+* @file elements/html
 * @project strong-css
 * @author The strong element
 */
+
+/**
+* @section Elements
+* Highest-level application settings
+*/
+
+/**
+* Top-level font and color rules for the application
+* Base font-size increases on larger screens
+*/
+html {
+	min-height: 100%;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  font-size: ($font-size--base/16px) * 1em;
+	@include media(m) {
+		//font-size: ($font-size--desktop / 16px) * 1em;
+	}
+}
+
+
+/**
+* @section Root Element
+* Default styles for root elements
+*/
+body {
+    -webkit-font-smoothing: antialiased;
+//    background-color: $background-color--default;
+    color: $color__text--default;
+    font-family: $font-family--default;
+    line-height: $line-height--ratio;
+}
 
 /**
 * @section Elements
@@ -26,9 +59,10 @@ $elements__flow: a, abbr, address, article, aside, audio, b, body, bdi, bdo, big
 * Top-level positioning rules for the UI
 */
 body {
-	min-height: 100%;
-	min-width: 100%;
+	min-height: 100vh;
+	min-width: 100vh;
 	position: absolute;
+  padding: 0;
 	margin: 0;
 }
 main {
@@ -47,37 +81,10 @@ header, footer {
 }
 
 /**
-* @section Flow Elements
-* Default styles for flow elements
+* Using .flow__flex will make all the immediate children the same height
+* Add .flow__flex--col — or shortcut "col--" to child containers to fill the horizontal space
 */
-p, ul, ol, blockquote, table {
-    margin-top: 0;
+section {
+  @include clearfix;
+//  width: 320px;
 }
-figure {
-    margin: 0;
-    line-height: 0;
-}
-figcaption {
-  line-height: $line-height--base;
-}
-ul {
-    padding-left: 0;
-}
-
-
-
-
-/**
-* @section Table Elements
-* Default styles for table elements
-*/
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-td, th {
-    text-align: left;
-    vertical-align: top;
-    padding: 8px 16px;
-}
-

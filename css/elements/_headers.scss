@@ -31,3 +31,15 @@ h1, h2, h3 {
 #{$elements__headers} {
 	@extend %font-size--reg;
 }
+
+
+
+/**
+* @section Header Elements
+* Default styles for header elements
+*/
+h1,h2,h3,h4,h5,h6 {
+    text-rendering: optimizeLegibility;
+    margin-top: 0;
+    margin-bottom: $margin-bottom--default;
+}
