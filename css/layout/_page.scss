@@ -1,0 +1,119 @@
+/**
+* @file _page.scss
+* @project strong-css
+* @author The strong element
+*/
+
+$max-panel-width: 1072px;
+%panel {
+    background-color: $color__white;
+    margin-bottom: 8px;
+    box-shadow: 0 3px 8px 0 rgba(0,0,0,0.04);
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: $width--ui-padding/3;
+    padding-right: $width--ui-padding/3;
+    @include screen(m) {
+        padding-left: $width--ui-padding/2;
+        padding-right: $width--ui-padding/2;
+    }
+    @include screen(xl) {
+        padding-left: calc((100% - #{$max-panel-width})/2);
+        padding-right: calc((100% - #{$max-panel-width})/2);;
+    }
+
+}
+
+/**
+* @section Page
+* Page header
+*/
+.page__header {
+    margin-bottom: 24px;
+    @extend %section;
+    @include screen(s) {
+        width: auto;
+        position: static;
+        display: flex;
+        background: $color__white;
+        padding-top: 24px;
+        //padding-bottom: 24px;
+        margin-bottom: 24px;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+    }
+}
+.page__title {
+    @include type(m);
+    width: 60vw;
+    height: 56px;
+    margin: -48px auto 0;
+    color: $color__white;
+    text-align: center;
+    @include screen(s) {
+        width: auto;
+        color: $color__text--default;
+        margin-top: 0;
+        flex: 1;
+        text-align: left;
+        padding-left: $width--ui-padding/3;
+    }
+    @include screen(m) {
+        padding-left: $width--ui-padding/2;
+    }
+    @include screen(l) {
+        padding-left: $width--ui-padding/2;
+    }
+}
+.page__nav {
+    @include screen(s) {
+        display: block;
+        flex: 1.75;
+    }
+    @include screen(l) {
+        flex: 1;
+    }
+}
+
+/**
+* @section Page
+* Page sections
+*/
+.page__section {
+    margin-bottom: 32px;
+    .panel__ {
+        @extend %panel;
+    }
+}
+
+/**
+* @section Page
+* Secondary navigation
+*/
+.secondary-nav {
+    text-align: center;
+    @include type(s);
+    @include weight(reg);
+    .list__ {
+        display: inline-block;
+        margin: 0 auto;
+    }
+    @include screen(s) {
+        @include type(reg);
+        float: right;
+        margin-right: 12px;
+        margin-top: -6px;
+    }
+
+    .link__ {
+        display: block;
+        padding: 8px 0;
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+    [aria-selected=true] {
+        color: $color__link--base;
+        border-bottom: solid 1px $color__link--base;
+    }
+}
+
+

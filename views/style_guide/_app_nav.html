@@ -1,10 +1,10 @@
-<!-- 
+<!--
     ///// PRIMARY NAV
-    
+
     .primary-nav
     :   list wrapper container
-        
-    .link__     
+
+    .link__
     :   hyperlink
         &[aria-selected]
         :   true || false toggle if selected
@@ -16,49 +16,47 @@
     /////
 -->
 
-    <ul class="navlist primary-nav">
-        <li class="item__">
-            <a href="#" class="link__ logo--" aria-selected="false">
-Dashboard
-            </a>
-        </li>
-        <li class="item__">
-          <a href="#" class="link__" aria-selected="true">
-Campaigns
-          </a>          
-        </li>
-        <li class="item__">
-          <a href="#" class="link__" aria-selected="false">
-Customers
-          </a>          
-        </li>
-        <li class="item__">
-          <a href="#" class="link__ locked--" aria-selected="false">
-Loyalty
-          </a>          
-        </li>
-        <li class="item__">
-          <a href="#" class="link__ notify--" aria-selected="false">
-Reviews
-          </a>          
-        </li>
-        <li class="item__">
-          <a href="#" class="link__" aria-selected="false">
-Payments
-          </a>         
-        </li>        
+<ul class="navlist primary-nav">
+    <li class="item__">
+        <a href="#" class="link__" aria-selected="false">
+Lorem
+        </a>
+    </li>
+    <li class="item__">
+      <a href="#" class="link__" aria-selected="true">
+Duis
+      </a>
+    </li>
+    <li class="item__">
+      <a href="#" class="link__" aria-selected="false">
+Reprehenderit
+      </a>
+    </li>
+    <li class="item__">
+      <a href="#" class="link__ locked--" aria-selected="false">
+Excepteur
+      </a>
+    </li>
+    <li class="item__">
+      <a href="#" class="link__ notify--" aria-selected="false">
+Dolor
+      </a>
+    </li>
+    <li class="item__">
+      <a href="#" class="link__" aria-selected="false">
+Sunt
+      </a>
+    </li>
+</ul>
 
 
-    </ul>
-    
-    
-<!-- 
-    ///// USER NAV
-    
-    .user-nav
+<!--
+    ///// SETTINGS NAV
+
+    .settings-nav
     :   list wrapper container
 
-    & > .link__
+    & > .link__, .control__
     :   first-level link
         &[aria-haspopup]
         :   true if has subnav
@@ -69,28 +67,28 @@ Payments
     :   dropdown wrapper container
         &[aria-hidden]
         :  true |false toggle
-    
-    .link__     
+
+    .link__
     :   hyperlink
 
     /////
 -->
 
-    
-        <div class="user-nav" role="navigation">
-            <a href="#usernav-dropdown" class="link__" aria-selected="true" aria-controls="usernav-dropdown"  aria-haspopup="true">Zack</a>
-            <ul class="navlist--dropdown subnav__" id="usernav-dropdown" aria-hidden="true">
-                <li class="item__">
-                    <a href="#" class="link__">Settings</a>
-                </li>
-                <li class="item__">
-                    <a href="#" class="link__">Settings</a>
-                </li>
-                <li class="item__">
-                    <a href="#" class="link__">Settings</a>
-                </li>
-                <li class="item__">
-                    <a href="#" class="link__">Settings</a>
-                </li>
-            </ul>
-        </div> 
+
+<div class="settings-nav" role="navigation">
+    <a href="#settings-dropdown" class="link__ control__" aria-selected="true" aria-controls="settings-dropdown"  aria-haspopup="true">Zack</a>
+    <ul class="navlist--dropdown subnav__" id="settings-dropdown" aria-hidden="true">
+        <li class="item__">
+            <a href="#" class="link__">Account</a>
+        </li>
+        <li class="item__">
+            <a href="#" class="link__">Privacy</a>
+        </li>
+        <li class="item__">
+            <a href="#" class="link__">Help</a>
+        </li>
+        <li class="item__">
+            <a href="#" class="link__">Log Out</a>
+        </li>
+    </ul>
+</div>

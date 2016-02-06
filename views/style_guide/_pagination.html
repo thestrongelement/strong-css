@@ -1,13 +1,12 @@
-
-<!-- 
+<!--
     ///// TABLE PAGINATION
-    
+
     .pagination
     :   wrapper element
-    
+
     .list__
     :   navlist wrapper
-    
+
     .link__
         &[aria-selected=]
         :   true || false toggle if active page
@@ -17,116 +16,108 @@
         :   add class if item is active_index + 1
         &[role=button]
         :   for actual links only
-        
+
         &.placeholder--
         :   only for ellipsis placeholder non-links
-    
-    /////
+
+    --/////
 -->
 
-<!--
-<nav class="pagination" aria-controls="deposits-table">
+<nav class="pagination" aria-controls="">
     <ul class="navlist list__">
         <li class="item__">
-            <a role="button" class="link__" aria-selected="true" data-page-index="0">1</a>
+            <a role="button" class="link__" aria-selected="true">1</a>
         </li>
-        <li class="item__"> 
-            <a role="button" class="link__ next--" aria-selected="false" data-page-index="1">2</a> 
+        <li class="item__">
+            <a role="button" class="link__ next--" aria-selected="false">2</a>
         </li>
     </ul>
 </nav>
 
-
 <nav class="pagination" aria-controls="deposits-table">
     <ul class="navlist list__">
         <li class="item__">
-            <a role="button" class="link__" aria-selected="false" data-page-index="0">1</a>
+            <a role="button" class="link__" aria-selected="false">1</a>
         </li>
-        <li class="item__"> 
-            <a role="button" class="link__" aria-selected="false" data-page-index="1">2</a> 
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false">2</a>
         </li>
-        <li class="item__"> 
-            <a role="button" class="link__" aria-selected="false"  data-page-index="2">3</a> 
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false" >3</a>
         </li>
-        <li class="item__"> 
-            <a role="button" class="link__ prev--" aria-selected="false" data-page-index="4">4</a> 
+        <li class="item__">
+            <a role="button" class="link__ prev--" aria-selected="false">4</a>
         </li>
-        <li class="item__"> 
-            <a role="button" class="link__" aria-selected="true" data-page-index="5">5</a> 
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="true">5</a>
         </li>
 
     </ul>
 </nav>
 
-
-
-<nav class="pagination" aria-controls="deposits-table">
+<nav class="pagination" aria-controls="">
     <ul class="navlist list__">
         <li class="item__">
-            <a role="button" class="link__" aria-selected="true" data-page-index="0">1</a>
+            <a role="button" class="link__" aria-selected="true">1</a>
         </li>
-        <li class="item__"> 
-            <a role="button" class="link__ next--" aria-selected="false" data-page-index="1">2</a> 
+        <li class="item__">
+            <a role="button" class="link__ next--" aria-selected="false">2</a>
         </li>
-        <li class="item__"> 
-            <a role="button" class="link__" aria-selected="false"  data-page-index="2">3</a> 
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false" >3</a>
         </li>
-        <li class="item__"> 
-            <a role="button" class="link__" aria-selected="false" data-page-index="4">4</a> 
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false">4</a>
         </li>
-        <li class="item__"> 
-            <a role="button" class="link__" aria-selected="false" data-page-index="5">5</a> 
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false">5</a>
         </li>
-        <li class="item__"> 
-            <a role="button" class="link__" aria-selected="false" data-page-index="6">6</a> 
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false">6</a>
         </li>
-        <li class="item__"> 
-            <a role="button" class="link__" aria-selected="false" data-page-index="7">7</a> 
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false">7</a>
         </li>
         <li class="item__">
             <a class="link__ placeholder--">..</a>
         </li>
-        <li class="item__"> 
-            <a role="button" class="link__" aria-selected="false" data-page-index="21">21</a> 
-        </li>        
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false">21</a>
+        </li>
     </ul>
 </nav>
 
--->
-
-<nav class="pagination" aria-controls="deposits-table">
+<nav class="pagination" aria-controls="">
     <ul class="navlist list__">
         <li class="item__">
-            <a role="button" class="link__" aria-selected="false" data-page-index="0">1</a>
+            <a role="button" class="link__" aria-selected="false">1</a>
         </li>
         <li class="item__">
             <a class="link__ placeholder--">..</a>
         </li>
-        <li class="item__"> 
-            <a role="button" class="link__" aria-selected="false" data-page-index="4">4</a> 
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false">4</a>
         </li>
-        <li class="item__"> 
-            <a role="button" class="link__ prev--" aria-selected="false" data-page-index="5">5</a> 
+        <li class="item__">
+            <a role="button" class="link__ prev--" aria-selected="false">5</a>
         </li>
-        <li class="item__"> 
-            <a role="button" class="link__" aria-selected="true" data-page-index="6">6</a> 
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="true">6</a>
         </li>
-        <li class="item__"> 
-            <a role="button" class="link__ next--" aria-selected="false" data-page-index="7">7</a> 
+        <li class="item__">
+            <a role="button" class="link__ next--" aria-selected="false">7</a>
         </li>
-        <li class="item__"> 
-            <a role="button" class="link__" aria-selected="false" data-page-index="1">8</a> 
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false">8</a>
         </li>
-        <li class="item__"> 
-            <a role="button" class="link__" aria-selected="false"  data-page-index="2">9</a> 
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false" >9</a>
         </li>
         <li class="item__">
             <a class="link__ placeholder--">..</a>
         </li>
-        <li class="item__"> 
-            <a role="button" class="link__" aria-selected="false" data-page-index="21">21</a> 
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false">21</a>
         </li>
-        
-        
     </ul>
 </nav>
