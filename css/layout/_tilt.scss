@@ -10,12 +10,125 @@
 */
 
 
+%tilt {
 
+  margin-bottom: 120px;
+  .tilt__bkgd {
+    padding: 0;
+    position: relative;
+    min-width: 100vw;
 
-
-.page__section {
+    &:before, &:after {
+      content: '';
+      display: block;
+      width: 110%;
+      height: 0;
+      margin-left: -5%;
+    }
+    &.top-- {
+      top: -20px;
+      &:before {
+        height: 40px;
+      }
+    }
+    &.bottom-- {
+      bottom: -20px;
+      &:after {
+        height: 40px;
+      }
+    }
+  }
 
 }
+
+
+
+.tilt--right {
+  @extend %tilt;
+  background-color: lightblue;
+  .tilt__bkgd {
+    &:before, &:after {
+      background: lightblue;
+      transform: rotate(2deg);
+    }
+  }
+}
+.tilt--left {
+  @extend %tilt;
+  background-color: purple;
+  .tilt__bkgd {
+    &:before, &:after {
+      background: purple;
+      transform: rotate(-2deg);
+    }
+  }
+}
+.tilt--left + .tilt--right {
+
+}
+
+/*
+
+
+
+
+//INLINE SVG APPROACH
+
+%tilt {
+  .tilt__bkgd {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    height: 40px;
+    max-height: 40px;
+    outline: solid 1px red;
+    svg {
+      position: absolute;
+      left: 0;
+      max-width: 100vw;
+    }
+    &.top-- {
+    bottom: 0;
+//      top: -33px;
+      svg {
+        top: 0;
+      }
+    }
+    &.bottom-- {
+//    bottom: -32px;
+      svg {
+        bottom: 0;
+      }
+    }
+  }
+
+}
+
+
+
+.tilt--right {
+  @extend %tilt;
+  background-color: lightblue;
+}
+
+.tilt--left {
+  @extend %tilt;
+  background-color: purple;
+  path {
+  //  fill: purple;
+  }
+    .tilt__bkgd {
+     // display: none;
+
+    }
+}
+
+
+
+
+
+
+//CCS BKGD APPROACH
 
 %tilt {
   &:before, &:after {
@@ -52,8 +165,7 @@
 }
 
 
-
-/*
+//ROTATED CONTAINER APPROACH
 
 %tilt {
 
@@ -104,6 +216,7 @@
 }
 
  */
+
 
 
 

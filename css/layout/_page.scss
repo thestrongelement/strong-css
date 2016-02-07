@@ -68,8 +68,8 @@ $max-panel-width: 1072px;
 * Page sections
 */
 .page__content {
-//  max-width: 100vw;
-//  overflow: hidden;
+    overflow: hidden;
+    max-width: 100vw;
 }
 .page__section {
     margin-bottom: 32px;
