@@ -17,10 +17,9 @@ html {
 	min-height: 100%;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  font-size: ($font-size--base/16px) * 1em;
+  font-size: $font-size--base;
 	@include media(m) {
-		//font-size: ($font-size--desktop / 16px) * 1em;
+		font-size: $font-size--desktop;
 	}
 }
 
@@ -30,8 +29,6 @@ html {
 * Default styles for root elements
 */
 body {
-    -webkit-font-smoothing: antialiased;
-//    background-color: $background-color--default;
     color: $color__text--default;
     font-family: $font-family--default;
     line-height: $line-height--ratio;

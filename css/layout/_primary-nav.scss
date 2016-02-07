@@ -1,0 +1,30 @@
+/**
+* @file _primary-nav.scss
+* @project strong-css
+* @author The strong element
+*/
+
+%header__link {
+    display: block;
+    padding: 0 24px;
+    &:hover {
+      text-decoration: underline;
+    }
+    &[aria-selected="true"] {
+        cursor: default;
+        text-decoration: none;
+    }
+}
+
+
+/**
+* @section App
+* @component Primary Nav
+* Top-level nav bar for accessing different sections
+*/
+.primary-nav {
+    margin-bottom: 0;
+    .link__ {
+        @extend %header__link;
+    }
+}

@@ -12,14 +12,13 @@
 */
 
 
-
+/*
 nav {
   ul {
     padding-left: 0;
     display: flex;
     & > li {
       flex: 1;
-      background-color: lightgray;
       margin-left: 1px;
       display: inline-block;
       transition: flex 0.15s ease-in;
@@ -31,7 +30,7 @@ nav {
           padding: $padding--base;
       }
       &[aria-selected=true] {
-          background: pink;
+
       }
       &:hover {
           flex: 1.2;
@@ -40,6 +39,6 @@ nav {
   }
 }
 
-
+*/
 
 

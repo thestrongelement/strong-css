@@ -57,35 +57,10 @@
 * @section Nav
 * Base styles for navlists (horizontal)
 */
-.navlist, .navlist--purchase {
+.navlist {
     @extend %nav--horizontal;
 }
 
-.navlist--purchase {
-    color: $color__gray--offset;
-    @include type(s);
-    text-transform: uppercase;
-    margin-bottom: 0;
-    .item__ {
-        margin-right: 50px;
-        @include weight(bold);
-        padding-bottom: 3px;
-        border-style: hidden;
-        border-width: 0 0 2px;
-    }
-    [aria-selected=true] {
-        border-style: solid;
-        &.build-- {
-            color: $color__blue--pastel;
-        }
-        &.grow-- {
-            color: $color__purple--pastel;
-        }
-        &.amplify-- {
-            color: $color__red--pastel;
-        }
-    }
-}
 
 /**
 * @section Nav
@@ -104,4 +79,4 @@
     @extend %nav--flex;
 }
 
-        
+

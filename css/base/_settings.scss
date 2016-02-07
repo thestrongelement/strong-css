@@ -29,11 +29,14 @@ $font-family--desktop: $font-family--default;
 
 //type
 $font-size--base:		20px !default;
+
+$font-size--mobile:		$font-size--base;
+$font-size--desktop:		24px !default;
+
 $line-height--base:	32px !default;
 $line-height--ratio:  $line-height--base / $font-size--base;
 
-$font-size--desktop:	$font-size--base;// * 1.125;
-$font-size--mobile:		$font-size--base;
+
 
 //modular scale
 $em-base: $font-size--base;

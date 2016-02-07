@@ -1,0 +1,112 @@
+/**
+* @file _tilt.scss
+* @project strong-css
+* @author The strong element
+*/
+
+/**
+* @section Layout
+* Global header
+*/
+
+
+
+
+
+.page__section {
+
+}
+
+%tilt {
+  &:before, &:after {
+    content: '';
+    display: block;
+    position: relative;
+    width: 100vw;
+    height: 10vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &:before {
+    top: -9.9vh;
+    background-image: url('data:image/svg+xml;utf8,<svg width="688" height="38" viewBox="0 0 688 38" xmlns="http://www.w3.org/2000/svg"><path d="M688 0v38H0L688 0z" fill="red" fill-rule="evenodd"/></svg>');
+  }
+  &:after {
+    bottom: -9.9vh;
+    background-image: url('data:image/svg+xml;utf8,<svg width="688" height="38" viewBox="0 0 688 38" xmlns="http://www.w3.org/2000/svg"><path d="M688 0v38H0L688 0z" fill="yellow" fill-rule="evenodd"/></svg>');
+
+
+
+  }
+}
+
+
+.tilt--right {
+  @extend %tilt;
+  background-color: red;
+}
+
+.tilt--left {
+  @extend %tilt;
+  background-color: red;
+}
+
+
+
+/*
+
+%tilt {
+
+  padding: 80px 20px 160px;
+
+  border-bottom: solid 1px black;
+  background-color: yellow;
+  margin: 0;
+  margin-bottom: -40px;
+  min-height: 50vh;
+  position: relative;
+
+  .tilt__bkgd {
+    min-width: 105vw;
+    position: absolute;
+    top: -40px;
+    left: -10px;
+
+    height: 100%;
+    width: 100%;
+
+  }
+  .tilt__content {
+  position: relative;
+  z-index: 1;
+    padding: 0;
+
+  }
+}
+
+.tilt--left {
+  @extend %tilt;
+  .tilt__bkgd {
+    transform: rotate(-2deg);
+    background-color: lightgray;
+  }
+  &:last-child {
+    margin-bottom: -80px;
+  }
+
+}
+.tilt--right {
+  @extend %tilt;
+  .tilt__bkgd {
+    transform: rotate(2deg);
+    background-color: pink;
+  }
+}
+
+ */
+
+
+
+
+
+
