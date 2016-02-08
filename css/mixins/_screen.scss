@@ -1,18 +1,21 @@
-@mixin screen($size) {
+@mixin screen($size, $dimension: width) {
+  @if $size == xxs {
+    @media (min-#{$dimension}: $screen--xxsmall) { @content; }
+  }
   @if $size == xs {
-    @media (min-width: $screen--xsmall) { @content; }
+    @media (min-#{$dimension}: $screen--xsmall) { @content; }
   }
   @else if $size == s {
-    @media (min-width: $screen--small) { @content; }
+    @media (min-#{$dimension}: $screen--small) { @content; }
   }
   @else if $size == m {
-    @media (min-width: $screen--medium) { @content; }
+    @media (min-#{$dimension}: $screen--medium) { @content; }
   }
   @else if $size == l {
-    @media (min-width: $screen--large) { @content; }
+    @media (min-#{$dimension}: $screen--large) { @content; }
   }
   @else if $size == xl {
-    @media (min-width: $screen--xlarge) { @content; }
+    @media (min-#{$dimension}: $screen--xlarge) { @content; }
   }
-
 }
+

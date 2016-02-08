@@ -45,20 +45,20 @@
 
 .tilt--right {
   @extend %tilt;
-  background-color: lightblue;
+  background-color: white;
   .tilt__bkgd {
     &:before, &:after {
-      background: lightblue;
+      background: white;
       transform: rotate(2deg);
     }
   }
 }
 .tilt--left {
   @extend %tilt;
-  background-color: purple;
+  background-color: white;
   .tilt__bkgd {
     &:before, &:after {
-      background: purple;
+      background-color: white;
       transform: rotate(-2deg);
     }
   }
