@@ -2,93 +2,106 @@
 .app--thestrongelement {
 
 
-  .page--index {
-    background-color: #EA508B;
-    &.ui--flex {
-      flex-direction: row-reverse;
-      @include screen(xs, height) {
-        flex-direction: column;
-      }
-      overflow-x: hidden;
+  .app__panel {
+    position: absolute;
+    width: 20%;
+    height: 33vh;
+    &.contact-- {
+      top: 0;
+      transform: skewY(-1.5deg);
     }
-
-
-    .ui__panel {
-
-      &.index-- {
-//        background-color: #EA508B;
-        order: 1;
-        padding-bottom: 200px;
-//        margin-bottom: -80px;
-      }
+    &.work-- {
+      top: 33vh;
+      transform: skewY(2.5deg);
+    }
+    &.about-- {
+      top: 67vh;
+      transform: skewY(3.5deg);
+    }
+    &[aria-selected=true] {
+      height: auto;
+      width: 80%;
+      left: 20%;
+    }
+    @include screen(xs, height) {
+      width: 100%;
+      height: 80px;
       &.contact-- {
-        background-color: #9255B5;
-        order: 4;
-        transform: rotate(-2deg);
-        position: relative;
         top: -20px;
       }
-      &.about-- {
-        background-color: #8CC876;
-        order: 3;
-        transform: rotate(1deg);
-        position: relative;
-        top: 20px;
-
-      }
       &.work-- {
-        background-color: #30C3F9;
-        order: 2;
-        transform: rotate(3deg);
-        position: relative;
-        top: 40px;
-margin-top: -20px;
+        top: auto;
+        bottom: 10px;
       }
-
-      @include screen(m) {
-        &.contact-- {
-           order: 1;
-        }
+      &.about-- {
+        top: auto;
+        bottom: -50px;
       }
-      @include screen(m, height) {
-        &.contact-- {
-           order: 1;
-        }
-      }
-
-      @include screen(xxs, height) {
-        &.index-- {
-  //        order: 4;
-        }
-      }
-      @include screen(xs, height) {
-        &.index-- {
-    //      order: 2;
-        }
-      }
-
-      @include screen(xl) {
-        &.contact-- {
-   //       order: 1;
-        }
-      }
-
-
       &[aria-selected=true] {
-        flex: 10;
-        z-index: 1;
-        position: relative;
+//        height: auto;
+        width: 100%;
+        left: 0;
       }
     }
 
+
+
+    &.index-- {
+
+
+    }
+
+
+
+
+
+
+
+    &[aria-selected=false] {
+      position: fixed;
+    }
+
+    &.contact-- {
+      background-color: #9255B5;
+      z-index: 10;
+     // top: -20px;
+     // transform: skewY(-1.5deg);
+    }
+    &.index-- {
+      //top: 0px;
+    }
+    &.about-- {
+    //  transform: skewY(3.5deg);
+      background-color: #8CC876;
+      bottom: -50px;
+    }
+    &.work-- {
+      background-color: #30C3F9;
+      bottom: 10px;
+   //   transform: skewY(2.5deg);
+    }
+
+
+
+
+
+
   }
 
 
 
-  .page__section:first-child {
-    min-height: 90vh;
-  }
 
+  .page--index {
+    .page__section:first-child {
+      min-height: 90vh;
+      background-color: #EA508B;
+    }
+    .page__header {
+      background-color: #EA508B;
+      padding-top: 100px;
+      margin-bottom: 0;
+    }
+  }
 
 
 

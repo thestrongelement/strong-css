@@ -12,7 +12,9 @@
 
 %tilt {
 
-  margin-bottom: 120px;
+  //margin-bottom: 120px;
+  margin-top: -40px;
+  padding-bottom: 40px;
   .tilt__bkgd {
     padding: 0;
     position: relative;
@@ -45,10 +47,10 @@
 
 .tilt--right {
   @extend %tilt;
-  background-color: white;
+  background-color: lightblue;
   .tilt__bkgd {
     &:before, &:after {
-      background: white;
+      background: lightblue;
       transform: rotate(2deg);
     }
   }
@@ -58,7 +60,7 @@
   background-color: white;
   .tilt__bkgd {
     &:before, &:after {
-      background-color: white;
+      background: white;
       transform: rotate(-2deg);
     }
   }
