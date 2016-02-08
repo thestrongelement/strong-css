@@ -1,0 +1,107 @@
+/**
+* @file layout/flow
+* @project strong-css
+* @author The strong element
+*/
+
+/**
+* @section Flow
+* Layout classes
+*/
+
+/**
+* Using .flow__flex will make all the immediate children the same height
+* Add .flow__flex--col — or shortcut "col--" to child containers to fill the horizontal space
+*/
+%flow__flex {
+  min-height: 64px;
+  @include media(s) {
+    display: flex;
+  }
+  padding: 0;
+  & > .flow__item, & > .item-- {
+    flex: 1;
+  }
+}
+.flow__flex {
+  @extend %flow__flex;
+}
+.flow__flex--vertical {
+  @extend %flow__flex;
+  flex-direction: column;
+}
+.flow__item--2, .item--2 {
+  flex: 2;
+}
+.flow__item--3, .item--3 {
+  flex: 3;
+}
+.flow__item--4, .item--5 {
+  flex: 5;
+}
+.flow__item--5, .item--5 {
+  flex: 5;
+}
+
+%span--item {
+  display: inline-block;
+  margin-right: $padding--base;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.flow--3-1 {
+  @extend %span--item;
+  width: calc((100%/3) - (#{$padding--base}*2/3));
+}
+.flow--3-2 {
+  @extend %span--item;
+  width: calc(((100%/3) - (#{$padding--base}*2/3))*2 + #{$padding--base});
+}
+
+.flow--4-1 {
+  @extend %span--item;
+  width: calc((100%/4) - (#{$padding--base}*3/4));
+}
+.flow--4-2 {
+  @extend %span--item;
+  width: calc(((100%/3) - (#{$padding--base}*3/4))*2 + #{$padding--base});
+}
+.flow--4-3 {
+  @extend %span--item;
+  width: calc(((100%/3) - (#{$padding--base}*3/4))*3 + #{$padding--base});
+}
+.flow--6-1 {
+  @extend %span--item;
+  width: calc((100%/6) - (#{$padding--base}*5/6));
+}
+.flow--6-2 {
+  @extend %span--item;
+  width: calc(((100%/6) - (#{$padding--base}*5/6))*2 + #{$padding--base});
+}
+.flow--6-3 {
+  @extend %span--item;
+  width: calc(((100%/6) - (#{$padding--base}*5/6))*3 + #{$padding--base}*2);
+}
+.flow--6-4 {
+  @extend %span--item;
+  width: calc(((100%/6) - (#{$padding--base}*5/6))*4 + #{$padding--base}*3);
+}
+.flow--6-5 {
+  @extend %span--item;
+  width: calc(((100%/6) - (#{$padding--base}*5/6))*5 + #{$padding--base}*4);
+}
+
+
+
+// flow helpers
+.flow__clear {
+  overflow: auto;
+}
+.flow__block {
+  display: block;
+}
+.flow__inline {
+  display: inline;
+}

@@ -1,0 +1,79 @@
+/**
+* @file _forms.scss
+* @project strong-css
+* @author The strong element
+*/
+
+/**
+* @section Filter Blocks
+* Default styles for form field blocks
+*/
+%filter {
+    max-height: 40px;
+    position: relative;
+    display: inline-block;
+    border: solid 1px $color__gray--d;
+    border-radius: 25px;
+    form {
+        display: inline;
+    }
+    button {
+        padding: 8px 18px;
+        @include type(s);
+        height: 38px;
+        max-height: 38px;
+    }
+    [aria-haspopup=true]:after, .prev--, .next-- {
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI5IiB2aWV3Qm94PSIwIDAgNiA5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0uMTA1IDQuMzA3bC0uMDEtLjAxMkw0LjM5OC0uMDFsLjg1Mi44NS0zLjQ3NiAzLjQ3NyAzLjQ2NCAzLjQ2Ni0uODUuODVMLjA4MyA0LjMzbC4wMjItLjAyM3oiIGZpbGw9IiNDMUMxQzUiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==');
+    }
+    [aria-haspopup=true] {
+      &:after {
+        display: inline-block;
+        content: '';
+        width: 6px;
+        height: 9px;
+        margin-left: 16px;
+        transform: rotate(-90deg);
+      }  
+    }
+    .prev--, .next-- {
+        padding-left: 16px;
+        padding-right: 16px;
+        background-position: 65% 50%;
+    }
+    .next-- {
+        transform: rotate(180deg);
+    }
+}
+.filter, .filter--datepicker {
+    @extend %filter;
+}
+.filter--datepicker {
+    .select-- {
+        border-right: solid 1px $color__gray--d;
+        border-left: solid 1px $color__gray--d;
+    }
+}
+
+
+
+.filter__options {
+    position: absolute;
+    z-index: 1;
+    width: 300px;
+    @include type(xs);
+//     top: 48px;
+//     left: 16px;
+    top: -10px;
+    left: 350px; 
+    padding: 0;
+    background-color: rgba($color__white,0.5);
+    .form__item {
+        display: inline-block;
+        width: 48%;
+        margin-bottom: 0;
+    }
+}
+

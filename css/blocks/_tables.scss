@@ -1,0 +1,57 @@
+/**
+* @file _tables.scss
+* @project strong-css
+* @author The strong element
+*/
+
+
+/**
+* @section Tables
+* Base styles for a simple table
+*/
+.table__caption--no-data {
+    text-align: center;
+    @include type(l);
+    margin-bottom: 0;
+    padding-top: 20vh;
+//    padding-bottom: 80px;
+    min-height: 50vh;
+}
+.table--simple {
+    margin-bottom: 32px;
+    th {
+        color: $color__white--a;
+        background-color: $color__gray--c;
+        &.sortable-- {
+            cursor: pointer;
+            position: relative;
+            padding-right: 32px;
+        }
+        &[aria-sort] {
+            background-color: $color__gray--b;
+            &:after {
+                content: '';
+                width: 9px;
+                height: 6px;
+                position: absolute;
+                right: 16px;
+                top: 16px;
+                background-repeat: no-repeat;
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOSIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgOSA2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik00LjY2MiA1Ljg3M2wtLjAxMi4wMUwuMzQ1IDEuNThsLjg1LS44NTIgMy40NzcgMy40NzZMOC4xMzguNzRsLjg1Ljg1LTQuMzA0IDQuMzA1LS4wMjItLjAyMnoiIGZpbGw9InJnYmEoMjU1LCAyNTUsIDI1NSwgMS4wKSIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+');
+            }
+        }
+        &[aria-sort=ascending] {
+            &:after {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    td {
+        border-color: $color__white--c;
+        border-width: 1px;
+        border-style: solid;
+    }    
+    .status__ {
+        @include type(s);
+    }
+}

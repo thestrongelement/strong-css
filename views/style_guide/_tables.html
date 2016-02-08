@@ -1,0 +1,78 @@
+
+<!--
+    ///// SIMPLE TABLE
+    .table--simple
+    :   table element
+    th
+    :   table header
+        &.sortable--
+        :   required if col is sortable
+        &[aria-sort]
+        :   ascending || descending (attr allowed on only one header at a time)
+    .status__
+    :   status message
+    /////
+-->
+
+<table class="table--simple" role="grid" aria-readonly="true">
+	<thead>
+		<tr>
+			<th class="sortable--" role="columnheader" aria-sort="descending" data-sortable="true">Date</th>
+			<th class="sortable--" role="columnheader" data-sortable="true">Type</th>
+			<th class="sortable--" role="columnheader" data-sortable="true">Amount</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td> 01/26/2016 </td>
+			<td> Lorem Ipsum <span class="status__">(pending)</span> </td>
+			<td> $1,000.00 </td>
+		</tr>
+		<tr>
+			<td> 01/25/2016 </td>
+			<td> Excepteur sint cupidatat </td>
+			<td> $1,000.00 </td>
+		</tr>
+		<tr>
+			<td> 01/25/2016 </td>
+			<td> Lorem Ipsum </td>
+			<td> $1,000.00 </td>
+		</tr>
+		<tr>
+			<td> 01/23/2016 </td>
+			<td> Occaecat </td>
+			<td> ($500.12) </td>
+		</tr>
+		<tr>
+			<td> 01/25/2016 </td>
+			<td> Excepteur sint cupidatat </td>
+			<td> $1,000.00 </td>
+		</tr>
+		<tr>
+			<td> 01/25/2016 </td>
+			<td> Lorem Ipsum </td>
+			<td> $1,000.00 </td>
+		</tr>
+		<tr>
+			<td> 01/25/2016 </td>
+			<td> Excepteur sint cupidatat </td>
+			<td> $1,000.00 </td>
+		</tr>
+		<tr>
+			<td> 01/25/2016 </td>
+			<td> Lorem Ipsum </td>
+			<td> $1,000.00 </td>
+		</tr>
+		<tr>
+			<td> 01/25/2016 </td>
+			<td> Excepteur sint cupidatat </td>
+			<td> $1,000.00 </td>
+		</tr>
+		<tr>
+			<td> 01/25/2016 </td>
+			<td> Lorem Ipsum </td>
+			<td> $1,000.00 </td>
+		</tr>
+	</tbody>
+</table>
+

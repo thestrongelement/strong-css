@@ -1,0 +1,48 @@
+
+<!--
+    ///// TABLIST
+
+    [role=tablist]
+    :   tabs wrapper container
+
+    [role=tab]
+    :   tab container
+        &[aria-controls]
+        :   matches ID of tabpanel
+        &[aria-selected]
+        :   true || false toggle if selected
+
+    /////
+-->
+
+<ul class=tabs__ role=tablist>
+    <li id=tab-1 class=tab__ role=tab aria-controls=tabpanel-1 aria-selected=true>TAB 1</li>
+    <li id=tab-2 class=tab__ role=tab aria-controls=tabpanel-2 aria-selected=false>TAB 2</li>
+    <li id=tab-3 class=tab__ role=tab aria-controls=tabpanel-3 aria-selected=false>TAB 3</li>
+</ul>
+
+
+<!--
+    ///// TABPANEL
+
+    [role=tabpanel]
+    :   tabs target container
+
+    [aria-labeled-by]
+    :   matches ID of trigger tab
+
+    [aria-hidden]
+    :   true || false toggle if active
+
+    /////
+-->
+
+<div class=panel__ id=tabpanel-1 role=tabpanel aria-labeled-by=tab-1 aria-hidden=false>
+    PANEL 1
+</div>
+<div class=panel__ id=tabpanel-2 class=tabpanel__ role=tabpanel aria-labeled-by=tab-2 aria-hidden=true>
+    PANEL 2
+</div>
+<div class=panel__ id=tabpanel-3 class=tabpanel__ role=tabpanel aria-labeled-by=tab-3 aria-hidden=true>
+    PANEL 3
+</div>

@@ -17,3 +17,75 @@ button {
 }
 
 
+
+/**
+* @section Form Elements
+* Default styles for form elements
+*/
+fieldset {
+    border: none;
+    padding: 0;
+}
+legend, .legend__ {
+
+}
+label, .label__ {
+
+}
+textarea, input[type]:not([type=radio]):not([type=checkbox]):not([type=submit]), select {
+    width: 100%;
+    min-height: 34px;
+    font-size: 0.9375rem;
+    line-height: 2;
+    box-sizing: border-box;
+    padding: 0 0.4em;
+    outline: none;
+    border-color: $color__form--default;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 0.1333em;
+    box-shadow: $form-box-shadow;
+    //states
+    &[disabled] {
+        color: $color__form--disabled;
+        border-color: $color__form--disabled;
+    }
+    //the .has-focus class is for demo purposes only
+    &:focus, &.has-focus {
+        border-color: $color__form--focus;
+    }
+    &.is-invalid {
+        border-color: $color__form--error;
+    }
+    &.is-valid {
+        border-color: $color__form--valid;
+    }
+}
+input[type=radio], input[type=checkbox] {
+    margin-right: 0.5rem;
+}
+
+select {
+    @include appearance(none);
+    background-color: $color__form--fill;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOSIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgOSA2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik00LjY2MiA1Ljg3M2wtLjAxMi4wMUwuMzQ1IDEuNThsLjg1LS44NTIgMy40NzcgMy40NzZMOC4xMzguNzRsLjg1Ljg1LTQuMzA0IDQuMzA1LS4wMjItLjAyMnoiIGZpbGw9InJnYmEoMTQ0LCAxNDQsIDE0NSwgMS4wKSIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 0.8em) center;
+    padding-right: 25px;
+    &.is-invalid {
+        border-color: $color__form--error;
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOSIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgOSA2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0aXRsZT5jaXJjdW1mbGV4LWludmVydGVkPC90aXRsZT48cGF0aCBkPSJNNC42NjIgNS44NzNsLS4wMTIuMDFMLjM0NSAxLjU4bC44NS0uODUyIDMuNDc3IDMuNDc2TDguMTM4Ljc0bC44NS44NS00LjMwNCA0LjMwNS0uMDIyLS4wMjJ6IiBmaWxsPSJyZ2JhKDIwNCwgMTI0LCAxMjcsIDEuMCkiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==');
+    }
+}
+@-moz-document url-prefix() {
+   // Firefox
+   select {
+        padding-top: 0.2666em;
+    }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+   // IE10+ specific styles go here
+   select {
+        padding-right: 0;
+   }
+}

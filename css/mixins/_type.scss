@@ -1,0 +1,57 @@
+@mixin type($size: reg) {
+  @if $size == xxs {
+    font-size: $font-size--xxs;
+    line-height: 2;
+  }
+  @if $size == xs {
+    font-size: $font-size--xs;
+    line-height: 1.33333333;
+  }
+  @if $size == s {
+    font-size: $font-size--s;
+    line-height: 1.14285714;
+    font-weight: 600;
+  }
+  @if $size == reg {
+    font-size: $font-size--base;
+    line-height: $line-height--base;
+  }
+  @if $size == m {
+    font-size: $font-size--m;
+    line-height: 1.33333333;
+    font-weight: 300;
+  }
+  @if $size == l {
+    font-size: $font-size--l;
+    line-height: 1.25;
+    font-weight: 300;
+  }
+  @if $size == xl {
+    font-size: $font-size--xl;
+    line-height: 1.16666667;
+    font-weight: 300;
+  }
+  @if $size == xxl {
+    font-size: $font-size--xxl;
+    line-height: 1.14285714;
+    font-weight: 300;
+  }
+}
+
+@mixin weight($weight: reg) {
+  @if $weight == light {
+    font-weight: 300;
+  }
+  @if $weight == med {
+    font-weight: 500;
+  }
+  @if $weight == semi {
+    font-weight: 600;
+  }
+  @if $weight == reg {
+    font-weight: 400;
+  }
+  @if $weight == bold {
+    font-weight: 700;
+  }
+}

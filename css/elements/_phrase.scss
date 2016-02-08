@@ -20,3 +20,26 @@ li {
 .phrase--big {
   @extend %font-size--xl;
 }
+
+
+
+
+/**
+* @section Phrases Elements
+* Default styles for phrase elements
+*/
+img {
+  margin: 0;
+  max-width: 100%;
+}
+a {
+  color: $color__link--default;
+  text-decoration: none;
+  &:hover {
+    color: $color__link--hover;
+  }
+  &:active, &:focus {
+    color: $color__link--hover;
+    outline: none;
+  }
+}

@@ -1,0 +1,119 @@
+<!--
+    ///// TABLE PAGINATION
+    .pagination
+    :   wrapper element
+    .list__
+    :   navlist wrapper
+    .link__
+        &[aria-selected=]
+        :   true || false toggle if active page
+        &.prev--
+        :   add class if item is active_index - 1
+        &.next--
+        :   add class if item is active_index + 1
+        &[role=button]
+        :   for actual links only
+
+        &.placeholder--
+        :   only for ellipsis placeholder non-links
+    --/////
+-->
+
+<nav class="pagination" aria-controls="table-1">
+    <ul class="navlist list__">
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="true">1</a>
+        </li>
+        <li class="item__">
+            <a role="button" class="link__ next--" aria-selected="false">2</a>
+        </li>
+    </ul>
+</nav>
+
+<nav class="pagination" aria-controls="table-1">
+    <ul class="navlist list__">
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false">1</a>
+        </li>
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false">2</a>
+        </li>
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false" >3</a>
+        </li>
+        <li class="item__">
+            <a role="button" class="link__ prev--" aria-selected="false">4</a>
+        </li>
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="true">5</a>
+        </li>
+
+    </ul>
+</nav>
+
+<nav class="pagination" aria-controls="table-1">
+    <ul class="navlist list__">
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="true">1</a>
+        </li>
+        <li class="item__">
+            <a role="button" class="link__ next--" aria-selected="false">2</a>
+        </li>
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false" >3</a>
+        </li>
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false">4</a>
+        </li>
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false">5</a>
+        </li>
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false">6</a>
+        </li>
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false">7</a>
+        </li>
+        <li class="item__">
+            <a class="link__ placeholder--">..</a>
+        </li>
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false">21</a>
+        </li>
+    </ul>
+</nav>
+
+<nav class="pagination" aria-controls="table-1">
+    <ul class="navlist list__">
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false">1</a>
+        </li>
+        <li class="item__">
+            <a class="link__ placeholder--">..</a>
+        </li>
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false">4</a>
+        </li>
+        <li class="item__">
+            <a role="button" class="link__ prev--" aria-selected="false">5</a>
+        </li>
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="true">6</a>
+        </li>
+        <li class="item__">
+            <a role="button" class="link__ next--" aria-selected="false">7</a>
+        </li>
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false">8</a>
+        </li>
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false" >9</a>
+        </li>
+        <li class="item__">
+            <a class="link__ placeholder--">..</a>
+        </li>
+        <li class="item__">
+            <a role="button" class="link__" aria-selected="false">21</a>
+        </li>
+    </ul>
+</nav>

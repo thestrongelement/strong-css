@@ -19,6 +19,8 @@
 */
 %ui {
   height: 100vh;
+  overflow: hidden;
+  width: 100vw;
 }
 .ui {
   @extend %ui;
@@ -31,6 +33,15 @@
 %ui--flex {
   @extend %ui;
   display: flex;
+  .ui__panel {
+    overflow: scroll;
+    flex: 1;
+    &[aria-selected=true] {
+      flex: 1;
+
+    }
+  }
+
 }
 .ui--flex {
   @extend %ui--flex;
@@ -86,6 +97,10 @@
   @extend %ui__view;
   display: flex;
 }
+
+
+
+
 
 /**
 *  .ui__content

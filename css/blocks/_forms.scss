@@ -1,0 +1,187 @@
+/**
+* @file _forms.scss
+* @project strong-css
+* @author The strong element
+*/
+
+/**
+* @section Form Blocks
+* Default styles for form field blocks
+*/
+%form__item {
+    outline: solid 1px blue;
+
+}
+
+.form__set {
+    &[disabled], &.is-hidden {
+        display: none;
+    }
+}
+
+.form__item {
+    position: relative;
+    margin-bottom: $margin-bottom--default;
+    //item states
+    &.inline-- {
+        display: inline-block;
+    }
+    //children
+    label, .label__ {
+        display: block;
+        margin-bottom: 0.375em;
+    }
+    .note__ {
+        position: absolute;
+        display: block;
+        color: $color__form--default;
+        font-size: 0.75rem;
+        line-height: 1.333333;
+        padding-top: 0.5em;
+        &.is-error {
+            color: $color__form--error;
+        }
+    }
+    .message__ {
+        display: block;
+    }
+    //descendant states
+    &.has-error {
+        .note__ {
+            color: $color__form--error;
+        }
+    }
+    //validation hint on top of input
+    .hint__ {
+        transition: all 0.2s;
+        position: relative;
+        display: block;
+        color: $color__form--default;
+        &:before {
+            position: absolute;
+            right: 0.8em;
+            top: -24px;
+            pointer-events: none;
+            font-size: 0.75rem;
+            line-height: 1.333333;
+        }
+        &.is-error:before {
+            color: $color__form--error;
+            content: "oops";
+        }
+        &.is-required:before {
+            content: "required";
+        }
+        &.is-visa:before {
+            content: "VISA";
+        }
+        &.is-amer:before {
+            content: "AMEX";
+        }
+        &.is-mast:before {
+            content: "Mastercard";
+        }
+        &.is-disc:before {
+            content: "Discover";
+        }
+    }
+    //hide on focus
+    :focus + .hint__ {
+        //opacity: 0;
+    }
+    //relational states
+    .is-valid + .hint__ {
+        color: $color__form--valid;
+    }
+    .is-invalid + .hint__ {
+        color: $color__form--error;
+    }
+}
+
+
+
+.form--payment {
+    .form__set {
+        @include clearfix;
+    }
+    input:not([type=radio]), select {
+        width: 100%;
+    }
+    a {
+        color: $color__blue--pastel;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .form__item {
+        float: left;
+        @include span-columns(4 of 8);
+        &:nth-child(2n + 2):not(.expiration--):not(.state--) {
+            @include omega;
+        }
+        @include media($xs) {
+            @include span-columns(4 of 4);
+        }
+        &.type-- {
+            @include span-columns(8 of 8);
+            br {
+                display: none;
+            }
+            label {
+                display: inline;
+                padding-right: 25px;
+            }
+            @include media($xs) {
+                br {
+                    display: inline;
+                }
+            }
+        }
+        &.expiration-- {
+            @include span-columns(3 of 8);
+            select {
+                width: 48%;
+            }
+            @include media($xs) {
+                @include span-columns(3 of 4);
+            }
+        }
+        &.cvv-- {
+            .hint__ {
+                display: none;
+            }
+            .note__ {
+                white-space: nowrap;
+                width: 60px;
+                margin-left: calc(100% - 60px);
+                text-align: right;
+            }
+            @include span-columns(1 of 8);
+            @include omega;
+            @include media($xs) {
+                @include span-columns(1 of 4);
+            }
+        }
+        &.state-- {
+            @include span-columns(2 of 8);
+            @include media($xs) {
+                @include span-columns(2 of 4);
+            }
+        }
+        &.zip-- {
+            @include span-columns(2 of 8);
+            @include omega;
+            @include media($xs) {
+                @include span-columns(2 of 4);
+            }
+            .note__ {
+                white-space: nowrap;
+            }
+        }
+        &.update-- {
+            @include span-columns(8 of 8);
+            margin-top: -($margin-bottom--default/1.5);
+        }
+    }
+}
+

@@ -1,0 +1,29 @@
+/**
+* @file _app.scss
+* @project strong-css
+* @author The strong element
+*/
+
+/**
+* @section App
+* Global header
+*/
+.app__header {
+
+
+}
+
+/**
+* @section App
+* Global header layout
+*/
+.app__logo {
+    margin-left: 24px;
+}
+.app__nav {
+    @include clearfix;
+    [aria-selected="true"] {
+      color: red;
+    }
+}
+

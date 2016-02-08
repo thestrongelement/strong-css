@@ -1,0 +1,82 @@
+/**
+* @file _nav.scss
+* @project strong-css
+* @author The strong element
+*/
+
+/**
+* @section Nav
+* Default styles for navs
+*/
+%nav--horizontal {
+    @include clearfix;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    .item__ {
+        float: left;
+        transition: all $time--base;
+    }
+    [aria-selected=true] {
+        cursor: default;
+    }
+    a {
+        color: inherit;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+%nav--vertical {
+    list-style: none;
+    padding: 0;
+    &[aria-hidden=true] {
+        display: none;
+    }
+    [aria-selected=true] {
+        cursor: default;
+    }
+    a {
+        color: inherit;
+    }
+}
+%nav--flex {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    .item__ {
+        flex: 1;
+    }
+    [aria-selected=true] {
+        cursor: default;
+    }
+}
+
+/**
+* @section Nav
+* Base styles for navlists (horizontal)
+*/
+.navlist {
+    @extend %nav--horizontal;
+}
+
+
+/**
+* @section Nav
+* Base styles for navlists (dropdowns)
+*/
+.navlist--dropdown {
+    @extend %nav--vertical;
+}
+
+
+/**
+* @section Nav
+* Base styles for flex navlists (pagination)
+*/
+.navlist--flex {
+    @extend %nav--flex;
+}
+
+

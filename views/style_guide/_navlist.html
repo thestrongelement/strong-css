@@ -1,0 +1,23 @@
+
+<!--
+    ///// NAVLIST
+
+    .navlist
+    :   list wrapper container
+
+    .item__
+    :   item container
+        &[aria-controls]
+        :   matches ID of target panel
+        &[aria-selected]
+        :   true || false toggle if selected
+
+    /////
+-->
+
+<ul class=navlist>
+    <li class=item__ aria-controls=panel-1 aria-selected=true>TAB 1</li>
+    <li class=item__ aria-controls=panel-2 aria-selected=false>TAB 2</li>
+    <li class=item__ aria-controls=panel-3 aria-selected=false>TAB 3</li>
+</ul>
+

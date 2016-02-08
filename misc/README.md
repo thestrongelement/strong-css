@@ -1,36 +1,8 @@
-# Strong CSS
-
-Bringing the cascade back to CSS. Class-based, component-centric, gets the job done.
-
-## Structure
-
-`vendor`
-
-`base`
-
-`mixins`
-
-`elements`
-
-`blocks`
-
-`layout`
-
-`components`
-
-`views`
-
-`helpers`
-
-
---- 
-
-
 # Modified BEM
 
-While BEM notation is excellent in terms of keeping presentation concerns separated and lends itself well to component architecture, it can lead to repetition. 
+While BEM notation is excellent in terms of keeping presentation concerns separated and lends itself well to component architecture, it can lead to (seemingly needless) repetition. 
 
-True BEM does not encourage descendant relationships in CSS `foo bar {}` focusing instead on class names that define the relationship like `foo__bar {}`. ) However, CSS processors, like SASS, emphasize descendant relationships often leading to complicated nesting structures. The former is good for performance, the latter is bad.
+True BEM does not encourage descendant relationships in CSS `foo bar {}` focusing instead on class names that define the relationship like `foo__bar {}`. CSS processors, on the other hand, tend to emphasize descendant relationships often leading to complicated nesting structures. The former is good for performance, the latter is bad.
 
 Let's find a middle ground.
 
@@ -96,7 +68,7 @@ This is the equivalent of `.tablist__tab--locked` in BEM.
 
 As with elements classes, these should never be defined globally. It may be tempting to do this, but use global helpers instead.
 
-Additionally, these should be considered rendered, static classes and not dynamically modified. Use a helper like `.is-locked` or an attribute like `disabled` for what best suits the user interaction.
+Additionally, these should be considered rendered, static classes and not dynamically modified with scripts. Again, use global helpers for that.
 
 ## Mix it up
 

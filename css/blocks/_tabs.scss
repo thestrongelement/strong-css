@@ -1,0 +1,38 @@
+/**
+* @file _tabs.scss
+* @project strong-css
+* @author The strong element
+*/
+
+/**
+* @section Tabs
+* Default styles for tablist
+*/
+%tablist {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    [role=tab] {
+        border: solid 1px black;     
+        padding: 20px;    
+    }
+    [aria-selected=true] {
+        background-color: lightgray;
+        cursor: default;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+
+}
+//base rules
+[role=tablist] {
+    @extend %tablist;
+}
+
+
+[role=tabpanel] {
+    &[aria-hidden=true] {
+        display: none; 
+    }
+}

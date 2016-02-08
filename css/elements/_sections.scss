@@ -26,7 +26,7 @@ header, footer {
 }
 article {
   & > section {
-    border-top: solid 16px white;
+//    border-top: solid 16px white;
   }
 }
 .section--no-side-padding {
@@ -34,4 +34,8 @@ article {
 	  padding-left: 0;
 	  padding-right: 0;
 	}
+}
+
+section {
+  @include clearfix;
 }
