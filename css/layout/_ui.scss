@@ -55,7 +55,6 @@
    position: absolute;
   .ui__panel, & > .panel__ {
     position: absolute;
-    overflow: scroll;
     &[aria-selected=true] {
       z-index: 10;
     }

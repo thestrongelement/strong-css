@@ -17,6 +17,9 @@
 
 %tilt {
   position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-bottom: -50px;
   & > .content__ {
     position: relative;
     z-index: 10;
@@ -35,21 +38,25 @@
   }
 
 }
-.tilt--left {
+.tilt--right {
   @extend %tilt;
-  background-color: lightblue;
+  margin-top: -50px;
   &:before {
+    background-color: #D8FFF6;
     transform: skewY(2deg);
   }
 }
-.tilt--right {
+.tilt, .tilt--left {
   @extend %tilt;
-  background-color: lightgreen;
   &:before {
+    background-color: white;
     transform: skewY(-2deg);
   }
-
 }
+
+
+
+
 
 
 /*

@@ -1,5 +1,192 @@
-
-.ui {
-  background: red;
+.app__header {
+  z-index: 100;
+  padding: 0;
+  max-width: 100vw;
+}
+.app__logo {
+  display: none;
 
 }
+.primary-nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+
+  .item__ {
+    outline: solid 1px red;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+  }
+  .contact-- {
+    top: 40px;
+  }
+  .work-- {
+    bottom: 200px;
+  }
+  .about-- {
+    bottom: 40px;
+  }
+
+}
+
+.social-nav {
+  top: 56px;
+ // max-width: 100vw;
+
+  display: flex;
+  @include screen(s) {
+float: right;
+//    position: absolute;
+top: 20px;
+left: 500px;
+
+ //   background-color: lime;
+  }
+    //background: green;
+
+  .item__ {
+    //outline: solid 1px red;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    margin-right: 40px;
+  }
+}
+
+
+
+
+
+.page__section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  &:not(.tilt,.tilt--right) {
+    background-color: white;
+  }
+}
+
+
+
+
+.ui__panel {
+  &.index-- {
+    padding-top: 240px;
+    background: #EA508B;
+  //  background: #50B0EA;
+  }
+}
+
+
+/*
+.app--thestrongelement {
+
+
+  .app__panel, .panel__ {
+    position: absolute;
+    width: 20%;
+    height: 33vh;
+    &.contact-- {
+      top: 0;
+      transform: skewY(-1.5deg);
+    }
+    &.work-- {
+      top: 33vh;
+      transform: skewY(2.5deg);
+    }
+    &.about-- {
+      top: 67vh;
+      transform: skewY(3.5deg);
+    }
+    &[aria-selected=true] {
+      height: auto;
+      width: 80%;
+      left: 20%;
+    }
+    @include screen(xs, height) {
+      width: 100%;
+      height: 80px;
+      &.contact-- {
+        top: -20px;
+      }
+      &.work-- {
+        top: auto;
+        bottom: 10px;
+      }
+      &.about-- {
+        top: auto;
+        bottom: -50px;
+      }
+      &[aria-selected=true] {
+//        height: auto;
+        width: 100%;
+        left: 0;
+      }
+    }
+
+
+
+    &.index-- {
+
+
+    }
+
+
+
+
+
+
+
+    &[aria-selected=false] {
+      position: fixed;
+    }
+
+    &.contact-- {
+      background-color: #9255B5;
+      z-index: 10;
+     // top: -20px;
+     // transform: skewY(-1.5deg);
+    }
+    &.index-- {
+      //top: 0px;
+    }
+    &.about-- {
+    //  transform: skewY(3.5deg);
+      background-color: #8CC876;
+      bottom: -50px;
+    }
+    &.work-- {
+      background-color: #30C3F9;
+      bottom: 10px;
+   //   transform: skewY(2.5deg);
+    }
+
+
+
+
+
+
+  }
+
+
+
+
+  .page--index {
+    .page__section:first-child {
+      min-height: 90vh;
+      background-color: #EA508B;
+    }
+    .page__header {
+      background-color: #EA508B;
+      padding-top: 100px;
+      margin-bottom: 0;
+    }
+  }
+
+
+
+}
+
+
+*/
