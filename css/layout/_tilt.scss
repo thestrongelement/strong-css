@@ -10,6 +10,51 @@
 */
 
 
+
+
+
+
+
+%tilt {
+  position: relative;
+  & > .content__ {
+    position: relative;
+    z-index: 10;
+  }
+  &:before {
+    position: absolute;
+    content: '';
+    display: block;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50%;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+}
+.tilt--left {
+  @extend %tilt;
+  background-color: lightblue;
+  &:before {
+    transform: skewY(2deg);
+  }
+}
+.tilt--right {
+  @extend %tilt;
+  background-color: lightgreen;
+  &:before {
+    transform: skewY(-2deg);
+  }
+
+}
+
+
+/*
+
+
 %tilt {
 
   //margin-bottom: 120px;

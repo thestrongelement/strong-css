@@ -18,9 +18,9 @@
 * Replacing the contents of this container would effectively replace the entire app UI
 */
 %ui {
-  height: 100vh;
-  overflow: hidden;
   width: 100vw;
+  height: 100vh;
+//  overflow: hidden;
 }
 .ui {
   @extend %ui;
@@ -33,12 +33,11 @@
 %ui--flex {
   @extend %ui;
   display: flex;
-  .ui__panel {
+  .ui__panel, & > .panel__ {
     overflow: scroll;
     flex: 1;
     &[aria-selected=true] {
       flex: 1;
-
     }
   }
 
@@ -47,6 +46,30 @@
   @extend %ui--flex;
   flex-direction: column;
 }
+
+/**
+* .ui--positioned
+* Sets app container to flexbox
+*/
+%ui--positioned {
+   position: absolute;
+  .ui__panel, & > .panel__ {
+    position: absolute;
+    overflow: scroll;
+    &[aria-selected=true] {
+      z-index: 10;
+    }
+  }
+}
+.ui--positioned {
+  @extend %ui;
+  @extend %ui--positioned;
+}
+
+
+
+
+
 
 /**
 * .ui--flex-cols
@@ -97,8 +120,6 @@
   @extend %ui__view;
   display: flex;
 }
-
-
 
 
 
