@@ -17,9 +17,7 @@
 
 %tilt {
   position: relative;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  margin-bottom: -50px;
+//background-color: transparent;
   & > .content__ {
     position: relative;
     z-index: 10;
@@ -38,21 +36,53 @@
   }
 
 }
-.tilt--right {
+
+@mixin tilt($color: white, $direction: left, $deg: 2) {
   @extend %tilt;
+  &:before {
+    background-color: $color;
+  }
+  @if $direction == right {
+    &:before {
+      transform: skewY(#{$deg}deg);
+    }
+  }
+  @if $direction == left {
+    &:before {
+      transform: skewY(-#{$deg}deg);
+    }
+  }
+}
+
+
+
+.tilt--right {
+//  @extend %tilt;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-bottom: -50px;
+
   margin-top: -50px;
+  @include tilt(#D8FFF6, right);
+
+/*
   &:before {
     background-color: #D8FFF6;
     transform: skewY(2deg);
   }
+ */
 }
 .tilt, .tilt--left {
-  @extend %tilt;
-  &:before {
-    background-color: white;
-    transform: skewY(-2deg);
-  }
+//  @extend %tilt;
+
+  @include tilt();
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-bottom: -50px;
+
+
 }
+
 
 
 

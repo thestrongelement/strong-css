@@ -19,7 +19,7 @@
 */
 %ui {
   width: 100vw;
-  height: 100vh;
+//  height: 100vh;
 //  overflow: hidden;
 }
 .ui {
@@ -55,6 +55,7 @@
    position: absolute;
   .ui__panel, & > .panel__ {
     position: absolute;
+    width: 100%;
     &[aria-selected=true] {
       z-index: 10;
     }
