@@ -45,6 +45,14 @@
   }
   .link__ {
     @extend %icon-link;
+    overflow: visible;
+    font-family: 'Courier', monospace;
+    text-decoration: none;
+    @incude weight(bold);
+    padding-top: 20px;
+    text-indent: 45px;
+    color: white;
+    @include type(s);
   }
   position: fixed;
   right: 0;
@@ -53,7 +61,7 @@
   height: 100vh;
   @include screen(xs, height) {
     right: auto;
-    left: 10px;
+    left: 0;
   }
   .item__ {
     position: absolute;
@@ -69,13 +77,13 @@
   }
   @include screen(m) {
     .contact-- {
-      top: 5px;
+      top: 0px;
     }
     .work-- {
-      top: calc(100vh - 50px);
+      top: calc(100vh - 45px);
     }
     .about-- {
-      top: calc(100vh - 100px);
+      top: calc(100vh - 95px);
     }
   }
 }
@@ -85,8 +93,8 @@
     fill: #D8FFF6;
   }
   position: absolute;
-  left: 10px;
-  top: 10px;
+  left: 0px;
+  top: 5px;
   width: 290px;
  .item__ {
      overflow: hidden;
@@ -113,39 +121,53 @@
 .ui__panel {
 
   z-index: 11;
-  &[aria-selected=false] {
-    height: 100px;
-    max-height: 100px;
-  }
-
-  &.index-- {
-    padding-top: 240px;
-    background: #EA508B;
-  }
-  &.contact-- {
-    @include tilt(#9255B5, left, 2);
-    bottom: calc(100vh - 35px);
-    position: fixed;
-  }
-  &.work-- {
-    z-index: 15;
-    top: calc(100vh - 70px);
-    @include tilt(#30C3F9, right, 5);
-    position: fixed;
-  }
-  &.about-- {
-    z-index: 16;
-    top: calc(100vh - 25px);
-    @include tilt(#8CC876, right, 4);
-    position: fixed;
-  }
-
   &[aria-selected=true] {
     min-height: 100vh;
-    min-width: 100vh;
     top: 0;
     left: 0;
   }
+  &[aria-selected=false] {
+    height: 100px;
+    max-height: 100px;
+    position: fixed;
+  }
+
+  &.index-- {
+
+    background: #EA508B;
+  }
+  &.contact-- {
+    z-index: 17;
+    @include tilt(#9255B5, left, 2);
+    bottom: -45px;
+    @include screen(xs) {
+      bottom: calc(100vh - 35px);
+    }
+
+  }
+  &.work-- {
+    z-index: 15;
+
+    top: calc(100vh - 140px);
+
+    @include tilt(#30C3F9, right, 5);
+    @include screen(m) {
+      top: calc(100vh - 70px);
+    }
+  }
+  &.about-- {
+    z-index: 16;
+    top: calc(100vh - 95px);
+
+    @include tilt(#8CC876, right, 4);
+    @include screen(m) {
+      top: calc(100vh - 25px);
+
+    }
+  }
+
+
+
 
 }
 
@@ -163,12 +185,13 @@
 
   .page--index {
     .page__section:first-child {
-      min-height: 90vh;
+      min-height: 80vh;
+
       background-color: #EA508B;
     }
     .page__header {
       background-color: #EA508B;
-      padding-top: 100px;
+      padding-top: 150px;
       margin-bottom: 0;
     }
   }
