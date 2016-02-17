@@ -5,10 +5,9 @@
 }
 .app__logo {
   display: none;
-
 }
 .app__main {
-  outline: solid 6px lime;
+//  outline: solid 6px lime;
 //  position: absolute;
 //  width: 100vw;
 //  height: 100vh;
@@ -88,6 +87,10 @@
   }
 }
 
+
+
+
+
 .social-nav {
   svg {
     fill: #D8FFF6;
@@ -131,9 +134,13 @@
     max-height: 100px;
     position: fixed;
   }
+    left: calc(100vw - 60px);
+  @include screen(s, height) {
+    //right: auto;
+    left: 0px;
+  }
 
   &.index-- {
-
     background: #EA508B;
   }
   &.contact-- {
@@ -143,17 +150,28 @@
     @include screen(xs) {
       bottom: calc(100vh - 35px);
     }
+   @include screen(s, height) {
+//     transform: skewX(-2deg);
+//     left: calc(100vw - 51px);
+//     top: calc(100vh - 60px);
+   }
+
 
   }
   &.work-- {
     z-index: 15;
-
     top: calc(100vh - 140px);
-
     @include tilt(#30C3F9, right, 5);
+
     @include screen(m) {
       top: calc(100vh - 70px);
     }
+//    @include screen(xs, height) {
+//      transform: skewX(-2deg);
+//      left: calc(100vw - 50px);
+//      top: calc(100vh - 85px);
+//    }
+
   }
   &.about-- {
     z-index: 16;
@@ -164,9 +182,22 @@
       top: calc(100vh - 25px);
 
     }
+//    @include screen(xxs, height) {
+//        z-index: 14;
+//      transform: skewX(-2deg);
+//      left: calc(100vw - 48px);
+//      top: calc(100vh - 135px);
+//    }
+    @include screen(xs) {
+      top: calc(100vh - 25px);
+
+      z-index: 14;
+      transform: skewX(-2deg);
+      left: 0;
+     // top: calc(100vh - 135px);
+    }
+
   }
-
-
 
 
 }
