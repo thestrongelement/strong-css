@@ -25,7 +25,7 @@ gulp.task('serve', ['www'], function () {
     port: 9000,
     server: {
       baseDir: [dir__www],
-      index: 'strong.html',
+      index: 'grid.html',
       routes: {
         '/bower_components': 'bower_components',
         '/css': 'css'
@@ -33,7 +33,8 @@ gulp.task('serve', ['www'], function () {
     }
   });
   gulp.watch(dir__src_html+'/**/*.html', ['html']);
-  gulp.watch(dir__src_css+'/**/*', ['css']);
+  gulp.watch(dir__src_css+'/**/*.scss', ['css']);
+  gulp.watch(dir__src_css+'/**/*.gss', ['gss']);
   gulp.watch(dir__public+'/**/*', ['public']);
 });
 
@@ -68,6 +69,13 @@ gulp.task('css', function () {
     .pipe(reload());
 });
 
+// process gss files
+gulp.task('gss', function() {
+  return gulp.src(dir__src_css+'/*.gss')
+	  .pipe(gulp.dest(dir__www))
+    .pipe(reload());
+});
+
 // process static files
 gulp.task('public', function() {
   return gulp.src(dir__public+'/**/*')
@@ -75,7 +83,7 @@ gulp.task('public', function() {
 });
 
 //build
-gulp.task('www', $.sequence('clean',['css','public'],'html','dist'));
+gulp.task('www', $.sequence('clean',['css','gss','public'],'html','dist'));
 
 gulp.task('dist', function () {
   return gulp.src(dir__src_css+'/*.scss')

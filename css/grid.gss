@@ -1,0 +1,8 @@
+/*
+p[line-height] >= 32;
+p[line-height] <= ::window[height] / 12;
+.ui__panel[width] == ::window[width] / 2;
+*/
+
+.ui__panel[height] == ::window[height] / 8;
+/* (.ui__panel.index--)[x] == ::window[width] / 2; */

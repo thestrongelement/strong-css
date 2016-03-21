@@ -17,12 +17,12 @@ $elements__sections--app: header, footer, main;
   //min-width: 664px;
   //background: white;
 	& > div {
-		padding: $padding--base;
+		//padding: $width--ui-padding;
     max-width: 1440px;
 	}
 }
 header, footer {
-    padding: $padding--base;
+    //padding: $width--ui-padding;
 }
 article {
   & > section {

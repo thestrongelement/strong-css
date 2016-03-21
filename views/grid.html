@@ -1,0 +1,67 @@
+<% var title = "grid" %>
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <% include ./includes/_app_meta.html %>
+<script src="/bower_components/gss/dist/gss.js"></script>
+<script type="text/javascript">
+  window.engine = new GSS(document);
+</script>
+<link rel="stylesheet/gss" type="text/gss" href="css/grid.gss"></link>
+
+        <style>
+
+
+        </style>
+    </head>
+    <body class=app--thestrongelement id=thestrongelement-com>
+        <div class="ui--grid" role=application>
+            <header class="panel__ app__header">
+                <a href="/" class=app__logo id=logo--thestrongelement aria-selected=true>
+                    <strong>The <code>strong</code> element</strong>
+                </a>
+            </header>
+            <main class="app__main page--index" role=main>
+
+                <div class="ui__panel contact--" aria-selected=false>
+<p>
+.contact--
+</p>
+<!--
+<p>
+Vivamus feugiat, sapien vitae convallis consectetur, justo ligula semper quam.
+</p>
+
+<p>
+Donec condimentum convallis lacus at feugiat. Aliquam erat volutpat. Etiam auctor risus dolor, vel in tempor nibh. Nulla interdum, magna eget suscipit aliquet, enim arcu aliquet nunc, vel molestie est sem ac turpis. Ut et convallis diam. Integer malesuada eleifend eros non sollicitudin. In ac sem eget purus iaculis sollicitudin.
+</p>
+ -->
+
+                </div>
+                <div class="ui__panel index--" aria-selected=true>
+<p>
+.index--
+</p>
+
+                </div>
+
+                <div class="ui__panel work--" aria-selected=false>
+<p>
+.work--
+</p>
+
+                </div>
+
+                <div class="ui__panel about--" aria-selected=false>
+<p>
+.about--
+</p>
+
+                </div>
+
+
+            </main>
+        </div>
+	</body>
+</html>
+
