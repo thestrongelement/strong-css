@@ -1,8 +1,251 @@
+.app__header {
+  z-index: 100;
+  padding: 0;
+  max-width: 100vw;
+}
+.app__logo {
+  display: none;
+}
+.app__main {
+//  outline: solid 6px lime;
+//  position: absolute;
+//  width: 100vw;
+//  height: 100vh;
+}
 
+
+
+
+%icon-link {
+  display: block;
+  position: relative;
+  height: 50px;
+  width: 50px;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  text-indent: 100%;
+  svg {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+  }
+  &.is-email, &.is-twitter {
+    svg {
+      top: 30%;
+    }
+  }
+}
+
+.primary-nav {
+  svg {
+    fill: #F7F7F7;
+  }
+  .link__ {
+    @extend %icon-link;
+    overflow: visible;
+    font-family: 'Courier', monospace;
+    text-decoration: none;
+    @incude weight(bold);
+    padding-top: 20px;
+    text-indent: 45px;
+    color: white;
+    @include type(s);
+  }
+  position: fixed;
+  right: 0;
+  left: auto;
+  width: 50px;
+  height: 100vh;
+  @include screen(xs, height) {
+    right: auto;
+    left: 0;
+  }
+  .item__ {
+    position: absolute;
+  }
+  .contact-- {
+    top: calc(100vh - 50px);
+  }
+  .work-- {
+    top: calc(100vh - 100px);
+  }
+  .about-- {
+    top: calc(100vh - 150px);
+  }
+  @include screen(m) {
+    .contact-- {
+      top: 0px;
+    }
+    .work-- {
+      top: calc(100vh - 45px);
+    }
+    .about-- {
+      top: calc(100vh - 95px);
+    }
+  }
+}
+
+
+
+
+
+.social-nav {
+  svg {
+    fill: #D8FFF6;
+  }
+  position: absolute;
+  left: 0px;
+  top: 5px;
+  width: 290px;
+ .item__ {
+     overflow: hidden;
+     width: 50px;
+     height: 50px;
+     margin-right: 15px;
+  }
+  .email-- {
+    margin-left: 45px;
+    margin-right: 0;
+  }
+  .link__ {
+    @extend %icon-link;
+  }
+  @include screen(m) {
+    left: calc(100vw - 325px);
+    top: 55px;
+  }
+}
+
+
+
+
+.ui__panel {
+
+  z-index: 11;
+  &[aria-selected=true] {
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+  }
+  &[aria-selected=false] {
+    height: 100px;
+    max-height: 100px;
+    position: fixed;
+  }
+    left: calc(100vw - 60px);
+  @include screen(s, height) {
+    //right: auto;
+    left: 0px;
+  }
+
+  &.index-- {
+    background: #EA508B;
+  }
+  &.contact-- {
+    z-index: 17;
+    @include tilt(#9255B5, left, 2);
+    bottom: -45px;
+    @include screen(xs) {
+      bottom: calc(100vh - 35px);
+    }
+   @include screen(s, height) {
+//     transform: skewX(-2deg);
+//     left: calc(100vw - 51px);
+//     top: calc(100vh - 60px);
+   }
+
+
+  }
+  &.work-- {
+    z-index: 15;
+    top: calc(100vh - 140px);
+    @include tilt(#30C3F9, right, 5);
+
+    @include screen(m) {
+      top: calc(100vh - 70px);
+    }
+//    @include screen(xs, height) {
+//      transform: skewX(-2deg);
+//      left: calc(100vw - 50px);
+//      top: calc(100vh - 85px);
+//    }
+
+  }
+  &.about-- {
+    z-index: 16;
+    top: calc(100vh - 95px);
+
+    @include tilt(#8CC876, right, 4);
+    @include screen(m) {
+      top: calc(100vh - 25px);
+
+    }
+//    @include screen(xxs, height) {
+//        z-index: 14;
+//      transform: skewX(-2deg);
+//      left: calc(100vw - 48px);
+//      top: calc(100vh - 135px);
+//    }
+    @include screen(xs) {
+      top: calc(100vh - 25px);
+
+      z-index: 14;
+      transform: skewX(-2deg);
+      left: 0;
+     // top: calc(100vh - 135px);
+    }
+
+  }
+
+
+}
+
+
+
+
+.page__section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  &:not(.tilt,.tilt--right) {
+    background-color: white;
+  }
+}
+
+
+  .page--index {
+    .page__section:first-child {
+      min-height: 80vh;
+
+      background-color: #EA508B;
+    }
+    .page__header {
+      background-color: #EA508B;
+      padding-top: 150px;
+      margin-bottom: 0;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 .app--thestrongelement {
 
 
-  .app__panel {
+  .app__panel, .panel__ {
     position: absolute;
     width: 20%;
     height: 33vh;
@@ -91,18 +334,10 @@
 
 
 
-  .page--index {
-    .page__section:first-child {
-      min-height: 90vh;
-      background-color: #EA508B;
-    }
-    .page__header {
-      background-color: #EA508B;
-      padding-top: 100px;
-      margin-bottom: 0;
-    }
-  }
 
 
 
 }
+
+
+*/

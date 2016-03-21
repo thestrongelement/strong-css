@@ -10,6 +10,88 @@
 */
 
 
+
+
+
+
+
+%tilt {
+  position: relative;
+//background-color: transparent;
+  & > .content__ {
+    position: relative;
+    z-index: 10;
+  }
+  &:before {
+    position: absolute;
+    content: '';
+    display: block;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50%;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+}
+
+@mixin tilt($color: white, $direction: left, $deg: 2) {
+  @extend %tilt;
+  &:before {
+    background-color: $color;
+  }
+  @if $direction == right {
+    &:before {
+      transform: skewY(#{$deg}deg);
+    }
+  }
+  @if $direction == left {
+    &:before {
+      transform: skewY(-#{$deg}deg);
+    }
+  }
+}
+
+
+
+.tilt--right {
+//  @extend %tilt;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-bottom: -50px;
+
+  margin-top: -50px;
+  @include tilt(#D8FFF6, right);
+
+/*
+  &:before {
+    background-color: #D8FFF6;
+    transform: skewY(2deg);
+  }
+ */
+}
+.tilt, .tilt--left {
+//  @extend %tilt;
+
+  @include tilt();
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-bottom: -50px;
+
+
+}
+
+
+
+
+
+
+
+/*
+
+
 %tilt {
 
   //margin-bottom: 120px;

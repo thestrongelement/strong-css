@@ -22,7 +22,7 @@
 * Top-level content container
 */
 body {
-    background-color: $color__white--offset;
+    background-color: $color__white;
 }
 body > header {
     @extend %section;
