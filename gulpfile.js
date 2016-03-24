@@ -25,7 +25,7 @@ gulp.task('serve', ['www'], function () {
     port: 9000,
     server: {
       baseDir: [dir__www],
-      index: 'strong.html',
+      index: 'index.html',
       routes: {
         '/bower_components': 'bower_components',
         '/css': 'css'
