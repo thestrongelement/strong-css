@@ -1,21 +1,9 @@
 @mixin screen($size, $dimension: width) {
-  @if $size == xxs {
-    @media (min-#{$dimension}: $screen--xxsmall) { @content; }
-  }
-  @if $size == xs {
-    @media (min-#{$dimension}: $screen--xsmall) { @content; }
-  }
-  @else if $size == s {
-    @media (min-#{$dimension}: $screen--small) { @content; }
-  }
-  @else if $size == m {
-    @media (min-#{$dimension}: $screen--medium) { @content; }
-  }
-  @else if $size == l {
-    @media (min-#{$dimension}: $screen--large) { @content; }
-  }
-  @else if $size == xl {
-    @media (min-#{$dimension}: $screen--xlarge) { @content; }
+  @if map-has-key($breakpoints, $size) {
+    @media (min-#{$dimension}: map-get($breakpoints, $size)) {
+        @content;
+    }
+  } @else {
+    @warn "Unknown `#{$size}` in $breakpoints";
   }
 }
-

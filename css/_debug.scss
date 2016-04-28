@@ -1,11 +1,85 @@
+body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent $vertical-grid - 1px,
+        rgba(0,0,0,0.1) $vertical-grid - 1px,
+        rgba(0,0,0,0.1) $vertical-grid
+      );
 
+  }
+}
+.width {
+  height: 100px;
+  background: yellow;
+}
+h1, h2, h3, h4 , h5 , h6, p, small{
+  background: rgba(yellow, 0.4);
+  display: block;
+}
+h1 {
+  @include type(xxl);
+}
+h2 {
+  @include type(xl);
+  }
+h3 {
+@include type(l);
+}
+
+h4 {
+@include type(m);
+}
+
+h5 {
+@include type(reg);
+}
+
+h6 {
+@include type(xs);
+}
+
+p {
+@include type(s);
+}
+small {
+@include type(xxs);
+}
+
+//
+//$type: (
+//  xxs: ms(-1) 1.25,     //13.507
+//  xs: ms(0) 1.33333333,//16
+//  s: ms(1) 1.33333333,   //18.005
+//  reg: ms(3) 1.5,       //24
+//  m: ms(5) 1.33333333,  //31.992
+//  l: ms(7) 1.2727272,   //42.645
+//  xl: ms(9) 1.2,        //56.846
+//  xxl: ms(11) 1.21052    //75.776
+//) !default;
+
+
+
+
+/*
 #ui {
 //  background-image: url(../grid-6-12.min.svg);
 }
 
-#{$elements__phrase} {
-  //outline: solid 1px blue;
-}
 
 .ui__nav {
   background: purple;
@@ -73,3 +147,5 @@
   color: white;
   font-size: $font-size--xl;
 }
+*/
+

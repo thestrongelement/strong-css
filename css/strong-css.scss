@@ -39,6 +39,7 @@ view
 @import "elements/interactive";
 @import "elements/palpable";
 
+//blocks (return @extend)
 @import "blocks/buttons";
 @import "blocks/forms";
 @import "blocks/filters";
@@ -49,6 +50,7 @@ view
 @import "layout/ui";
 @import "layout/flow";
 @import "layout/app";
+
 @import "layout/primary-nav";
 @import "layout/body";
 @import "layout/page";

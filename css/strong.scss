@@ -13,20 +13,35 @@ view
 */
 
 //vendor
+/*
 @import "bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "bower_components/neat/app/assets/stylesheets/neat";
-@import "bower_components/modular-scale/stylesheets/modular-scale";
+ */
 
-//base
-@import "base/settings";
-@import "base/type";
+@import "functions/color";
+@import "functions/space";
 
 //mixins
 @import "mixins/type";
 @import "mixins/screen";
 @import "mixins/clearfix";
-@import "mixins/at-media";
+@import "mixins/weight";
+@import "mixins/print";
 
+//base
+@import "base/settings";
+@import "base/sections";
+
+//@import "base/type";
+
+//blocks
+@import "blocks/elements";
+
+
+@import "debug";
+
+
+/*
 //elements
 @import "elements/doc";
 @import "elements/sections";
@@ -62,6 +77,6 @@ view
 @import "helpers/generic";
 @import "helpers/type";
 
-@import "debug";
 
 
+*/

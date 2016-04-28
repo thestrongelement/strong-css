@@ -54,12 +54,12 @@ gulp.task('css', function () {
   return gulp.src(dir__src_css+'/*.scss')
     .pipe(minify?$.util.noop():$.sourcemaps.init())
     .pipe($.sass({
-      outputStyle: (minify?'compressed':'nested'), // libsass doesn't support expanded yet
+      outputStyle: (minify?'compressed':'expanded'),
       precision: 10,
       includePaths: ['.'],
-      //onError: console.error.bind(console, 'Sass error:'),
       errLogToConsole: true
-    }))
+    })
+    .on('error', $.sass.logError))
     .pipe($.postcss([
       require('autoprefixer-core')({browsers: ['last 1 version']})
     ]))
