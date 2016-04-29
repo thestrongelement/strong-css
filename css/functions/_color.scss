@@ -2,7 +2,7 @@
   @if map-has-key($colors, $key) {
     @return map-get($colors, $key);
   } @else {
-    @warn "Unknown `#{$key}` in $colors";
+    @warn "Unknown `#{$key}` in $colors map";
     @return $color__text;
   }
 }

@@ -5,6 +5,6 @@
   }
   @else {
     @return map-get($spacing, reg);
-    @warn "Unknown `#{$key}` in $spacing-map.";
+    @warn "Unknown `#{$key}` in $spacing map.";
   }
 }

@@ -1,3 +1,9 @@
+RULES:
+  — $elements__blocks have default $margin-bottom, last-child has none
+  
+
+
+
 
 elements, objects, ui
 view

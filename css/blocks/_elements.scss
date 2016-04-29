@@ -1,4 +1,7 @@
-@import "bower_components/normalize-css/normalize";
+//@import "bower_components/normalize-css/normalize";
+
+$elements__headers: h1, h2, h3, h4, h5, h6;
+$elements__blocks: p, ul, ol, li, blockquote, table, figure;
 
 /**
 * @section Root Element
@@ -6,28 +9,99 @@
 */
 html {
   box-sizing: border-box;
+  min-height: 100%;
 }
 *, *:before, *:after {
   box-sizing: inherit;
 }
 body {
-    background-color: $background-color;
-    -webkit-font-smoothing: antialiased;
-    color: $color;
-    font-family: $font-family;
-    font-size: $font-size;
-    line-height: $line-height;
+  margin: 0;
+  background-color: $background-color;
+  -webkit-font-smoothing: antialiased;
+  color: $color;
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
 }
-
-
-
 
 /**
 * @section Header Elements
 * Default styles for header elements
 */
-h1,h2,h3,h4,h5,h6 {
-    text-rendering: optimizeLegibility;
-    margin-top: 0;
-    margin-bottom: $margin-bottom;
+#{$elements__headers} {
+  text-rendering: optimizeLegibility;
+  margin-bottom: $margin-bottom;
+	margin-top: 0;
 }
+
+
+/**
+* @section Block Elements
+* Default styles for block elements
+*/
+#{$elements__blocks}, .block__ {
+  margin-top: 0;
+  margin-bottom: $margin-bottom;
+  &:last-child {
+      margin-bottom: 0;
+  }
+}
+
+/**
+* @section List Elements
+* Default styles for lists
+*/
+ul:not(.list), ol:not(.list) {
+  padding-left: 0;
+  list-style: none;
+}
+li {
+  margin-bottom: $margin-bottom/2;
+}
+ul {
+  &.list {
+    list-style: disc;
+  }
+}
+ol {
+  &.list {
+    list-style: decimal;
+  }
+}
+
+/**
+* @section Phrases Elements
+* Default styles for phrase elements
+*/
+img {
+  line-height: 0;
+}
+
+a {
+  color: $color--link;
+  text-decoration: none;
+  &:hover {
+    color: $color--link-hover;
+  }
+  &:active, &:focus {
+    color: $color--link-hover;
+    outline: none;
+  }
+}
+
+/**
+* @section Table Elements
+* Default styles for table elements
+*/
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+td, th {
+  padding: $vertical-grid;
+  vertical-align: top;
+}
+th {
+  text-align: left;
+}
+

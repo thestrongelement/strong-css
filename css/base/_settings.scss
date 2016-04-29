@@ -10,16 +10,26 @@ $breakpoints: (
 ) !default;
 
 //spacing
-$spacing--base: 4px;
+$spacing--base: 6px;
+
 $spacing: (
-  base: $spacing--base,
-  xs: $spacing--base*2,    //8
-  s: $spacing--base*3,     //12
-  reg: $spacing--base*6,      //24
-  m: $spacing--base*9,    //36
-  l: $spacing--base*11,     //44
-  xl: $spacing--base*14,    //56
-  xxl: $spacing--base*30    //120
+  base: $spacing--base,   //6
+  xs: $spacing--base*2,   //12
+  s: $spacing--base*4,    //24
+  reg: $spacing--base*6,  //36
+  m: $spacing--base*8,    //48
+  l: $spacing--base*10,   //60
+  xl: $spacing--base*12,  //72
+  xxl: $spacing--base*14  //84
+) !default;
+
+$padding: (
+  compact: $spacing--base,  //6
+  tight: $spacing--base*2,  //12
+  reg: $spacing--base*4,    //24
+  loose: $spacing--base*8,  //48
+  roomy: $spacing--base*12, //72
+  extra: $spacing--base*20  //120
 ) !default;
 
 //ui dimensions
@@ -46,7 +56,7 @@ $ms-ratio: $fourth; //1.333
 $type: (
   xxs: ms(-1) 1.77685644, //13.507
   xs: ms(0) 1.5,          //16
-  s: ms(1) 1.33296307,    //18.005
+  s: ms(1) 1.33333333,    //18.005
   reg: ms(3) 1.5,         //24
   m: ms(5) 1.12528132,    //31.992
   l: ms(7) 1.12557158,    //42.645
@@ -108,15 +118,19 @@ $colors: (
 
 
 //DEFAULTS
-$font-size: nth(map-get($type,s), 1) !default;
-$line-height: nth(map-get($type,reg), 2) !default;
 $font-family: map-get($fonts,body) !default;
 $font-family--header:  map-get($fonts,header) !default;
+$font-size: nth(map-get($type,s), 1) !default;
+$line-height: nth(map-get($type,s), 2) !default;
+
 $margin-bottom: map-get($spacing, reg) !default;
+
 $background-color: map-get($colors, lightgray) !default;
 $color: map-get($colors, black) !default;
+$color--link: map-get($colors, aqua);
+$color--link-hover: lighten($color__link,20);
 
-
+//$height--input: map
 
 //colors
 
@@ -129,8 +143,7 @@ $color__form--valid:  map-get($colors, green) !global;
 $color__form--disabled: lighten($color__form,10);
 $color__form--fill: map-get($colors, white) !global;
 
-$color__link: map-get($colors, aqua);
-$color__link--hover: lighten($color__link,20);
+
 
 //animation
 $time--base: 0.25s;
