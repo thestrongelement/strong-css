@@ -18,12 +18,9 @@
     "tests"
   ],
   "dependencies": {
-    "inuit-starter-kit": "~0.2.9",
-    "bourbon": "thoughtbot/bourbon#4.2.4",
-    "neat": "thoughtbot/neat#1.7.2"
+
   },
   "devDependencies": {
-    "modular-scale": "~2.1.1",
-    "normalize-css": "^4.1.1"
+    "modular-scale": "~2.1.1"
   }
 }
