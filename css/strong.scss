@@ -34,7 +34,11 @@ view
 
 //helpers
 @import "helpers/general";
-@import "helpers/backgrounds";
 @import "helpers/flex";
+@import "helpers/backgrounds";
 
-//@import "debug";
+//variable dependent helpers (import separately)
+//@import "helpers/backgrounds";
+
+
+@import "debug";

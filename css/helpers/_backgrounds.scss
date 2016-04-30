@@ -8,12 +8,3 @@
   background-position: center;
   background-attachment: fixed;
 }
-@each $key, $value in $colors {
-  .has-background-color-#{$key} {
-    background-color: $value !important;
-    $saturation: saturation($value) / 100%;
-    @if $saturation > 0.5 {
-      color: color(white);
-    }
-  }
-}
