@@ -3,9 +3,7 @@
   "version": "v0.0.7",
   "homepage": "https://github.com/thestrongelement/strong-css",
   "description": "CSS framework for The Strong Element projects",
-  "main": [
-    "css/strong.scss"
-  ],
+  "main": "css/strong.scss",
   "authors": [
     "Zack Frazier <zack@thestrongelement.com>"
   ],
@@ -23,12 +21,12 @@
     "misc",
     "package.json",
     "views"
-    ],
-  "keywords": {
+  ],
+  "keywords": [
     "strong",
     "css",
     "scss"
-  },
+  ],
   "dependencies": {
     "modular-scale": "~2.1.1"
   }
