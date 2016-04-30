@@ -19,7 +19,7 @@
     "build",
     "misc"
   ],
-  "devDependencies": {
+  "dependencies": {
     "modular-scale": "~2.1.1"
   }
 }
