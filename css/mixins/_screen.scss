@@ -4,6 +4,6 @@
         @content;
     }
   } @else {
-    @warn "Unknown `#{$size}` in $breakpoints";
+    @warn "Unknown `#{$size}` in $breakpoints map";
   }
 }

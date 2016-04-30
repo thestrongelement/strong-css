@@ -4,14 +4,11 @@
 * @author The strong element
 */
 
-@import "primary-nav";
-
 /**
 * @section App
 * Global header
 */
 .app__header {
-
 
 }
 
@@ -20,12 +17,9 @@
 * Global header layout
 */
 .app__logo {
-    margin-left: 24px;
+
 }
 .app__nav {
-    @include clearfix;
-    [aria-selected="true"] {
-      color: red;
-    }
+
 }
 

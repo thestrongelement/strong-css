@@ -4,63 +4,18 @@
 * @author The strong element
 */
 
-$max-panel-width: 1072px;
-%panel {
-    background-color: $color__white;
-    margin-bottom: 8px;
-    box-shadow: 0 3px 8px 0 rgba(0,0,0,0.04);
-    padding-top: 24px;
-    padding-bottom: 24px;
-    padding-left: $width--ui-padding/3;
-    padding-right: $width--ui-padding/3;
-    @include screen(m) {
-        padding-left: $width--ui-padding/2;
-        padding-right: $width--ui-padding/2;
-    }
-    @include screen(xl) {
-        padding-left: calc((100% - #{$max-panel-width})/2);
-        padding-right: calc((100% - #{$max-panel-width})/2);;
-    }
-}
-
 /**
 * @section Page
 * Page header
 */
 .page__header {
-//    margin-bottom: 24px;
-    @extend %section;
+
 }
 .page__title {
-    @include type(m);
-    width: 60vw;
-    height: 56px;
-    margin: -48px auto 0;
-    color: $color__white;
-    text-align: center;
-    @include screen(s) {
-        width: auto;
-        color: $color__text--default;
-        margin-top: 0;
-        flex: 1;
-        text-align: left;
-        padding-left: $width--ui-padding/3;
-    }
-    @include screen(m) {
-        padding-left: $width--ui-padding/2;
-    }
-    @include screen(l) {
-        padding-left: $width--ui-padding/2;
-    }
+
 }
 .page__nav {
-    @include screen(s) {
-        display: block;
-        flex: 1.75;
-    }
-    @include screen(l) {
-        flex: 1;
-    }
+
 }
 
 /**
@@ -69,12 +24,7 @@ $max-panel-width: 1072px;
 */
 .page__content {
 
-
 }
 .page__section {
-    margin-bottom: 32px;
-    .panel__ {
-        @extend %panel;
 
-    }
 }

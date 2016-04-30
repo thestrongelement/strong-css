@@ -1,0 +1,11 @@
+@for $i from 1 through 6 {
+  .has-flex-#{$i} {
+    flex: #{$i} !important;
+  }
+}
+
+@for $i from 1 through 6 {
+  .has-order-#{$i} {
+    order: #{$i};
+  }
+}

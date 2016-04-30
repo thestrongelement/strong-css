@@ -19,59 +19,24 @@ view
 
 //base
 @import "base/settings";
-
-
-
-//@import "base/type";
-
-//blocks
 @import "blocks/elements";
-@import "blocks/interactive";
 
-//layout
+
+
+//blocks (return @extend ??)
 @import "base/sections";
-
-
-
-@import "debug";
-
-
-/*
-//elements
-@import "elements/doc";
-@import "elements/sections";
-@import "elements/headers";
-@import "elements/flow";
-@import "elements/phrase";
-@import "elements/embedded";
-@import "elements/interactive";
-@import "elements/palpable";
-
-//blocks
-@import "blocks/buttons";
-@import "blocks/forms";
-@import "blocks/filters";
-@import "blocks/nav";
-@import "blocks/tables";
-@import "blocks/pagination";
 
 //components
 
+
 //layout
-@import "layout/ui";
 @import "layout/flow";
 @import "layout/app";
-@import "layout/body";
 @import "layout/page";
-@import "layout/primary-nav";
-@import "layout/tilt";
 
-//@import "views/index";
-//@import "views/thestrongelement";
+//helpers
+@import "helpers/general";
+@import "helpers/backgrounds";
+@import "helpers/flex";
 
-@import "helpers/generic";
-@import "helpers/type";
-
-
-
-*/
+@import "debug";
