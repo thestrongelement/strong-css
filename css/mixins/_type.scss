@@ -1,57 +1,21 @@
-@mixin type($size: reg) {
-  @if $size == xxs {
-    font-size: $font-size--xxs;
-    line-height: 2;
+@mixin type($size: reg, $style: text) {
+  $list: map-get($type, reg);
+  @if map-has-key($type, $size) {
+    $list: map-get($type, $size);
+  } @else {
+    @warn "Unknown `#{$size}` in $type map";
   }
-  @if $size == xs {
-    font-size: $font-size--xs;
-    line-height: 1.33333333;
+  font-size: nth($list, 1);
+  line-height: nth($list, 2);
+  @if $style != text {
+    @if map-has-key($fonts, $style) {
+      font-family: map-get($fonts, $style);
+    } @else {
+      @warn "Unknown `#{$style}` in $fonts map";
+    }
   }
-  @if $size == s {
-    font-size: $font-size--s;
-    line-height: 1.14285714;
-    font-weight: 600;
-  }
-  @if $size == reg {
-    font-size: $font-size--base;
-    line-height: $line-height--base;
-  }
-  @if $size == m {
-    font-size: $font-size--m;
-    line-height: 1.33333333;
-    font-weight: 300;
-  }
-  @if $size == l {
-    font-size: $font-size--l;
-    line-height: 1.25;
-    font-weight: 300;
-  }
-  @if $size == xl {
-    font-size: $font-size--xl;
-    line-height: 1.16666667;
-    font-weight: 300;
-  }
-  @if $size == xxl {
-    font-size: $font-size--xxl;
-    line-height: 1.14285714;
-    font-weight: 300;
-  }
-}
-
-@mixin weight($weight: reg) {
-  @if $weight == light {
-    font-weight: 300;
-  }
-  @if $weight == med {
-    font-weight: 500;
-  }
-  @if $weight == semi {
-    font-weight: 600;
-  }
-  @if $weight == reg {
-    font-weight: 400;
-  }
-  @if $weight == bold {
-    font-weight: 700;
+  //TODO: add weight as second param
+  @if $style == header {
+    @include weight(light);
   }
 }

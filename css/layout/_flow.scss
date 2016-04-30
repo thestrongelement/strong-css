@@ -13,95 +13,175 @@
 * Using .flow__flex will make all the immediate children the same height
 * Add .flow__flex--col — or shortcut "col--" to child containers to fill the horizontal space
 */
-%flow__flex {
-  min-height: 64px;
-  @include media(s) {
-    display: flex;
-  }
-  padding: 0;
-  & > .flow__item, & > .item-- {
-    flex: 1;
-  }
-}
-.flow__flex {
-  @extend %flow__flex;
-}
-.flow__flex--vertical {
-  @extend %flow__flex;
-  flex-direction: column;
-}
-.flow__item--2, .item--2 {
-  flex: 2;
-}
-.flow__item--3, .item--3 {
-  flex: 3;
-}
-.flow__item--4, .item--5 {
-  flex: 5;
-}
-.flow__item--5, .item--5 {
-  flex: 5;
-}
 
-%span--item {
-  display: inline-block;
-  margin-right: $padding--base;
+/*
+    .flow
+    &.flex--
+        .flow__box
+*/
+
+$box_gutter: $width--ui-padding;
+
+// COLUMNS
+%flow {
+    @include clearfix;
+    margin-bottom: $margin-bottom;
   &:last-child {
-    margin-right: 0;
+        margin-bottom: 0;
+  }
+    @include screen(m) {
+      [class*=flow__box] {
+        float: left;
+        margin-right: $box_gutter;
+        &:last-child {
+          margin-right: 0;
+        }
+        &.center-- {
+          //this can only be used when there is a single container
+          float: none;
+          margin: 0 auto;
+        }
+        &.reverse-- {
+          float: right;
+          margin-left: $box_gutter;
+          margin-right: 0;
+          &:last-child {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+}
+.flow, .flow--reverse {
+    @extend %flow;
+}
+//reverse order (right to left)
+.flow--reverse {
+  @include screen(m) {
+    [class*=flow__box] {
+      float: right;
+      margin-left: $box_gutter;
+      margin-right: 0;
+      &:last-child {
+        margin-left: 0;
+      }
+    }
   }
 }
 
-.flow--3-1 {
-  @extend %span--item;
-  width: calc((100%/3) - (#{$padding--base}*2/3));
-}
-.flow--3-2 {
-  @extend %span--item;
-  width: calc(((100%/3) - (#{$padding--base}*2/3))*2 + #{$padding--base});
-}
 
-.flow--4-1 {
-  @extend %span--item;
-  width: calc((100%/4) - (#{$padding--base}*3/4));
+// FLEX
+%flex {
+  margin-bottom: $margin-bottom;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  @include screen(m) {
+    flex-direction: row;
+  }
+  .flow__box {
+    flex: 1;
+    padding: $box_gutter;
+  }
+
 }
-.flow--4-2 {
-  @extend %span--item;
-  width: calc(((100%/3) - (#{$padding--base}*3/4))*2 + #{$padding--base});
-}
-.flow--4-3 {
-  @extend %span--item;
-  width: calc(((100%/3) - (#{$padding--base}*3/4))*3 + #{$padding--base});
-}
-.flow--6-1 {
-  @extend %span--item;
-  width: calc((100%/6) - (#{$padding--base}*5/6));
-}
-.flow--6-2 {
-  @extend %span--item;
-  width: calc(((100%/6) - (#{$padding--base}*5/6))*2 + #{$padding--base});
-}
-.flow--6-3 {
-  @extend %span--item;
-  width: calc(((100%/6) - (#{$padding--base}*5/6))*3 + #{$padding--base}*2);
-}
-.flow--6-4 {
-  @extend %span--item;
-  width: calc(((100%/6) - (#{$padding--base}*5/6))*4 + #{$padding--base}*3);
-}
-.flow--6-5 {
-  @extend %span--item;
-  width: calc(((100%/6) - (#{$padding--base}*5/6))*5 + #{$padding--base}*4);
+.flow--flex {
+  @extend %flex;
+  @include screen(m) {
+    //these override order for largescreens (see POS upsell for example)
+    .order-1-- {
+      order: 1;
+    }
+    .order-2-- {
+      order: 2;
+    }
+    .order-3-- {
+      order: 3;
+    }
+  }
+   &.vcenter-- {
+    align-items: center;
+  }
 }
 
 
+// FLOW BOXES
+//set base column widths for 2-12 cols
+//everything stacks under screen(m)
 
-// flow helpers
-.flow__clear {
-  overflow: auto;
+
+@include screen(m) {
+
+  @for $i from 2 through 12 {
+    [class*=flow__box--#{$i}] {
+      width:
+        calc(
+          (100% -
+            (#{$box_gutter} * #{$i - 1})
+          )/
+          #{$i}
+        );
+      $length: $i - 1;
+      @for $k from 1 through $length {
+        &.shift-#{$k}-- {
+          margin-left:
+            calc(
+              (
+                (100% -
+                  (#{$box_gutter} * #{$i - 1})
+                )/ #{$i}
+              ) *
+              #{$k} + (
+                #{$box_gutter * $k}
+              )
+            );
+
+        }
+        &.pull-#{$k}-- {
+          margin-right:
+            calc(
+              (
+                (100% -
+                  (#{$box_gutter} * #{$i - 1})
+                )/ #{$i}
+              ) *
+              #{$k} + (
+                #{$box_gutter * $k}
+              )
+            );
+        }
+      }
+    }
+  }
+  @for $i from 3 through 12 {
+    .flow__box {
+      @for $j from 2 through $i {
+        &--#{$i}-#{$j} {
+          width:
+            calc(
+              (
+                (
+                  (100% -
+                    (#{$box_gutter} * #{$i - 1})
+                  )/
+                  #{$i}
+                )
+                * #{$j}
+              )
+              +
+              (
+                #{$box_gutter}*#{$j - 1}
+              )
+            );
+        }
+      }
+    }
+  }
+
+//end screen
 }
-.flow__block {
-  display: block;
-}
-.flow__inline {
-  display: inline;
-}
+
+

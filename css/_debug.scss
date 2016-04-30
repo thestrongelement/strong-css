@@ -1,11 +1,167 @@
+$grid-unit: $vertical-grid;
 
+body {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+  &:before {
+    pointer-events: none;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    min-height: 100%;
+    background-image:
+      repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent $grid-unit - 1px,
+        rgba(0,0,0,0.1) $grid-unit - 1px,
+        rgba(0,0,0,0.1) $grid-unit
+      );
+  }
+
+
+}
+
+.width {
+  height: 100px;
+  background: yellow;
+}
+h1, h2, h3, h4 , h5 , h6, p, small, li, fieldset {
+  background: rgba(yellow, 0.4);
+//  display: block;
+}
+ul, ol, label {
+  background: rgba(pink, 0.4);
+}
+
+table {
+  background: rgba(pink, 0.4);
+  td {
+    background: rgba(yellow, 0.4);
+  }
+  th {
+    background: rgba(green, 0.4);
+  }
+}
+
+h1 {
+  @include type(xxl);
+}
+h2 {
+  @include type(xl);
+  }
+h3 {
+@include type(l);
+}
+
+h4 {
+@include type(m);
+}
+
+h5 {
+@include type(reg);
+}
+
+h6 {
+@include type(xs);
+}
+
+p {
+@include type(s);
+}
+small {
+@include type(xxs);
+}
+
+
+
+.space {
+  margin: 60px 0;
+  [class*=box] {
+    background-color: rgba(blue,0.4);
+    margin-bottom: space(xs);
+  }
+  .box-1 {
+    //height: space(base);
+  }
+  .box-2 {
+    height: space(xs);
+  }
+  .box-3 {
+    height: space(s);
+  }
+  .box-4 {
+    height: space(reg);
+  }
+  .box-5 {
+    height: space(m);
+  }
+  .box-6 {
+    height: space(l);
+  }
+  .box-7 {
+    height: space(xl);
+  }
+  .box-8 {
+    height: space(xxl);
+  }
+}
+
+
+.padding {
+  margin: 60px 0;
+  [class*=box] {
+    background-color: rgba(blue,0.4);
+    margin-bottom: space(xs);
+  }
+  .box-1 {
+    padding: padding(compact) 0;
+  }
+  .box-2 {
+    padding: padding(tight) 0;
+  }
+  .box-3 {
+    padding: padding(reg) 0;
+  }
+  .box-4 {
+    padding: padding(loose) 0;
+  }
+  .box-5 {
+    padding: padding(roomy) 0;
+  }
+  .box-6 {
+    padding: padding(extra) 0;   
+  }
+
+}
+
+
+//
+//$type: (
+//  xxs: ms(-1) 1.25,     //13.507
+//  xs: ms(0) 1.33333333,//16
+//  s: ms(1) 1.33333333,   //18.005
+//  reg: ms(3) 1.5,       //24
+//  m: ms(5) 1.33333333,  //31.992
+//  l: ms(7) 1.2727272,   //42.645
+//  xl: ms(9) 1.2,        //56.846
+//  xxl: ms(11) 1.21052    //75.776
+//) !default;
+
+
+
+
+/*
 #ui {
 //  background-image: url(../grid-6-12.min.svg);
 }
 
-#{$elements__phrase} {
-  //outline: solid 1px blue;
-}
 
 .ui__nav {
   background: purple;
@@ -73,3 +229,5 @@
   color: white;
   font-size: $font-size--xl;
 }
+*/
+

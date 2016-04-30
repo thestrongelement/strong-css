@@ -1,0 +1,87 @@
+
+/**
+* @file blocks/interactive
+* @project strong-css
+* @author zack@thestrongelement.com
+*/
+
+$elements__interactive: a, audio\[controls\], button, details, embed, iframe, img\[usemap\], input, keygen, label, object\[usemap\], select, textarea, video\[controls\];
+
+
+/**
+* @section Form Elements
+* Default styles for form elements
+*/
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+legend, .legend__ {
+
+}
+label, .label__ {
+  @include type(s);
+  &:not(.inline--) {
+    display: block;
+    margin-bottom: space(base);
+  }
+}
+
+//$height--form-field
+
+%form-field-base {
+    appearance: none;
+    box-sizing: border-box;
+    outline: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: $color__form;
+    border-radius: 2px;
+    color: $color__form;
+    //states
+    &[disabled] {
+        color: $color__form--disabled;
+        border-color: $color__form--disabled;
+    }
+    //the .has-focus class is for demo purposes only
+    &:focus, &.has-focus {
+        border-color: $color__form--focus;
+        color: $color__form--focus;
+    }
+    &.is-invalid {
+        border-color: $color__form--error;
+        color: $color__form--error;
+    }
+    &.is-valid {
+        color: $color__form--valid;
+    }
+}
+
+
+
+
+/**
+* @section Block elements
+*
+*/
+
+
+button {
+
+}
+
+
+
+
+@-moz-document url-prefix() {
+  // Firefox
+  select {
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  // IE10+ specific styles go here
+  select {
+    padding-right: 0;
+  }
+}

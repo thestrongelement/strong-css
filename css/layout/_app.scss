@@ -10,7 +10,6 @@
 */
 .app__header {
 
-
 }
 
 /**
@@ -18,12 +17,9 @@
 * Global header layout
 */
 .app__logo {
-    margin-left: 24px;
+
 }
 .app__nav {
-    @include clearfix;
-    [aria-selected="true"] {
-      color: red;
-    }
+
 }
 

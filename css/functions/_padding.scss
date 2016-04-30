@@ -1,0 +1,10 @@
+
+@function padding($key: base) {
+  @if map-has-key($padding, $key) {
+    @return map-get($padding, $key);
+  }
+  @else {
+    @return map-get($padding, reg);
+    @warn "Unknown `#{$key}` in $padding map.";
+  }
+}

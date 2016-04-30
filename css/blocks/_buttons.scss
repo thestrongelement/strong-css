@@ -30,7 +30,7 @@ input[type="submit"]::-moz-focus-inner {
 %button--base {
     @extend %button;
     background-color: $color__button--default;
-    color: white;    
+    color: white;
     font-size: $font-size--button;
     border-radius: 4px;
     line-height: 1;
@@ -52,14 +52,6 @@ button {
 input[type=submit], .button {
     @extend %button--base;
 }
-.button--white {
-    @extend %button--base;
-    background-color: $color__white--b;
-    color: $color__text--default;
-}
-
-
-
 
 
 

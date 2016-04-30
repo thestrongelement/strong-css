@@ -1,0 +1,68 @@
+/**
+* @file _section.scss
+* @author zack@thestrongelement.com
+*/
+
+/**
+* @section Base
+* Sets behavior for primary layout containers
+*/
+
+%section-base {
+  @include clearfix;
+  position: relative;
+  z-index: 1;
+}
+
+%app-section-bleed {
+  @extend %section-base;
+  margin-left: 0;
+  margin-right: 0;
+  @include screen(xl) {
+    padding-left: calc((100% - #{$width--ui-max})/2);
+    padding-right: calc((100% - #{$width--ui-max})/2);
+  }
+}
+
+
+%app-section {
+  @extend %section-base;
+  @include screen(l) {
+    margin-left: $width--ui-padding;
+    margin-right: $width--ui-padding;
+  }
+  @include screen(xl) {
+    margin-left: calc((100% - #{$width--ui-max})/2);
+    margin-right: calc((100% - #{$width--ui-max})/2);
+  }
+  &.bleed-- {
+    @extend %app-section-bleed;
+  }
+}
+
+
+%content-section {
+  @include clearfix;
+  position: relative;
+  padding-left: $width--ui-padding;
+  padding-right: $width--ui-padding;
+  @include screen(xl) {
+    padding-left: calc((100% - #{$width--ui-max-content})/2);
+    padding-right: calc((100% - #{$width--ui-max-content})/2);
+  }
+
+    &.flex-- {
+        padding: 0;
+        display: flex;
+        flex-flow: column;
+        @include screen(m) {
+            flex-flow: row;
+        }
+        & > * {
+            width: auto;
+            flex: 1;
+            margin: 0;
+            padding: space(m);
+        }
+    }
+}
