@@ -1,37 +1,6 @@
 {
   "name": "strong-css",
-  "version": "0.0.7",
-  "homepage": "https://github.com/thestrongelement/strong-css",
-  "description": "CSS framework for The Strong Element projects",
-  "main": [
-    "css/strong-css.scss"
-  ],
-  "authors": [
-    "Zack Frazier <zack@thestrongelement.com>"
-  ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests",
-    "ROADMAP.md",
-    "build",
-    "www",
-    "gulpfile.js",
-    "misc",
-    "package.json",
-    "views"
-  ],
-  "devDependencies": {
-    "modular-scale": "~2.1.1"
-  }
-}
-
-{
-  "name": "strong-css",
-  "version": "0.0.7",
+  "version": "v0.0.7",
   "homepage": "https://github.com/thestrongelement/strong-css",
   "description": "CSS framework for The Strong Element",
   "main": [
