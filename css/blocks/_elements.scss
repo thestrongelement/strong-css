@@ -3,6 +3,8 @@
 $elements__headers: h1, h2, h3, h4, h5, h6;
 $elements__blocks: p, ul, ol, li, blockquote, table, figure;
 $elements__interactive: a, audio\[controls\], button, details, embed, iframe, img\[usemap\], input, keygen, label, object\[usemap\], select, textarea, video\[controls\];
+$elements__inputs--text: "input[type=text]", "input[type=password]", "input[type=email]", "input[type=url]", "input[type=search]", "input[type=tel]", "input[type=number]", "input[type=date]";
+$elements__inputs--check: "input[type=radio]", "input[type=checkbox]";
 
 
 /**
@@ -229,7 +231,7 @@ label, .label__ {
   }
 }
 
-textarea, input:not([type=radio]):not([type=checkbox]):not([type=submit]), select {
+#{$elements__inputs--text}, textarea, select {
   @extend %form-field-base;
   width: 100%;
   height: $height--form-text;
@@ -242,7 +244,7 @@ textarea {
   padding-top: 1em;
 }
 
-input[type=radio], input[type=checkbox] {
+#{$elements__inputs--text} {
   @extend %form-field-base;
   height: $height--form-check;
   width: $height--form-check;
