@@ -94,7 +94,7 @@
 
 }
 .ui__footer--fixed {
-  @extend %ui__footer;
+  @extend %ui__footer !optional;
   position: fixed;
   bottom: 0;
 }
