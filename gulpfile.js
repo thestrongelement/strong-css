@@ -66,6 +66,7 @@ gulp.task('css', function () {
     ]))
     .pipe($.if(minify, $.cssnano()))
     .pipe(gulp.dest(dir__build + '/css'))
+    .pipe(reload());
 });
 
 // process static files
@@ -97,7 +98,7 @@ gulp.task('default', function () {
   gulp.start('serve');
 });
 
-gulp.task('clean', del.bind(null, ['.tmp', dir__www, dir__dist]));
+gulp.task('clean', del.bind(null, ['.tmp', dir__www]));
 
 function reload() {
   if (server) {

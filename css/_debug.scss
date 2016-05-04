@@ -1,11 +1,10 @@
 $grid-unit: $vertical-grid;
 
 @if $debug--vertical-grid {
-
   body {
-      position: absolute;
-      width: 100%;
-      min-height: 100%;
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
     &:before {
       pointer-events: none;
       content: '';
@@ -27,8 +26,9 @@ $grid-unit: $vertical-grid;
         );
     }
   }
-
 }
+
+
 
 
 .width {
@@ -37,7 +37,6 @@ $grid-unit: $vertical-grid;
 }
 h1, h2, h3, h4 , h5 , h6, p, small, li, fieldset {
   background: rgba(yellow, 0.4);
-//  display: block;
 }
 ul, ol, label {
   background: rgba(pink, 0.4);
@@ -143,94 +142,3 @@ small {
   }
 
 }
-
-
-//
-//$type: (
-//  xxs: ms(-1) 1.25,     //13.507
-//  xs: ms(0) 1.33333333,//16
-//  s: ms(1) 1.33333333,   //18.005
-//  reg: ms(3) 1.5,       //24
-//  m: ms(5) 1.33333333,  //31.992
-//  l: ms(7) 1.2727272,   //42.645
-//  xl: ms(9) 1.2,        //56.846
-//  xxl: ms(11) 1.21052    //75.776
-//) !default;
-
-
-
-
-/*
-#ui {
-//  background-image: url(../grid-6-12.min.svg);
-}
-
-
-.ui__nav {
-  background: purple;
-  color: white;
-//  height: 200px;
-}
-.ui__header, .ui__footer, .ui__footer--fixed {
-//  height: 40px;
-  background: black;
-  color: white;
-}
-.ui__content {
-//  background: orange;
-  //min-height: 100vh;
-}
-
-
-
-#logo--thestrongelement {
-  code {
-    @include media(xs) {
-      color: red;
-    }
-    @include media(s) {
-      color: orange;
-    }
-    @include media(m) {
-      color: green;
-    }
-    @include media(l) {
-      color: blue;
-    }
-    @include media(xl) {
-      color: purple;
-    }
-  }
-}
-
-.ui__header--fixed, .ui__footer--fixed {
-  //opacity: 0.3;
- // background: rgba(0,0,0,0.1);
-}
-
-[class^=flow__flex] > div {
-  background: rgba(0,0,0,0.2);
-  outline: solid 1px white;
-  color: white;
-  font-size: $font-size--xl;
-}
-[class^=flow--3] {
-  background: rgba(0,0,0,0.5);
-  outline: solid 1px white;
-  color: white;
-  font-size: $font-size--xl;
-}
-[class^=flow--6] {
-  background: rgba(0,0,0,0.3);
-  outline: solid 1px white;
-  color: white;
-  font-size: $font-size--xl;
-}
-[class^=flow--4] {
-  background: rgba(0,0,0,0.7);
-  outline: solid 1px white;
-  color: white;
-  font-size: $font-size--xl;
-}
-*/
-
