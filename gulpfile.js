@@ -9,6 +9,7 @@ var del = require('del');
 var json__pkg = require('./package.json');
 var cli_argv = require('minimist')(process.argv.slice(2));
 var minify = typeof cli_argv.minify != 'undefined';
+var dist = typeof cli_argv.dist != 'undefined';
 
 var dir__public = 'public';
 var dir__src_html = 'views';
@@ -37,7 +38,6 @@ gulp.task('serve', ['www'], function () {
   gulp.watch(dir__public+'/**/*', ['public']);
 });
 
-
 gulp.task('html', function () {
   return gulp.src([dir__src_html+'/**/*.html','!'+dir__src_html+'/**/_*'])
     .pipe($.ejs({
@@ -50,12 +50,11 @@ gulp.task('html', function () {
     .pipe(reload());
 });
 
-
 // process SASS
 gulp.task('css', function () {
   return gulp.src([dir__src_css+'/*.scss', '!'+dir__src_css+'/_debug.scss'])
     .pipe($.sass({
-      outputStyle: (minify?'compressed':'expanded'),
+      outputStyle: (minify||dist?'compressed':'expanded'),
       precision: 10,
       includePaths: ['.'],
       errLogToConsole: true
@@ -65,7 +64,7 @@ gulp.task('css', function () {
       require('autoprefixer-core')({browsers: ['last 1 version', 'ie >= 10', 'and_chr >= 2.3']})
     ]))
     .pipe($.if(minify, $.cssnano()))
-    .pipe(gulp.dest(dir__build + '/css'))
+    .pipe(gulp.dest(dist? dir__dist:dir__build + '/css'))
     .pipe(reload());
 });
 
@@ -77,22 +76,6 @@ gulp.task('public', function() {
 
 //build
 gulp.task('www', $.sequence('clean',['css','public'],'html'));
-
-gulp.task('dist', function () {
-  return gulp.src([dir__src_css+'/*.scss', '!'+dir__src_css+'/_debug.scss'])
-    .pipe($.sass({
-      outputStyle: ('compressed'),
-      precision: 10,
-      includePaths: ['.'],
-      errLogToConsole: true
-    })
-    .on('error', $.sass.logError))
-    .pipe($.postcss([
-      require('autoprefixer-core')({browsers: ['last 1 version', 'ie >= 10', 'and_chr >= 2.3']})
-    ]))
-    .pipe($.cssnano())
-    .pipe(gulp.dest(dir__dist + '/css'))
-});
 
 gulp.task('default', function () {
   gulp.start('serve');

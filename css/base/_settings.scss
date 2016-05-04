@@ -1,11 +1,11 @@
 @import "bower_components/modular-scale/stylesheets/modular-scale";
 
 //modular scale vars
-$ms-base: 16px 24px !default;
-$ms-ratio: $fourth !default; //1.333
+$ms-base: 16px 24px;
+$ms-ratio: $fourth; //1.333
 
 //debug vars
-$debug--vertical-grid: false !default;
+$debug--vertical-grid: true !default;
 
 //breakpoints
 $breakpoints: (
