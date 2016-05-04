@@ -75,7 +75,7 @@ gulp.task('public', function() {
 });
 
 //build
-gulp.task('www', $.sequence('clean',['css','public'],'html','dist'));
+gulp.task('www', $.sequence('clean',['css','public'],'html'));
 
 gulp.task('dist', function () {
   return gulp.src(dir__src_css+'/*.scss')

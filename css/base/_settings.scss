@@ -1,5 +1,10 @@
 @import "bower_components/modular-scale/stylesheets/modular-scale";
 
+
+//debug vars
+$debug--vertical-grid: true !default;
+
+//breakpoints
 $breakpoints: (
   xs: 480px,
   s: 667px,
@@ -49,6 +54,9 @@ $vertical-grid: 12px !default;
 $ms-base: 16px 24px;
 $ms-ratio: $fourth; //1.333
 
+//modular scale vars
+$ms-base: 16px, 24px !default;
+$ms-ratio: 1.333 !default; //1.333
 
 $type: (
   xxs: ms(-1) 1.77685644, //13.507
@@ -118,6 +126,8 @@ $colors: (
 $font-family: map-get($fonts,body) !default;
 $font-family--header:  map-get($fonts,header) !default;
 $font-size: nth(map-get($type,s), 1) !default;
+@debug nth(map-get($type,s), 1);
+
 $line-height: nth(map-get($type,s), 2) !default;
 $border-radius: 2px;
 

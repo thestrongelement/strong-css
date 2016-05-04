@@ -1,32 +1,35 @@
 $grid-unit: $vertical-grid;
 
-body {
-    position: absolute;
-    width: 100%;
-    min-height: 100%;
-  &:before {
-    pointer-events: none;
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    min-height: 100%;
-    background-image:
-      repeating-linear-gradient(
-        to bottom,
-        transparent 0px,
-        transparent $grid-unit - 1px,
-        rgba(0,0,0,0.1) $grid-unit - 1px,
-        rgba(0,0,0,0.1) $grid-unit
-      );
+@if $debug--vertical-grid {
+
+  body {
+      position: absolute;
+      width: 100%;
+      min-height: 100%;
+    &:before {
+      pointer-events: none;
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      min-height: 100%;
+      background-image:
+        repeating-linear-gradient(
+          to bottom,
+          transparent 0px,
+          transparent $grid-unit - 1px,
+          rgba(0,0,0,0.1) $grid-unit - 1px,
+          rgba(0,0,0,0.1) $grid-unit
+        );
+    }
   }
 
-
 }
+
 
 .width {
   height: 100px;
@@ -73,7 +76,7 @@ h6 {
 }
 
 p {
-@include type(s);
+//@include type(s);
 }
 small {
 @include type(xxs);
@@ -136,7 +139,7 @@ small {
     padding: padding(roomy) 0;
   }
   .box-6 {
-    padding: padding(extra) 0;   
+    padding: padding(extra) 0;
   }
 
 }
