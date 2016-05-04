@@ -66,6 +66,7 @@ gulp.task('css', function () {
     ]))
     .pipe($.if(minify, $.cssnano()))
     .pipe(gulp.dest(dir__build + '/css'))
+    .pipe(reload());
 });
 
 // process static files
@@ -75,7 +76,7 @@ gulp.task('public', function() {
 });
 
 //build
-gulp.task('www', $.sequence('clean',['css','public'],'html','dist'));
+gulp.task('www', $.sequence('clean',['css','public'],'html'));
 
 gulp.task('dist', function () {
   return gulp.src([dir__src_css+'/*.scss', '!'+dir__src_css+'/_debug.scss'])
@@ -97,7 +98,7 @@ gulp.task('default', function () {
   gulp.start('serve');
 });
 
-gulp.task('clean', del.bind(null, ['.tmp', dir__www, dir__dist]));
+gulp.task('clean', del.bind(null, ['.tmp', dir__www]));
 
 function reload() {
   if (server) {
