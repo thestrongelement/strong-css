@@ -50,9 +50,10 @@ gulp.task('html', function () {
     .pipe(reload());
 });
 
+
+// process SASS
 gulp.task('css', function () {
-  return gulp.src(dir__src_css+'/*.scss')
-    .pipe(minify?$.util.noop():$.sourcemaps.init())
+  return gulp.src([dir__src_css+'/*.scss', '!'+dir__src_css+'/_debug.scss'])
     .pipe($.sass({
       outputStyle: (minify?'compressed':'expanded'),
       precision: 10,
@@ -61,11 +62,10 @@ gulp.task('css', function () {
     })
     .on('error', $.sass.logError))
     .pipe($.postcss([
-      require('autoprefixer-core')({browsers: ['last 1 version']})
+      require('autoprefixer-core')({browsers: ['last 1 version', 'ie >= 10', 'and_chr >= 2.3']})
     ]))
-    .pipe(minify?$.util.noop():$.sourcemaps.write())
+    .pipe($.if(minify, $.cssnano()))
     .pipe(gulp.dest(dir__build + '/css'))
-    .pipe(reload());
 });
 
 // process static files
@@ -78,16 +78,18 @@ gulp.task('public', function() {
 gulp.task('www', $.sequence('clean',['css','public'],'html'));
 
 gulp.task('dist', function () {
-  return gulp.src(dir__src_css+'/*.scss')
+  return gulp.src([dir__src_css+'/*.scss', '!'+dir__src_css+'/_debug.scss'])
     .pipe($.sass({
-      outputStyle: ('compressed'), // libsass doesn't support expanded yet
+      outputStyle: ('compressed'),
       precision: 10,
       includePaths: ['.'],
-      onError: console.error.bind(console, 'Sass error:')
-    }))
+      errLogToConsole: true
+    })
+    .on('error', $.sass.logError))
     .pipe($.postcss([
-      require('autoprefixer-core')({browsers: ['last 1 version']})
+      require('autoprefixer-core')({browsers: ['last 1 version', 'ie >= 10', 'and_chr >= 2.3']})
     ]))
+    .pipe($.cssnano())
     .pipe(gulp.dest(dir__dist + '/css'))
 });
 
@@ -95,7 +97,7 @@ gulp.task('default', function () {
   gulp.start('serve');
 });
 
-gulp.task('clean', del.bind(null, ['.tmp', dir__www]));
+gulp.task('clean', del.bind(null, ['.tmp', dir__www, dir__dist]));
 
 function reload() {
   if (server) {
