@@ -1,0 +1,70 @@
+<% var title = "" %>
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <% include ./includes/_app_meta.html %>
+    </head>
+    <body id=thestrongelement-com>
+		<div class=ui role=application>
+<!--
+			<header class=ui__header>
+			    <div>
+                    <strong id=logo~~thestrongelement>The <code>strong</code> element</strong>
+                    <nav role=navigation>
+                        <ul>
+                            <li><a href="#">PBR</a></li>
+                            <li aria-selected=true><a href="#">Paleo</a></li>
+                            <li><a href="#">Meh</a></li>
+                        </ul>
+                    </nav>
+                </div>
+			</header>
+ -->
+			<main class=ui__view role=main>
+
+<h1>.navlist</h1>
+<nav role="navigation"> 
+
+
+
+<ul class="ul-list">
+  <li class="item__"><a href="#" class="link__">link 1</a></li>
+  <li class="item__"><a href="#" class="link__">link 2</a></li>
+  <li class="item__"><a href="#" class="link__">link 3</a></li>
+</ul>
+
+
+<ol class="ol-list numbered--">
+  <li class="item__"><a href="#" class="link__">link 1</a></li>
+  <li class="item__"><a href="#" class="link__">link 2</a></li>
+  <li class="item__"><a href="#" class="link__">link 3</a></li>
+</ol>
+
+<dl class="dl-list">
+  <dt class="item__">dt</dt>
+    <dd>dd</dd>
+  <dt class="item__">dt</dt>
+    <dd>dd</dd>  
+  <dt class="item__">dt</dt>
+    <dd>dd</dd>  
+</dl>
+
+
+ <aside class="div-list numbered--" role="list">
+  <div class="item__" role="listitem"><a href="#" class="link__">link 1</a></div>
+  <div class="item__" role="listitem"><a href="#" class="link__">link 2</a></div>
+  <div class="item__" role="listitem"><a href="#" class="link__">link 3</a></div>
+</aside>
+
+
+
+</nav>
+
+
+			</main>
+            <%# include ./includes/_app_footer.html %>
+		</div>
+	</body>
+</html>
+
+

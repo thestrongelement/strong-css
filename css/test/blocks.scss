@@ -1,0 +1,35 @@
+@import "navlist";
+
+//.ul-list {
+////  @extend %navlist-horizontal;
+//}
+//
+//
+//.ol-list {
+//  @extend %navlist;
+//  
+//}
+//
+//.dl-list {
+//  @extend %navlist;
+//  
+//}
+
+$counter-format: "0" "/";
+@include navlist(".ol-list, .div-list", $counter-format) {
+  & > .item__ {
+    @include type(l);
+    & > .link__ {
+      padding: space(xs);
+    }
+  }
+  
+  
+};
+
+
+//
+//.div-list {
+//  @extend %navlist-vertical;
+//  
+//}
