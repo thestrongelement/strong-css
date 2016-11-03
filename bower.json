@@ -13,11 +13,13 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
     "www",
     "views",
     "build",
-    "misc"
+    "misc",
+    "BEM.md",
+    "ROADMAP.md",
+    "gulpfile.js",
   ],
   "dependencies": {
     "modular-scale": "~2.1.1"
