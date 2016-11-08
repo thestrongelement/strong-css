@@ -1,0 +1,76 @@
+/*
+* BLOCKS
+* usage
+*   @extend %BLOCK
+*/
+
+/*
+  self-rendering requirements
+
+  $type: block, inline;
+
+  $props: (
+    box-sizing: ,
+    margin: 0,
+    padding: 0,
+    font: {
+    family: inherit,
+      size: inherit,
+      weight: ,
+    },
+    line-height: ,
+
+
+
+  }
+
+
+*/
+
+
+
+$block-name: BLOCK;
+
+$block-name: NAV-HORIZONTAL;
+%#{$block-name} {
+
+  & { //.foo if .foo { @extend %BLOCK }
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    & > ol, & > ul, & > .list__ {
+      @include clearfix;
+      margin-bottom: inherit;
+      & > li > & > .item__ {
+        float: left;
+      }
+    }
+  }
+}
+
+[class*="#{$block-name"}] {
+
+}
+
+
+
+
+$block-name: NAV-VERTICAL;
+%#{$block-name} {
+
+  & { //.foo if .foo { @extend %BLOCK }
+    margin: inherit inherit 0;
+    padding: inherit;
+    list-style: none;
+    & > .list__ {
+      @include clearfix;
+      margin-bottom: inherit;
+      & > .item__ {
+        float: left;
+      }
+    }
+  }
+
+
+}
+
