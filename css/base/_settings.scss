@@ -1,5 +1,14 @@
 @import "bower_components/modular-scale/stylesheets/modular-scale";
 
+//vendor vars
+$ms-base: 16px 24px;
+$ms-ratio: $fourth; //1.333
+
+//debug vars
+$vertical-grid: 12px !default;
+$debug--vertical-grid: true !default;
+
+//breakpoints
 $breakpoints: (
   xs: 480px,
   s: 667px,
@@ -38,16 +47,10 @@ $width--ui-max-content: 926px;
 $width--ui-padding: 24px;
 
 $fonts: (
-  body: #{"Helvetica Neue", sans-serif},
+  body: #{"'Helvetica Neue'", sans-serif},
   header: #{"Courier", sans-serif},
 ) !default;
 
-
-$vertical-grid: 12px !default;
-
-//vendor vars
-$ms-base: 16px 24px;
-$ms-ratio: $fourth; //1.333
 
 
 $type: (
@@ -118,6 +121,8 @@ $colors: (
 $font-family: map-get($fonts,body) !default;
 $font-family--header:  map-get($fonts,header) !default;
 $font-size: nth(map-get($type,s), 1) !default;
+@debug $font-size;
+
 $line-height: nth(map-get($type,s), 2) !default;
 $border-radius: 2px;
 
@@ -197,28 +202,4 @@ $font-size--desktop:		24px !default;
 $line-height--base:	32px !default;
 $line-height--ratio:  $line-height--base / $font-size--base;
 
-
-
-//modular scale
-/*
-$em-base: $font-size--base;
-$ms-base: $font-size--base;
-$ms-ratio: $fourth;
-$font-size--xl:     rem(ms(3)); //2.5rem
-$font-size--l:      rem(ms(2)); //2.0rem
-$font-size--m:      rem(ms(1)); //1.5rem
-$font-size--reg:    rem(ms(0));
-$font-size--s:      rem(ms(-1)); //0.875rem
-$font-size--xs:			rem(ms(-2)); //0.75rem
-*/
-/*
-$font-size--xxs: 0.5rem; //8px
-$font-size--xs: 0.75rem; //12px
-$font-size--s: 0.875rem; //14px
-$font-size--reg: $font-size--base; //16px
-$font-size--m: 1.5rem; //24px
-$font-size--l: 2rem; //32px
-$font-size--xl: 3rem; //48px
-$font-size--xxl: 3.5rem; //56px
- */
 
