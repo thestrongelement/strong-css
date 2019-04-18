@@ -1,0 +1,187 @@
+@import "functions";
+
+//breakpoints
+$breakpoints: (
+  xs: 480px,
+  s: 667px,
+  m: 768px,
+  l: 1024px,
+  xl: 1248px,
+  xxl: 1440px
+) !default;
+
+//spacing
+$spacing--base: 6px;
+$spacing: (
+  base: $spacing--base,   //6
+  xs: $spacing--base*2,   //12
+  s: $spacing--base*4,    //24
+  reg: $spacing--base*6,  //36
+  m: $spacing--base*8,    //48
+  l: $spacing--base*10,   //60
+  xl: $spacing--base*12,  //72
+  xxl: $spacing--base*14  //84
+) !default;
+
+$padding: (
+  compact: $spacing--base,  //6
+  tight: $spacing--base*2,  //12
+  reg: $spacing--base*4,    //24
+  loose: $spacing--base*8,  //48
+  roomy: $spacing--base*12, //72
+  extra: $spacing--base*20  //120
+) !default;
+
+//type
+$type: (
+  xxs: ms(-1) 1.77685644, //13.507
+  xs: ms(0) 1.5,          //16
+  s: ms(1) 1.33333333,    //18.005
+  reg: ms(3) 1.5,         //24
+  m: ms(5) 1.12528132,    //31.992
+  l: ms(7) 1.12557158,    //42.645
+  xl: ms(9) 1.26687988,   //56.846
+  xxl: ms(11) 1.10853041  //75.776
+) !default;
+
+//fonts
+$fonts: (
+    body: #{"'Helvetica Neue'", sans-serif},
+    header: #{"Times New Roman", sans-serif},
+    code: #{"American Typewriter", "Courier", monospace},
+) !default;
+
+//colors
+$colors: (
+    white: #ffffff,
+    black: #000000,
+    coolgray: #474F54,
+    darkgray: #6F6F6F,
+    mediumgray: #AFAFAF,
+    gray: #EFEFEF,
+    lightgray: #F5F5F5,
+    offwhite: #F9F9F9,
+    midnightblue: #114958,
+    aqua: #1E7E98,
+    plum: #820068,
+    hibiscus: #E80134,
+    midnightblack: #211F1F,
+    red: #D81E17,
+    green: #1F7A18,
+    yellow: #FFA500,
+    brightblue: #3AB7D8,
+) !default;
+
+//ui dimensions
+$width--ui-max: 1140px;
+$width--ui-max-content: 926px;
+$width--ui-padding: 24px;
+
+//DEFAULTS
+$font-family: map-get($fonts,body) !default;
+$font-family--header: map-get($fonts,header) !default;
+$font-size: nth(map-get($type,s), 1) !default;
+$line-height: nth(map-get($type,s), 2) !default;
+$border-radius: 2px;
+
+$margin-bottom: map-get($spacing, reg) !default;
+
+//body
+$background-color: map-get($colors, lightgray) !default;
+$color: map-get($colors, black) !default;
+
+//anchors
+$color--link: map-get($colors, aqua) !default;
+$color--link-hover: lighten($color__link,20) !default;
+
+//buttons
+$height--button: map-get($spacing, m) !default;
+$border-radius--button: $border-radius !default;
+$background-color--button: map-get($colors, aqua) !default;
+$background-color--button-hover: map-get($colors, brightblue) !default;
+$color--button: map-get($colors, white) !default;
+$color--button-hover: map-get($colors, white) !default;
+
+
+//forms
+$height--form-text: map-get($spacing, m);
+$height--form-check: map-get($spacing, reg);
+
+$color--form: map-get($colors, aqua) !default;
+$color--form-focus: map-get($colors, plum) !default;
+$color--form-error:  map-get($colors, red) !default;
+$color--form-valid:  map-get($colors, green) !default;
+
+$opacity--disabled: 0.5 !default;
+
+
+//animation
+$transition-duration: 0.25s !default;
+$transition-timing-function: linear !default;
+
+
+///////////////////////////
+
+
+//colors
+
+$color__shadow: rgba(map-get($colors, mediumgray),0.5);
+
+
+//legacy variables
+
+
+$form-box-shadow: inset 0 rem(1) rem(3) rgba(black,0.06);
+
+
+//ui dimensions
+$width--ui-max: 1280px;
+$width--ui-padding: 48px;
+
+
+$padding--base: 1.6rem;
+$margin-bottom--default: 1.5rem;
+
+$screen--xxsmall: 320px;
+$screen--xsmall: 480px;
+$screen--small: 667px;
+$screen--medium: 768px;
+$screen--large: 1024px;
+$screen--xlarge: 1280px;
+$screen--xxlarge: 1440px;
+
+
+//type
+$font-size--base:		20px !default;
+
+$font-size--mobile:		$font-size--base;
+$font-size--desktop:		24px !default;
+
+$line-height--base:	32px !default;
+$line-height--ratio:  $line-height--base / $font-size--base;
+
+$time--base: 0.3s !default;
+
+
+//modular scale
+/*
+$em-base: $font-size--base;
+$ms-base: $font-size--base;
+$ms-ratio: $fourth;
+$font-size--xl:     rem(ms(3)); //2.5rem
+$font-size--l:      rem(ms(2)); //2.0rem
+$font-size--m:      rem(ms(1)); //1.5rem
+$font-size--reg:    rem(ms(0));
+$font-size--s:      rem(ms(-1)); //0.875rem
+$font-size--xs:			rem(ms(-2)); //0.75rem
+*/
+/*
+$font-size--xxs: 0.5rem; //8px
+$font-size--xs: 0.75rem; //12px
+$font-size--s: 0.875rem; //14px
+$font-size--reg: $font-size--base; //16px
+$font-size--m: 1.5rem; //24px
+$font-size--l: 2rem; //32px
+$font-size--xl: 3rem; //48px
+$font-size--xxl: 3.5rem; //56px
+ */

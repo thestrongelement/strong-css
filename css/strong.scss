@@ -5,20 +5,10 @@ view
 	- concerned with high-level layout of view components
 */
 
-//functions
-@import "functions/color";
-@import "functions/space";
-@import "functions/padding";
-
-//mixins
-@import "mixins/type";
-@import "mixins/screen";
-@import "mixins/clearfix";
-@import "mixins/weight";
-@import "mixins/print";
-
 //base
-@import "base/settings";
+@import "settings";
+
+
 @import "blocks/elements";
 
 //blocks (return @extend ??)
